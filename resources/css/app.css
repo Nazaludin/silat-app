@@ -57,3 +57,19 @@ section:nth-child(odd) {
     transform:translateY(0);
 
 }
+
+.form-default {
+   @apply py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.form-label {
+    @apply font-bold text-sm;
+}
+
+.form-group {
+    @apply  mb-3
+}
+
+.divider {
+    @apply py-3 flex items-center text-xs text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 font-bold uppercase;
+}
