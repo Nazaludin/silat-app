@@ -18,6 +18,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/dashboard/sejarah', function () {
+    return view('sejarah');
+});
+Route::get('/dashboard/prestasi', function () {
+    return view('prestasi');
+});
+Route::get('/dashboard/tokoh', function () {
+    return view('tokoh');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
