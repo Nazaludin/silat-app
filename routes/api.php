@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\ProvinsiCollection;
+use App\Models\Provinsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::get('/provinsi/{kode_provinsi}', function (string $kode_provinsi) {
+    return new ProvinsiCollection(Provinsi::where('kode_provinsi', $kode_provinsi)->get());
 });

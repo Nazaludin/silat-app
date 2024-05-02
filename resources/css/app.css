@@ -13,6 +13,9 @@ section:nth-child(odd) {
 
 
 .btn {
+    @apply w-fit cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out 
+}
+.btn-secondary {
     @apply w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out 
 }
 .btn-full {
@@ -71,5 +74,9 @@ section:nth-child(odd) {
 }
 
 .divider {
-    @apply py-3 flex items-center text-xs text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 font-bold uppercase;
+    @apply py-3 flex items-center text-xs text-gray-800 before:flex-1 before:border-t before:border-gray-400 before:me-6 after:flex-1 after:border-t after:border-gray-400 after:ms-6 font-bold uppercase;
+}
+
+.tox-promotion  {
+    display:none;
 }
