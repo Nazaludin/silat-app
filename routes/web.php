@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PerguruanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WilayahController;
 
@@ -30,9 +31,9 @@ Route::get('/', function () {
 //     return view('tokoh');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 Route::get('/sejarah', function () {
     return view('sejarah');
 })->name('sejarah');
@@ -40,6 +41,11 @@ Route::get('/wilayah', function () {
     return view('wilayah');
 })->name('wilayah');
 Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('wilayah.tambah');
+
+Route::get('/dashboard', [PerguruanController::class, 'create'])
+    ->name('dashboard');
+Route::post('/perguruan/store', [PerguruanController::class, 'store'])
+    ->name('perguruan.store');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

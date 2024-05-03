@@ -44,4 +44,3 @@ class Tokoh extends Model
     //     'password' => 'hashed',
     // ];
 }
-}
