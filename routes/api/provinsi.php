@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/provinsi', function (Request $request) {
+    return new ProvinsiCollection(Provinsi::all());
 });
-// Route::get('/provinsi/{kode_provinsi}', function (string $kode_provinsi) {
-//     return new ProvinsiCollection(Provinsi::where('kode_provinsi', $kode_provinsi)->get());
-// });
-$routes = glob(__DIR__ . "/api/*.php");
-foreach ($routes as $route) require($route);
+Route::get('/provinsi/{kode_provinsi}', function (string $kode_provinsi) {
+    return new ProvinsiCollection(Provinsi::where('kode_provinsi', $kode_provinsi)->get());
+});
+Route::get('/provinsi/search/{search}', function ($search) {
+    $provinsi = Provinsi::where('provinsi', 'like', '%' . $search . '%')->get();
+    return new ProvinsiCollection($provinsi);
+});

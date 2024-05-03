@@ -8,6 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    optimizeDeps: {
+        include: ["jquery"], // Menyertakan jQuery dalam bundle
+    },
     resolve: {
         alias: {
             $: "jQuery",
