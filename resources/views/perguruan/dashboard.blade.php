@@ -139,6 +139,7 @@
                                     // Mengatur nilai input #provinsi sesuai dengan opsi yang dipilih
                                     $('#provinsi').val(selectedProvinsi);
                                     console.log($('#provinsi').val());
+                                    $('#provinsi').attr('data-hs-combo-box-input', selectedProvinsi);
                                     // Menyembunyikan kotak opsi
                                     $('#cotainter_provinsi').hide();
                                 });
@@ -161,7 +162,7 @@
 
                                             // Tambahkan opsi berdasarkan data yang diterima dari API
                                             $.each(data.data, function(index, provinsi) {
-                                                var option = $('<div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">');
+                                                var option = $('<div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75 selected" tabindex="0" data-hs-combo-box-output-item="">');
                                                 option.append('<div class="flex justify-between items-center w-full">');
                                                 option.find('div').append('<span data-hs-combo-box-search-text="' + provinsi.provinsi + '" data-hs-combo-box-value="' + provinsi.provinsi + '">' + provinsi.provinsi + '</span>');
                                                 option.find('div').append('<span class="hidden hs-combo-box-selected:block">');
@@ -172,6 +173,10 @@
                                             });
                                             // Tampilkan hasil pencarian
                                             $('#cotainter_provinsi').show();
+
+
+                                            // Inisialisasi ulang elemen select
+                                            // window.HSStaticMethods.autoInit(['select']);
                                         });
                                     } else {
                                         // Sembunyikan hasil pencarian jika input kosong
@@ -186,7 +191,7 @@
 
                         <!-- Form -->
                         <label for="kota" class="form-label">Kota</label>
-                        <div class="relative mb-4" data-hs-combo-box="">
+                        <div class="relative mb-4" data-hs-combo-box=''>
                             <div class="relative">
                                 <input placeholder="Kota..." id="kota" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
                                 <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
