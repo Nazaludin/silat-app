@@ -47,12 +47,12 @@
                     </form>
 
                 </div>
-                <div class="flex gap-5">
-                    <div class="form-group w-1/2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="form-group">
                         <label for="tahunberdiri" class="form-label">Tahun Berdiri</label>
                         <input placeholder="Tahun Berdiri..." id="tahunberdiri" class="form-default" type="number" value="" data-hs-combo-box-input="" />
                     </div>
-                    <div class="form-group w-1/2">
+                    <div class="form-group">
                         <label for="sejarah" class="form-label">Aliran</label>
                         <div class="relative mb-4" data-hs-combo-box="">
                             <div class="relative">

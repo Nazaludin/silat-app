@@ -15,27 +15,27 @@
   <!-- Styles -->
 
 </head>
-
-<body>
-  <header class="font-primary flex justify-center w-full bg-white py-5 px-10 shadow-lg">
-    <div class="container flex justify-between items-center">
-      <div>LOGO</div>
-
+<!-- header -->
+<header class="font-primary flex justify-center w-full bg-white py-5 px-10  fixed top-0 transition-all duration-200">
+  <div class="container flex justify-between items-center">
+    <div class="z-[999]">LOGO</div>
       <div>
-        <nav class="flex">
-          <ul class="flex circle-after">
-            <li class="w-100 mx-5">
-              <a href="">Beranda</a>
+        <nav id="nav-menu" class="navigation md:flex md:static md:bg-transparent md:shadow-none shadow-lg bg-white fixed w-full left-0 top-0 -translate-y-64 md:translate-y-0 md:pt-0 pt-[5rem] md:pb-0 pb-[2rem] rounded-b-2xl transition-all duration-500">
+          <ul class="flex nav-hover md:flex-row flex-col justify-center items-center w-full">
+            <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3  text-center">
+              <a href="#beranda" class="active">Beranda</a>
             </li>
-            <li class="w-100 mx-5">
-              <a href="">Perguruan</a>
+            <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
+              <a href="#perguruan">Perguruan</a>
             </li>
+          
+
           </ul>
         </nav>
       </div>
       <div class="flex items-center">
         <a href="{{ __('login') }}" class="btn"> Login </a>
-        <button id="hamburger" class="lg:hidden">
+        <button id="hamburger" class="md:hidden z-[999]">
           <span class="hamburger-line transition-all duration-500 ease-in-out"></span>
           <span class="hamburger-line transition-all duration-500 ease-in-out"></span>
           <span class="hamburger-line transition-all duration-500 ease-in-out"></span>
@@ -43,14 +43,15 @@
       </div>
     </div>
   </header>
-
-  <body>
-    <section>
-      <div class="w-100 flex justify-center c">
-        <div class="container flex flex-row items-center w-100 justify-center">
-          <div class="flex flex-col w-[50%] text-justify">
-            <h1 class="text-3xl mb-3 font-bold text-main">Selamat Datang!</h1>
-            <p class="mb-3 text-main">
+  
+  <!-- header -->
+  <body style="margin: 0;" class="font-primary">
+    <section id="beranda">
+      <div class="w-100 flex justify-center ">
+        <div class="container flex flex-col-reverse md:flex-row w-100 justify-center">
+          <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
+            <h1 class="text-3xl mb-3 font-bold text-main lg:text-left text-center">Selamat Datang!</h1>
+            <p class="mb-3 text-main w-full">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consectetur fugit similique quis accusantium dolorum mollitia
               quod, laboriosam voluptatum eligendi asperiores vero est vel
@@ -64,7 +65,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section >
       <div class="flex flex-col justify-center items-center">
         <h1 class="text-3xl mb-3 font-bold text-center text-main">
           Lembaga Sertifikasi Profesi
@@ -87,9 +88,33 @@
             </div>
             <div class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
               <!-- select -->
-              <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+              <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item>
                 <div class="flex justify-between items-center w-full">
-                  <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="">Argentina</span>
+                  <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="Argentina">Argentina</span>
+                  <span class="hidden hs-combo-box-selected:block">
+                    <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <!-- select -->
+              <!-- select -->
+              <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item>
+                <div class="flex justify-between items-center w-full">
+                  <span data-hs-combo-box-search-text="Argentina1" data-hs-combo-box-value="Argentina1">Argentina1</span>
+                  <span class="hidden hs-combo-box-selected:block">
+                    <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <!-- select -->
+              <!-- select -->
+              <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item>
+                <div class="flex justify-between items-center w-full">
+                  <span data-hs-combo-box-search-text="Indonesia" data-hs-combo-box-value="Indonesia">Indonesia</span>
                   <span class="hidden hs-combo-box-selected:block">
                     <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M20 6 9 17l-5-5"></path>
@@ -167,14 +192,14 @@
       </div>
     </section>
 
-    <section>
-      <div class="flex flex-wrap gap-2 justify-center mb-4">
+    <section id="perguruan">
+      <div class="flex flex-wrap justify-center mb-4">
 
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
-          <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+        <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center overflow-hidden">
+            <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
           </div>
-          <div class="text w-full text-wrap">
+          <div class="text w-full">
             <h1 class="font-bold text-xl">BNPS</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -182,11 +207,11 @@
             </p>
           </div>
         </a>
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
-          <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+        <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center overflow-hidden">
+            <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
           </div>
-          <div class="text w-full text-wrap">
+          <div class="text w-full">
             <h1 class="font-bold text-xl">BNPS</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -194,11 +219,11 @@
             </p>
           </div>
         </a>
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
-          <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+        <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center overflow-hidden">
+            <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
           </div>
-          <div class="text w-full text-wrap">
+          <div class="text w-full">
             <h1 class="font-bold text-xl">BNPS</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -206,11 +231,35 @@
             </p>
           </div>
         </a>
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
-          <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+        <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center overflow-hidden">
+            <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
           </div>
-          <div class="text w-full text-wrap">
+          <div class="text w-full">
+            <h1 class="font-bold text-xl">BNPS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, amet! asas
+            </p>
+          </div>
+        </a>
+        <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center overflow-hidden">
+            <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
+          </div>
+          <div class="text w-full">
+            <h1 class="font-bold text-xl">BNPS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, amet! asas
+            </p>
+          </div>
+        </a>
+        <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center overflow-hidden">
+            <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
+          </div>
+          <div class="text w-full">
             <h1 class="font-bold text-xl">BNPS</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -220,34 +269,35 @@
         </a>
        
 
-      </div>
-      <div class="flex gap-3 justify-center">
-        <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out ">
-          1
-        </div>
-        <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold   border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out ">
-          2
-        </div>
-        <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold   border-2 hover:text-main hover:bg-transparent transition duration-200 ease-in-out ">
-          >
-        </div>
+       
 
-    </section>
-    <section>
-    <form action="" method="get">
-        <div class="mb-3">
-            <label for="pwd">TinyMCE input:</label>
-            <textarea class="tinyMce" name="user-bio"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+       
+
+      </div>
+      <div class="flex justify-center">
+
+        <!-- Pagination -->
+        <nav class="flex items-center -space-x-px">
+          <button type="button" class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-lg last:rounded-e-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
+            <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-gray-200 text-gray-800 border border-gray-200 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none" aria-current="page">1</button>
+          <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">2</button>
+          <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">3</button>
+          <button type="button" class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-lg last:rounded-e-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
+            <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </nav>
+        <!-- End Pagination -->
+      </div>
+
     </section>
     </div>
 
-    <!-- Javascript -->
-    <script src="./dist/js/script.js"></script>
-    <script src="../node_modules/preline/dist/preline.js"></script>
-  </body>
 
 
   <!-- Javascript -->
