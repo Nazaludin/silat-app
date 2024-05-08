@@ -28,4 +28,7 @@ Route::prefix('adminpg')->group(function () {
         ->name('dashboard');
     Route::post('/perguruan/store', [PerguruanController::class, 'store'])
         ->name('perguruan.store');
+    Route::get('/prestasi', function () {
+        return view('prestasi.prestasi');
+    })->name('prestasi');
 });

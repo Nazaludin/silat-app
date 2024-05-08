@@ -44,12 +44,12 @@ class RegisteredUserController extends Controller
         ]);
 
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
         // $emailVerificationController = new EmailVerificationNotificationController();
         // return $emailVerificationController->store($user);
 
-        $request->user()->sendEmailVerificationNotification();
+        $user->sendEmailVerificationNotification();
 
 
         Auth::login($user);
