@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PerguruanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WilayahController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,19 +21,43 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard/sejarah', function () {
-    return view('sejarah');
-});
-Route::get('/dashboard/prestasi', function () {
-    return view('prestasi');
-});
-Route::get('/dashboard/tokoh', function () {
-    return view('tokoh');
-});
+// Route::get('/dashboard/sejarah', function () {
+//     return view('sejarah');
+// });
+// Route::get('/dashboard/prestasi', function () {
+//     return view('prestasi');
+// });
+// Route::get('/dashboard/tokoh', function () {
+//     return view('tokoh');
+// });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+Route::get('dashboard/sejarah', function () {
+    return view('sejarah');
+})->name('sejarah');
+Route::get('dashboard/prestasi', function () {
+    return view('prestasi');
+})->name('prestasi');
+
+Route::get('dashboard/tokoh', function () {
+    return view('tokoh');
+})->name('tokoh');
+
+Route::get('/wilayah', function () {
+    return view('wilayah');
+})->name('wilayah');
+Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('wilayah.tambah');
+
+Route::get('/dashboard', [PerguruanController::class, 'create'])
+    ->name('dashboard');
+Route::post('/perguruan/store', [PerguruanController::class, 'store'])
+    ->name('perguruan.store');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -38,4 +65,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
