@@ -60,4 +60,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+$routes = glob(__DIR__ . "/web/*.php");
+foreach ($routes as $route) require($route);
+
 require __DIR__ . '/auth.php';
