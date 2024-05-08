@@ -37,9 +37,17 @@ Route::get('/', function () {
 // })->name('dashboard');
 Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage'])->name('view-image');
 
-Route::get('/sejarah', function () {
+Route::get('dashboard/sejarah', function () {
     return view('sejarah');
 })->name('sejarah');
+Route::get('dashboard/prestasi', function () {
+    return view('prestasi');
+})->name('prestasi');
+
+Route::get('dashboard/tokoh', function () {
+    return view('tokoh');
+})->name('tokoh');
+
 Route::get('/wilayah', function () {
     return view('wilayah');
 })->name('wilayah');
