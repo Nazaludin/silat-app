@@ -17,7 +17,7 @@ class PerguruanController extends Controller
         // $myClass->add('Muaitai');
         // dd($myClass->get());
 
-        return view('perguruan.dashboard');
+        return view('adminpg.perguruan.dashboard');
     }
     public function store(Request $request): RedirectResponse
     {
@@ -93,24 +93,28 @@ class PerguruanController extends Controller
         // isi dengan nama folder tempat kemana file diupload
         $lokasi = $file->move(storage_path('images'),  $nama_file);
 
+        $perguruan = Perguruan::where('id_user', Auth::user()->id)->first();
 
-        $perguruan = new Perguruan();
-        $perguruan->id_user         = Auth::user()->id;
-        $perguruan->nama            = $validatedData['nama'];
-        $perguruan->arti_nama       = $validatedData['arti_nama'];
-        $perguruan->motto           = $validatedData['motto'];
-        $perguruan->sejarah         = $validatedData['sejarah'];
-        $perguruan->deskripsi       = $validatedData['deskripsi'];
-        $perguruan->nama_file_logo  = $nama_file;
-        $perguruan->makna_logo      = $validatedData['makna_logo'];
-        $perguruan->tahun_berdiri   = $validatedData['tahun_berdiri'];
-        $perguruan->aliran          = $validatedData['aliran'];
-        $perguruan->provinsi        = $validatedData['provinsi'];
-        $perguruan->kabupaten       = $validatedData['kabupaten'];
-        $perguruan->kecamatan       = $validatedData['kecamatan'];
-        $perguruan->desa            = $validatedData['desa'];
-        $perguruan->nama_jalan      = $validatedData['nama_jalan'];
-        $status =  $perguruan->save();
+        if ($perguruan) {
+            $perguruan->nama            = $validatedData['nama'];
+            $perguruan->arti_nama       = $validatedData['arti_nama'];
+            $perguruan->motto           = $validatedData['motto'];
+            $perguruan->sejarah         = $validatedData['sejarah'];
+            $perguruan->deskripsi       = $validatedData['deskripsi'];
+            $perguruan->nama_file_logo  = $nama_file;
+            $perguruan->makna_logo      = $validatedData['makna_logo'];
+            $perguruan->tahun_berdiri   = $validatedData['tahun_berdiri'];
+            $perguruan->aliran          = $validatedData['aliran'];
+            $perguruan->provinsi        = $validatedData['provinsi'];
+            $perguruan->kabupaten       = $validatedData['kabupaten'];
+            $perguruan->kecamatan       = $validatedData['kecamatan'];
+            $perguruan->desa            = $validatedData['desa'];
+            $perguruan->nama_jalan      = $validatedData['nama_jalan'];
+
+            $status = $perguruan->save();
+        } else {
+            $status = false;
+        }
 
         dd($status);
         // return redirect()->route('perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');

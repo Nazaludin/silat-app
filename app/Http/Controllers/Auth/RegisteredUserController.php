@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Perguruan;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -42,6 +43,10 @@ class RegisteredUserController extends Controller
             'role' => 2,
             'password' => Hash::make($request->password),
         ]);
+        $perguruan = Perguruan::create([
+            'id_user' => $user->id,
+        ]);
+        session()->put('perguruan_id', $perguruan->id);
 
 
         // event(new Registered($user));

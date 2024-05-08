@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PerguruanController;
+use App\Http\Controllers\PrestasiController;
 use App\Http\Resources\ProvinsiCollection;
 use App\Models\Provinsi;
 use Illuminate\Http\Request;
@@ -29,6 +30,13 @@ Route::prefix('adminpg')->group(function () {
     Route::post('/perguruan/store', [PerguruanController::class, 'store'])
         ->name('perguruan.store');
     Route::get('/prestasi', function () {
-        return view('prestasi.prestasi');
+        return view('adminpg.prestasi.prestasi');
     })->name('prestasi');
+    Route::prefix('prestasi')->group(function () {
+        Route::get('/add', function () {
+            return view('adminpg.prestasi.add');
+        })->name('adminpg.prestasi.add');
+        Route::post('/store', [PrestasiController::class, 'store'])
+            ->name('adminpg.prestasi.store');
+    });
 });

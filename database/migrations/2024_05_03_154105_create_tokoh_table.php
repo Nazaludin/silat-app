@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('id_perguruan')->references('id_perguruan')->on('perguruan');
             $table->string('nama');
             $table->string('tipe');
-            $table->string('lokasi_foto');
-            $table->longText('deskripsi');
+            $table->string('nama_file');
+            $table->longText('deskripsi')->nullable();
             $table->timestamps();
         });
     }

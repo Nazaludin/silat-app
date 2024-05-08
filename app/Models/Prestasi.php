@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prestasi extends Model
 {
     use HasFactory;
-    protected $table = "perguruan";
+    protected $table = "prestasi";
 
     /**
      * The attributes that are mass assignable.
@@ -18,8 +18,9 @@ class Prestasi extends Model
     protected $fillable = [
         'id_perguruan',
         'judul',
-        'lokasi_foto',
+        'nama_file',
         'tahun',
+        'deskripsi',
 
     ];
 

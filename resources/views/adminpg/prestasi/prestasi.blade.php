@@ -37,9 +37,9 @@
                                                 <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">Search</button>
                                             </div>
                                         </div>
-                                        <div class="btn my-3 mx-4">
-                                            Tombol Aksi
-                                        </div>
+                                        <a href="{{ route('adminpg.prestasi.add') }}" class="btn my-3 mx-4">
+                                            Tambah Prestasi
+                                        </a>
 
                                     </div>
 
@@ -74,6 +74,12 @@
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">3 Januari 2022</td>
                                                     <td class="px-6 py-4 text-sm text-gray-800 text-justify">
                                                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, amet optio consequatur, quisquam ad, possimus facilis facere distinctio suscipit ut reiciendis? Temporibus, cum aut inventore unde, voluptatibus, saepe quas eum ipsam molestias numquam explicabo fugit natus magni iste modi! Exercitationem temporibus illum error amet deleniti accusamus incidunt dolor asperiores! Corrupti!
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2">Lihat</button>
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2">Edit</button>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                                         <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2">Hapus</button>

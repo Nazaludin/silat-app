@@ -16,9 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('id_perguruan');
             $table->foreign('id_perguruan')->references('id_perguruan')->on('perguruan');
             $table->string('judul');
-            $table->string('lokasi_foto');
+            $table->string('nama_file');
             $table->string('tahun');
-            $table->longText('deskripsi');
+            $table->longText('deskripsi')->nullable();
             $table->timestamps();
         });
     }

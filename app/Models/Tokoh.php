@@ -19,7 +19,7 @@ class Tokoh extends Model
         'id_perguruan',
         'nama',
         'tipe',
-        'lokasi_foto',
+        'nama_file',
         'deskripsi',
 
     ];
