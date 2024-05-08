@@ -193,108 +193,135 @@
     </div>
   </section>
 
-  <section id="perguruan">
-    <div class="flex flex-wrap justify-center mb-4">
+  <section>
+    <div id="container_perguruan" class="flex flex-wrap gap-2 justify-center mb-4">
 
-      <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
-        <div class="flex justify-center items-center overflow-hidden">
-          <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
-        </div>
-        <div class="text w-full">
-          <h1 class="font-bold text-xl">BNPS</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Molestiae, amet! asas
-          </p>
-        </div>
-      </a>
-      <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
-        <div class="flex justify-center items-center overflow-hidden">
-          <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
-        </div>
-        <div class="text w-full">
-          <h1 class="font-bold text-xl">BNPS</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Molestiae, amet! asas
-          </p>
-        </div>
-      </a>
-      <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
-        <div class="flex justify-center items-center overflow-hidden">
-          <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
-        </div>
-        <div class="text w-full">
-          <h1 class="font-bold text-xl">BNPS</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Molestiae, amet! asas
-          </p>
-        </div>
-      </a>
-      <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
-        <div class="flex justify-center items-center overflow-hidden">
-          <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
-        </div>
-        <div class="text w-full">
-          <h1 class="font-bold text-xl">BNPS</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Molestiae, amet! asas
-          </p>
-        </div>
-      </a>
-      <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
-        <div class="flex justify-center items-center overflow-hidden">
-          <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
-        </div>
-        <div class="text w-full">
-          <h1 class="font-bold text-xl">BNPS</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Molestiae, amet! asas
-          </p>
-        </div>
-      </a>
-      <a href="" class="group flex flex-col w-[20rem] text-justify m-4 p-4 gap-1 rounded-xl shadow-md hover:shadow-2xl hover:scale-95 transition-all duration-20">
-        <div class="flex justify-center items-center overflow-hidden">
-          <img class="w-[10rem] group-hover:scale-110 transition-all duration-20" src="{{ asset('img/bnsp.png')}}" alt="" />
-        </div>
-        <div class="text w-full">
-          <h1 class="font-bold text-xl">BNPS</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Molestiae, amet! asas
-          </p>
-        </div>
-      </a>
-
-
-
-
+      <!-- <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center gambar">
+            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+          </div>
+          <div class="text w-full text-wrap">
+            <h1 class="font-bold text-xl">BNPS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, amet! asas
+            </p>
+          </div>
+        </a>
+        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center gambar">
+            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+          </div>
+          <div class="text w-full text-wrap">
+            <h1 class="font-bold text-xl">BNPS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, amet! asas
+            </p>
+          </div>
+        </a>
+        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center gambar">
+            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+          </div>
+          <div class="text w-full text-wrap">
+            <h1 class="font-bold text-xl">BNPS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, amet! asas
+            </p>
+          </div>
+        </a>
+        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
+          <div class="flex justify-center items-center gambar">
+            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+          </div>
+          <div class="text w-full text-wrap">
+            <h1 class="font-bold text-xl">BNPS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, amet! asas
+            </p>
+          </div>
+        </a> -->
 
 
     </div>
-    <div class="flex justify-center">
-
-      <!-- Pagination -->
-      <nav class="flex items-center -space-x-px">
-        <button type="button" class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-lg last:rounded-e-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-          <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m15 18-6-6 6-6"></path>
-          </svg>
-        </button>
-        <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-gray-200 text-gray-800 border border-gray-200 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none" aria-current="page">1</button>
-        <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">2</button>
-        <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">3</button>
-        <button type="button" class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-lg last:rounded-e-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-          <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-        </button>
-      </nav>
-      <!-- End Pagination -->
+    <div id="pagination_perguruan" class="flex gap-3 justify-center">
+      <!-- <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out ">
+          1
+        </div>
+        <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold   border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out ">
+          2
+        </div>
+        <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold   border-2 hover:text-main hover:bg-transparent transition duration-200 ease-in-out ">
+          >
+        </div> -->
     </div>
+    <script type="module">
+      $(document).ready(function() {
+        const container = $('#container_perguruan');
+        $.get('/api/perguruan', function(data) {
+          console.log(data);
+          // Tambahkan opsi berdasarkan data yang diterima dari API
+          $.each(data.data, function(index, item) {
+            // Bangun elemen DOM untuk setiap item
+            console.log(item);
+            var anchor = $('<a>', {
+              // href: "{{ url('storage/public/1715132993_filled_profil.png')}}",
+              href: "{{ url('/view-image/') }}/",
+              class: 'flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20'
+            });
+
+            var img = $('<img>', {
+              src: "{{ url('/view-image/') }}/" + item.nama_file_logo,
+              alt: ''
+            }).addClass('w-10');
+
+            var textDiv = $('<div>', {
+              class: 'text w-full text-wrap'
+            });
+
+            var title = $('<h1>', {
+              class: 'font-bold text-xl'
+            }).text(item.nama);
+
+            var paragraph = $('<p>').text(item.deskripsi);
+
+            // Gabungkan elemen-elemen DOM ke dalam hierarki DOM yang benar
+            textDiv.append(title, paragraph);
+            anchor.append(img, textDiv);
+
+            // Tambahkan elemen anchor ke dalam kontainer
+            container.append(anchor);
+
+          });
+          var index = 1;
+          do {
+            var pageDiv = $('<div>', {
+              class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+              text: index
+            });
+            index++;
+            // Menambahkan elemen div pagination ke dalam DOM
+            $('#pagination_perguruan').append(pageDiv);
+
+            if (index == 5) {
+              var pageDiv = $('<div>', {
+                class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+                text: '>'
+              });
+              // Menambahkan elemen div pagination ke dalam DOM
+              $('#pagination_perguruan').append(pageDiv);
+              break;
+            }
+          } while (index < data.last_page);
+
+
+        });
+      });
+    </script>
+
 
   </section>
   </div>
