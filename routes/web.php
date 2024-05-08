@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FunctionalController;
 use App\Http\Controllers\PerguruanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WilayahController;
@@ -34,6 +35,8 @@ Route::get('/', function () {
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage'])->name('view-image');
+
 Route::get('dashboard/sejarah', function () {
     return view('sejarah');
 })->name('sejarah');
