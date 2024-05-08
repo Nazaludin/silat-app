@@ -168,9 +168,9 @@
     </section>
 
     <section>
-      <div class="flex flex-wrap gap-2 justify-center mb-4">
+      <div id="container_perguruan" class="flex flex-wrap gap-2 justify-center mb-4">
 
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
+        <!-- <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
           <div class="flex justify-center items-center gambar">
             <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
           </div>
@@ -217,12 +217,12 @@
               Molestiae, amet! asas
             </p>
           </div>
-        </a>
-       
+        </a> -->
+
 
       </div>
-      <div class="flex gap-3 justify-center">
-        <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out ">
+      <div id="pagination_perguruan" class="flex gap-3 justify-center">
+        <!-- <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out ">
           1
         </div>
         <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold   border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out ">
@@ -230,17 +230,82 @@
         </div>
         <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold   border-2 hover:text-main hover:bg-transparent transition duration-200 ease-in-out ">
           >
-        </div>
+        </div> -->
+      </div>
+      <script type="module">
+        $(document).ready(function() {
+          const container = $('#container_perguruan');
+          $.get('/api/perguruan', function(data) {
+            console.log(data);
+            // Tambahkan opsi berdasarkan data yang diterima dari API
+            $.each(data.data, function(index, item) {
+              // Bangun elemen DOM untuk setiap item
+              console.log(item);
+              var anchor = $('<a>', {
+                // href: "{{ url('storage/public/1715132993_filled_profil.png')}}",
+                href: "{{ url('/view-image/') }}/",
+                class: 'flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20'
+              });
+
+              var img = $('<img>', {
+                src: "{{ url('/view-image/') }}/" + item.nama_file_logo,
+                alt: ''
+              }).addClass('w-10');
+
+              var textDiv = $('<div>', {
+                class: 'text w-full text-wrap'
+              });
+
+              var title = $('<h1>', {
+                class: 'font-bold text-xl'
+              }).text(item.nama);
+
+              var paragraph = $('<p>').text(item.deskripsi);
+
+              // Gabungkan elemen-elemen DOM ke dalam hierarki DOM yang benar
+              textDiv.append(title, paragraph);
+              anchor.append(img, textDiv);
+
+              // Tambahkan elemen anchor ke dalam kontainer
+              container.append(anchor);
+
+            });
+            var index = 1;
+            do {
+              var pageDiv = $('<div>', {
+                class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+                text: index
+              });
+              index++;
+              // Menambahkan elemen div pagination ke dalam DOM
+              $('#pagination_perguruan').append(pageDiv);
+
+              if (index == 5) {
+                var pageDiv = $('<div>', {
+                  class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+                  text: '>'
+                });
+                // Menambahkan elemen div pagination ke dalam DOM
+                $('#pagination_perguruan').append(pageDiv);
+                break;
+              }
+            } while (index < data.last_page);
+
+
+          });
+        });
+      </script>
+
 
     </section>
     <section>
-    <form action="" method="get">
+      <form action="" method="get">
         <div class="mb-3">
-            <label for="pwd">TinyMCE input:</label>
-            <textarea class="tinyMce" name="user-bio"></textarea>
+          <label for="pwd">TinyMCE input:</label>
+          <textarea class="tinyMce" name="user-bio"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+      </form>
     </section>
     </div>
 

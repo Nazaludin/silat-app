@@ -6,11 +6,17 @@ use App\Models\Perguruan;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Classes\AliranSilat;
+use Illuminate\Support\Facades\Auth;
 
 class PerguruanController extends Controller
 {
     public function create(Request $request): View
     {
+        // $myClass = new AliranSilat;
+        // $myClass->add('Muaitai');
+        // dd($myClass->get());
+
         return view('perguruan.dashboard');
     }
     public function store(Request $request): RedirectResponse
@@ -22,13 +28,13 @@ class PerguruanController extends Controller
             'sejarah'       => 'required|string|max:255',
             'deskripsi'     => 'required|string|max:255',
             'logo'          => 'required|file|max:2048|mimes:jpeg,png',
-            'lokasi_logo'   => 'required|string|max:255',
+            // 'lokasi_logo'   => 'required|string|max:255',
             'makna_logo'    => 'required|string|max:255',
             'tahun_berdiri' => 'required|string|max:255',
             'aliran'        => 'required|string|max:255',
             'provinsi'      => 'required|string|max:255',
             'kecamatan'     => 'required|string|max:255',
-            'kota'          => 'required|string|max:255',
+            'kabupaten'     => 'required|string|max:255',
             'desa'          => 'required|string|max:255',
             'nama_jalan'    => 'required|string|max:255',
         ], [
@@ -50,9 +56,9 @@ class PerguruanController extends Controller
             'logo.required'          => 'Logo perguruan harus diunggah.',
             'logo.file'              => 'Logo harus berupa file.',
             'logo.max'               => 'Ukuran logo tidak boleh lebih dari 2MB.',
-            'lokasi_logo.required'   => 'Lokasi logo perguruan harus diisi.',
-            'lokasi_logo.string'     => 'Lokasi logo perguruan harus berupa teks.',
-            'lokasi_logo.max'        => 'Lokasi logo perguruan tidak boleh lebih dari 255 karakter.',
+            // 'lokasi_logo.required'   => 'Lokasi logo perguruan harus diisi.',
+            // 'lokasi_logo.string'     => 'Lokasi logo perguruan harus berupa teks.',
+            // 'lokasi_logo.max'        => 'Lokasi logo perguruan tidak boleh lebih dari 255 karakter.',
             'makna_logo.required'    => 'Makna logo perguruan harus diisi.',
             'makna_logo.string'      => 'Makna logo perguruan harus berupa teks.',
             'makna_logo.max'         => 'Makna logo perguruan tidak boleh lebih dari 255 karakter.',
@@ -65,9 +71,9 @@ class PerguruanController extends Controller
             'provinsi.required'      => 'Provinsi perguruan harus diisi.',
             'provinsi.string'        => 'Provinsi perguruan harus berupa teks.',
             'provinsi.max'           => 'Provinsi perguruan tidak boleh lebih dari 255 karakter.',
-            'kota.required'          => 'Kota perguruan harus diisi.',
-            'kota.string'            => 'Kota perguruan harus berupa teks.',
-            'kota.max'               => 'Kota perguruan tidak boleh lebih dari 255 karakter.',
+            'kabupaten.required'     => 'Kota perguruan harus diisi.',
+            'kabupaten.string'       => 'Kota perguruan harus berupa teks.',
+            'kabupaten.max'          => 'Kota perguruan tidak boleh lebih dari 255 karakter.',
             'kecamatan.required'     => 'Kecamatan perguruan harus diisi.',
             'kecamatan.string'       => 'Kecamatan perguruan harus berupa teks.',
             'kecamatan.max'          => 'Kecamatan perguruan tidak boleh lebih dari 255 karakter.',
@@ -80,22 +86,33 @@ class PerguruanController extends Controller
             // tambahkan pesan validasi untuk input lainnya
         ]);
 
+        // menyimpan data file yang diupload ke variabel $file
+        $file = $request->file('logo');
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+
+        // isi dengan nama folder tempat kemana file diupload
+        $lokasi = $file->move(storage_path('images'),  $nama_file);
+
+
         $perguruan = new Perguruan();
+        $perguruan->id_user         = Auth::user()->id;
         $perguruan->nama            = $validatedData['nama'];
         $perguruan->arti_nama       = $validatedData['arti_nama'];
         $perguruan->motto           = $validatedData['motto'];
         $perguruan->sejarah         = $validatedData['sejarah'];
         $perguruan->deskripsi       = $validatedData['deskripsi'];
-        $perguruan->lokasi_logo     = $validatedData['lokasi_logo'];
+        $perguruan->nama_file_logo  = $nama_file;
         $perguruan->makna_logo      = $validatedData['makna_logo'];
         $perguruan->tahun_berdiri   = $validatedData['tahun_berdiri'];
         $perguruan->aliran          = $validatedData['aliran'];
         $perguruan->provinsi        = $validatedData['provinsi'];
+        $perguruan->kabupaten       = $validatedData['kabupaten'];
         $perguruan->kecamatan       = $validatedData['kecamatan'];
         $perguruan->desa            = $validatedData['desa'];
         $perguruan->nama_jalan      = $validatedData['nama_jalan'];
-        $perguruan->save();
+        $status =  $perguruan->save();
 
-        return redirect()->route('perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');
+        dd($status);
+        // return redirect()->route('perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');
     }
 }

@@ -17,7 +17,7 @@ import jQuery from "jquery";
 window.$ = jQuery;
 
 // hamburger
-const hamburger = document.querySelector("#hamburger");
-hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("hamburger-active");
-});
+// const hamburger = document.querySelector("#hamburger");
+// hamburger.addEventListener("click", function () {
+//     hamburger.classList.toggle("hamburger-active");
+// });
