@@ -197,14 +197,50 @@
                                                 var tdDescription = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200').html(item.deskripsi);
 
                                                 // Buat elemen <td> untuk tombol lihat
-                                                var tdAction = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-end text-sm font-medium border-r border-r-gray-200');
-                                                var btnView = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Lihat');
-                                                var btnEdit = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Edit');
-                                                var btnDelete = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Hapus');
 
-                                                tdAction.append(btnView);
-                                                tdAction.append(btnEdit);
+                                                var btnDelete = $('<div>').addClass('hs-tooltip').html(`
+                                                <button customToolTip="Hapus" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M4 7l16 0" />
+                                                        <path d="M10 11l0 6" />
+                                                        <path d="M14 11l0 6" />
+                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                                    </svg>
+                                                </button>
+                                                `);
+                                                var btnEdit = $('<div>').addClass('hs-tooltip').html(`
+                                                <button customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                                    <path d="M16 5l3 3" />
+                                                </svg>
+                                                </button>
+                                                `);
+                                                var btnView = $('<div>').addClass('hs-tooltip').html(`
+                                                <button customToolTip="View" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                                    <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                                    <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                                </svg>
+                                                </button>
+                                                `);
+
+
+                                                var tdAction = $('<td>').addClass('flex gap-2 px-6 py-4 whitespace-nowrap text-end text-sm font-medium border-r border-r-gray-200');
+                                                // var btnView = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Lihat');
+                                                // var btnEdit = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Edit');
+                                                // var btnDelete = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Hapus');
+
+
                                                 tdAction.append(btnDelete);
+                                                tdAction.append(btnEdit);
+                                                tdAction.append(btnView);
                                                 tr.append(tdNumber, tdTitle, tdDate, tdDescription, tdAction);
                                                 container.append(tr);
                                             });
@@ -221,10 +257,10 @@
                                             var divSecond = $("<div>");
                                             var navElement = $("<nav>").addClass("isolate inline-flex -space-x-px rounded-md shadow-sm").attr("aria-label", "Pagination");
 
-                                            var firstNavItemClass = "relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0";
-                                            var lastNavItemClass = "relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex";
-                                            var defaultNavItemClass = "relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex";
-                                            var activeNavItemClass = "relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600";
+                                            var firstNavItemClass = "relative inline-flex items-center rounded-l-full p-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 cursor-default";
+                                            var lastNavItemClass = "relative hidden items-center p-2 rounded-r-full text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex hover:bg-main hover:text-white hover:opacity-70 cursor-pointer transition duration-200 ease-in-out";
+                                            var defaultNavItemClass = "relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex hover:bg-main hover:text-white hover:opacity-70 cursor-pointer transition duration-200 ease-in-out";
+                                            var activeNavItemClass = "relative z-10 inline-flex items-center bg-main px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main ";
 
                                             var anchorPrev = $("<a>").attr("href", "#").addClass(firstNavItemClass).html("<span class='sr-only'>Previous</span><svg class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'><path fill-rule='evenodd' d='M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z' clip-rule='evenodd' /></svg>").on("click", function() {
                                                 if (pageNumber > 1) {
