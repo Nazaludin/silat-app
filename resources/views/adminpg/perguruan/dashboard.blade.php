@@ -417,9 +417,9 @@
                         </div>
                         <!-- Form End -->
 
-                        <hr class="mb-3">
+                 
                         <div class="flex justify-end">
-                            <button type="button" class="btn" data-hs-overlay="#submit-alert">Simpan Perubahan</button>
+                            <button type="button" class="btn bg-green-500 border-green-500 hover:bg-transparent hover:text-green-500" data-hs-overlay="#submit-alert">Simpan Perubahan</button>
                         </div>
                 </form>
             </div>
