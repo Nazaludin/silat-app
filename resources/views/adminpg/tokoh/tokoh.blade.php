@@ -10,92 +10,67 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <div class="btn" data-hs-overlay="#tambah-tokoh">
+                    <div class="btn-main" data-hs-overlay="#tambah-tokoh">
                         Tambah Tokoh
                     </div>
                     <div class="divider">daftar tokoh</div>
 
                     <div class="flex flex-wrap justify-center">
                         <!-- tokoh card -->
-                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-slate-100 rounded-xl shadow-md">
+                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
                             <div class="w-[10rem] rounded-full overflow-hidden ">
                                 <img src="{{ asset('img/tokoh.jpg')}}" alt="">
                             </div>
                             <div class="form-label mb-5">Tokoh 1</div>
-                            <div class="flex gap-7">
-                                <div class="btn">
-                                    Hapus
+                            <div class="flex gap-2">
+
+                                <div class="hs-tooltip">
+                                    <div class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Hapus
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="btn">
-                                    Lihat
+
+                                <div class="hs-tooltip">
+                                    <div class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Edit
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- tokoh card -->
-                        <!-- tokoh card -->
-                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-slate-100 rounded-xl shadow-md">
-                            <div class="w-[10rem] rounded-full overflow-hidden ">
-                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
-                            </div>
-                            <div class="form-label mb-5">Tokoh 1</div>
-                            <div class="flex gap-7">
-                                <div class="btn">
-                                    Hapus
-                                </div>
-                                <div class="btn">
-                                    Lihat
-                                </div>
-                            </div>
-                        </div>
-                        <!-- tokoh card -->
-                        <!-- tokoh card -->
-                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-slate-100 rounded-xl shadow-md">
-                            <div class="w-[10rem] rounded-full overflow-hidden ">
-                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
-                            </div>
-                            <div class="form-label mb-5">Tokoh 1</div>
-                            <div class="flex gap-7">
-                                <div class="btn">
-                                    Hapus
-                                </div>
-                                <div class="btn">
-                                    Lihat
-                                </div>
-                            </div>
-                        </div>
-                        <!-- tokoh card -->
-                        <!-- tokoh card -->
-                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-slate-100 rounded-xl shadow-md">
-                            <div class="w-[10rem] rounded-full overflow-hidden ">
-                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
-                            </div>
-                            <div class="form-label mb-5">Tokoh 1</div>
-                            <div class="flex gap-7">
-                                <div class="btn">
-                                    Hapus
-                                </div>
-                                <div class="btn">
-                                    Lihat
+                                <div class="hs-tooltip">
+                                    <div class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                        <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                        <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Lihat
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- tokoh card -->
-                        <!-- tokoh card -->
-                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-slate-100 rounded-xl shadow-md">
-                            <div class="w-[10rem] rounded-full overflow-hidden ">
-                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
-                            </div>
-                            <div class="form-label mb-5">Tokoh 1</div>
-                            <div class="flex gap-7">
-                                <div class="btn">
-                                    Hapus
-                                </div>
-                                <div class="btn">
-                                    Lihat
-                                </div>
-                            </div>
-                        </div>
-                        <!-- tokoh card -->
+
+
 
                     </div>
 
@@ -113,13 +88,13 @@
     <div id="tambah-tokoh" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
         <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all w-full sm:max-w-[70rem] sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)]">
             <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
-                <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+                <div class="flex justify-between items-center py-3 px-4 border-b">
                     <h3 class="font-bold text-gray-800">
                         Tambah Tokoh
                     </h3>
-                    <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#tambah-tokoh">
+                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#tambah-tokoh">
                         <span class="sr-only">Close</span>
-                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
                             <path d="m6 6 12 12"></path>
                         </svg>
@@ -189,10 +164,7 @@
                     </div>
                 </div>
                 <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
-                    <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#tambah-tokoh">
-                        Tutup
-                    </button>
-                    <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <button type="button" class="w-fit cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-green-600 border-2 border-green-600 hover:text-green-600 hover:bg-transparent transition duration-200 ease-in-out ">
                         Simpan Perubahan
                     </button>
                 </div>

@@ -45,7 +45,7 @@ Route::get('dashboard/prestasi', function () {
 })->name('prestasi');
 
 Route::get('dashboard/tokoh', function () {
-    return view('tokoh');
+    return view('adminpg.tokoh.tokoh');
 })->name('tokoh');
 
 Route::get('/wilayah', function () {

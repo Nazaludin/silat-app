@@ -34,7 +34,7 @@
       </nav>
     </div>
     <div class="flex items-center">
-      <a href="{{ __('login') }}" class="btn"> Login </a>
+      <a href="{{ __('login') }}" class="btn-main"> Login </a>
       <button id="hamburger" class="md:hidden z-[999]">
         <span class="hamburger-line transition-all duration-500 ease-in-out"></span>
         <span class="hamburger-line transition-all duration-500 ease-in-out"></span>
@@ -45,7 +45,6 @@
 </header>
 
 <!-- header -->
-
 <body style="margin: 0;" class="font-primary">
   <section id="beranda">
     <div class="w-100 flex justify-center ">
@@ -58,7 +57,7 @@
             quod, laboriosam voluptatum eligendi asperiores vero est vel
             adipisci deleniti laudantium ipsum amet? Eaque, est!
           </p>
-          <a href="" class="btn"> Lihat Perguruan </a>
+          <a href="" class="btn-main"> Lihat Perguruan </a>
         </div>
         <div class="flex-col">
           <img src="{{ asset('img/hero.svg')}}" alt="" />
@@ -193,61 +192,24 @@
     </div>
   </section>
 
-  <section>
+  <section id="perguruan">
     <div id="container_perguruan" class="flex flex-wrap gap-2 justify-center mb-4">
-
-      <!-- <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
+<!-- 
+ <a href="" class="flex flex-col w-[3rem] text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
           <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
+            <img class="w-[10]" src="{{ url('/view-image/1715422129_1281265.jpg') }}/" alt="" />
           </div>
           <div class="text w-full text-wrap">
             <h1 class="font-bold text-xl">BNPS</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae, amet! asas
-            </p>
-          </div>
-        </a>
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
-          <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
-          </div>
-          <div class="text w-full text-wrap">
-            <h1 class="font-bold text-xl">BNPS</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae, amet! asas
-            </p>
-          </div>
-        </a>
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
-          <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
-          </div>
-          <div class="text w-full text-wrap">
-            <h1 class="font-bold text-xl">BNPS</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae, amet! asas
-            </p>
-          </div>
-        </a>
-        <a href="" class="flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
-          <div class="flex justify-center items-center gambar">
-            <img class="w-[10]" src="{{ asset('img/bnsp.png')}}" alt="" />
-          </div>
-          <div class="text w-full text-wrap">
-            <h1 class="font-bold text-xl">BNPS</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae, amet! asas
+             Deskripsi
             </p>
           </div>
         </a> -->
 
 
     </div>
-    <div id="pagination_perguruan" class="flex gap-3 justify-center">
+    <div id="pagination_perguruan" class="flex gap-3 justify-center ">
       <!-- <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out ">
           1
         </div>
@@ -270,16 +232,19 @@
             var anchor = $('<a>', {
               // href: "{{ url('storage/public/1715132993_filled_profil.png')}}",
               href: "{{ url('/view-image/') }}/",
-              class: 'flex flex-col w-1/5 text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20'
+              class: 'flex flex-col w-[20rem] text-justify p-4 gap-1 rounded-xl items-center hover:shadow-flat hover:scale-95 transition-all duration-20'
             });
 
             var img = $('<img>', {
               src: "{{ url('/view-image/') }}/" + item.nama_file_logo,
               alt: ''
-            }).addClass('w-10');
+            }).addClass('overflow-hidden object-cover object-center h-[10rem] rounded-xl');
 
+            var imgDiv = $('<div>', {
+              class: 'flex justify-center items-center gambar'
+            });
             var textDiv = $('<div>', {
-              class: 'text w-full text-wrap'
+              class: 'text w-full text-wrap text-center'
             });
 
             var title = $('<h1>', {
@@ -290,7 +255,8 @@
 
             // Gabungkan elemen-elemen DOM ke dalam hierarki DOM yang benar
             textDiv.append(title, paragraph);
-            anchor.append(img, textDiv);
+            imgDiv.append(img);
+            anchor.append(imgDiv, textDiv);
 
             // Tambahkan elemen anchor ke dalam kontainer
             container.append(anchor);

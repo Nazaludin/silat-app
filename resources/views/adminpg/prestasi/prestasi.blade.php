@@ -10,7 +10,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <div class="btn" data-hs-overlay="#tambah-prestasi">
+                    <div class="btn-main" data-hs-overlay="#tambah-prestasi">
                         Tambah Prestasi
                     </div>
                     <div class="divider">daftar Prestasi</div>
@@ -26,18 +26,18 @@
                                     <div class="flex justify-between">
                                         <div>
                                             <label for="hs-trailing-button-add-on-with-icon-and-button" class="sr-only">Label</label>
-                                            <div class="relative flex rounded-lg shadow-sm">
-                                                <input type="text" id="hs-trailing-button-add-on-with-icon-and-button" name="hs-trailing-button-add-on-with-icon-and-button" class="py-3 px-4 ps-11 block w-full border-gray-200 shadow-sm rounded-s-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                                            <div class="relative flex rounded-lg shadow-sm my-2 mx-2">
+                                                <input type="text" id="hs-trailing-button-add-on-with-icon-and-button" name="hs-trailing-button-add-on-with-icon-and-button" class="py-3 px-4 ps-11 block w-full border-gray-200 shadow-sm rounded-s-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none">
                                                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
-                                                    <svg class="flex-shrink-0 size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <svg class="flex-shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <circle cx="11" cy="11" r="8"></circle>
                                                         <path d="m21 21-4.3-4.3"></path>
                                                     </svg>
                                                 </div>
-                                                <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">Search</button>
+                                                <button type="button" class="w-fit cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out  rounded-l-none mx-0">Cari</button>
                                             </div>
                                         </div>
-                                        <a href="{{ route('adminpg.prestasi.add') }}" class="btn my-3 mx-4">
+                                        <a href="{{ route('adminpg.prestasi.add') }}" class="btn-main my-2 mx-4">
                                             Tambah Prestasi
                                         </a>
 
@@ -284,13 +284,13 @@
     <div id="tambah-prestasi" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
         <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)]">
             <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
-                <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+                <div class="flex justify-between items-center py-3 px-4 border-b">
                     <h3 class="font-bold text-gray-800">
                         Tambah Prestasi
                     </h3>
-                    <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#tambah-prestasi">
+                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#tambah-prestasi">
                         <span class="sr-only">Close</span>
-                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
                             <path d="m6 6 12 12"></path>
                         </svg>
@@ -314,10 +314,7 @@
                     </div>
                 </div>
                 <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
-                    <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#tambah-prestasi">
-                        Tutup
-                    </button>
-                    <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                    <button type="button" class="w-fit cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-green-600 border-2 border-green-600 hover:text-green-600 hover:bg-transparent transition duration-200 ease-in-out ">
                         Simpan Perubahan
                     </button>
                 </div>
