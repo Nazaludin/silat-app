@@ -36,5 +36,10 @@ Route::prefix('adminpg')->group(function () {
         Route::get('/add', [PrestasiController::class, 'create'])->name('adminpg.prestasi.add');
         Route::post('/store', [PrestasiController::class, 'store'])
             ->name('adminpg.prestasi.store');
+        Route::get('/edit', [PrestasiController::class, 'edit'])->name('adminpg.prestasi.edit');
+        Route::put('/update', [PrestasiController::class, 'update'])
+            ->name('adminpg.prestasi.update');
+        Route::delete('/destroy', [PrestasiController::class, 'destroy'])
+            ->name('adminpg.prestasi.destroy');
     });
 });

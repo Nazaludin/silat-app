@@ -15,6 +15,12 @@ class PrestasiController extends Controller
         // dd(session()->all());
         return view('adminpg.prestasi.add');
     }
+    public function edit($id)
+    {
+        $prestasi = Prestasi::findOrFail($id);
+        // Lakukan apapun yang diperlukan untuk menampilkan form edit, misalnya:
+        return view('edit_prestasi', compact('prestasi'));
+    }
     public function store(Request $request): RedirectResponse
     {
 
@@ -55,7 +61,55 @@ class PrestasiController extends Controller
         $prestasi->deskripsi       = $validatedData['deskripsi'];
         $status =  $prestasi->save();
 
-        dd($status);
-        // return redirect()->route('perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');
+
+        return redirect()->route('perguruan.index')->with('success', 'Prestasi berhasil diperbarui!');
+    }
+
+
+
+    public function update(Request $request, $id): RedirectResponse
+    {
+        $validatedData = $request->validate([
+            'judul'     => 'required|string|max:255',
+            'tahun'     => 'required|numeric',
+            'file'      => 'nullable|file|max:2048|mimes:jpeg,png', // Ubah menjadi nullable agar tidak wajib diisi pada update
+            'deskripsi' => 'required|string',
+        ], [
+            'judul.required'        => 'Judul harus diisi.',
+            'judul.string'          => 'Judul harus berupa teks.',
+            'judul.max'             => 'Judul tidak boleh lebih dari 255 karakter.',
+            'tahun.required'        => 'Tahun harus diisi.',
+            'tahun.numeric'         => 'Tahun harus berupa angka.',
+            'file.required'         => 'File harus diunggah.',
+            'file.file'             => 'File harus berupa file.',
+            'logo.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
+            'deskripsi.required'    => 'Deskripsi harus diisi.',
+            'deskripsi.string'      => 'Deskripsi harus berupa teks.',
+        ]);
+
+        $prestasi = Prestasi::findOrFail($id);
+        $prestasi->judul = $validatedData['judul'];
+        $prestasi->tahun = $validatedData['tahun'];
+        $prestasi->deskripsi = $validatedData['deskripsi'];
+
+        if ($request->hasFile('file')) {
+            // Jika ada file baru diupload, lakukan proses update file
+            $file = $request->file('file');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $lokasi = $file->move(storage_path('images'),  $nama_file);
+            $prestasi->nama_file = $nama_file;
+        }
+
+        $prestasi->save();
+
+        return redirect()->route('perguruan.index')->with('success', 'Prestasi berhasil diperbarui!');
+    }
+
+    public function destroy($id): RedirectResponse
+    {
+        $prestasi = Prestasi::findOrFail($id);
+        $prestasi->delete();
+
+        return redirect()->route('perguruan.index')->with('success', 'Prestasi berhasil dihapus!');
     }
 }
