@@ -27,8 +27,23 @@ Route::prefix('admin')->group(function () {
     });
 });
 Route::prefix('adminpg')->group(function () {
+    // Route::get('/prestasi', function (Request $request) {
+    //     $prestasi = Prestasi::where('id_perguruan',  PerguruanHelper::id())->paginate(1);
+    //     return response()->json($prestasi);
+    // });
     Route::get('/prestasi', function (Request $request) {
-        $prestasi = Prestasi::where('id_perguruan',  PerguruanHelper::id())->paginate(15);
+        $key = $request->input('search');
+
+        // Jika query tidak ada atau kosong, tampilkan semua data
+        if (!$key) {
+            $prestasi = Prestasi::where('id_perguruan', PerguruanHelper::id())->paginate(1);
+        } else {
+            // Jika query ada, lakukan pencarian berdasarkan judul
+            $prestasi = Prestasi::where('id_perguruan', PerguruanHelper::id())
+                ->where('judul', 'like', "%$key%")
+                ->paginate(1);
+        }
+
         return response()->json($prestasi);
     });
 });
