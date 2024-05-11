@@ -136,6 +136,7 @@
 
                                     </div>
                                 </div>
+                                <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-alert"></button>
                                 <script type="module">
                                     $(document).ready(function() {
                                         var page = 1;
@@ -209,7 +210,10 @@
                                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                                                     </svg>
                                                 </button>
-                                                `);
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_delete').click();
+                                                    $('#form_delete').attr('action', "{{ route('adminpg.prestasi.destroy', '') }}/" + item.id_prestasi);
+                                                });
                                                 var btnEdit = $('<div>').addClass('hs-tooltip').html(`
                                                 <button customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
@@ -330,44 +334,43 @@
 
     </div>
 
-    <div id="tambah-prestasi" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
-        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)]">
-            <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+    <!-- modal -->
+    <div id="delete-alert" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
                 <div class="flex justify-between items-center py-3 px-4 border-b">
                     <h3 class="font-bold text-gray-800">
-                        Tambah Prestasi
+                        Simpan Perubahan?
                     </h3>
-                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#tambah-prestasi">
+                    <button type="button" class="hs-dropup-toggle flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " data-hs-overlay="#submit-alert">
                         <span class="sr-only">Close</span>
-                        <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
                             <path d="m6 6 12 12"></path>
                         </svg>
                     </button>
                 </div>
                 <div class="p-4 overflow-y-auto">
-                    <div class="space-y-4">
-                        <div class="form-group">
-                            <label for="judulprestasi" class="form-label">Judul Prestasi</label>
-                            <input placeholder="Judul Prestasi..." id="judulprestasi" class="form-default" type="text" value="" />
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggalprestasi" class="form-label">Tanggal Prestasi</label>
-                            <input placeholder="Tanggal Prestasi..." id="tanggalprestasi" class="form-default" type="date" value="" />
-                        </div>
-                        <div class="form-group">
-                            <label for="deskripsiprestasi" class="form-label">Deskripsi Prestasi</label>
-                            <textarea placeholder="Deskripsi Prestasi..." id="deskripsiprestasi" class="form-default" type="text" value=""></textarea>
-                        </div>
-
-                    </div>
+                    <p class="mt-1 text-gray-800">
+                        Data akan berubah sesuai dengan input yang telah dimasukkan
+                    </p>
                 </div>
                 <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
-                    <button type="button" class="w-fit cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-green-600 border-2 border-green-600 hover:text-green-600 hover:bg-transparent transition duration-200 ease-in-out ">
-                        Simpan Perubahan
+                    <button type="button" class="hs-dropup-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#submit-alert">
+                        Tutup
                     </button>
+
+                    <form id="form_delete" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
+                            Simpan Perubahan
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    <!-- modal -->
 </x-app-layout>

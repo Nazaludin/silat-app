@@ -19,7 +19,7 @@ class PrestasiController extends Controller
     {
         $prestasi = Prestasi::findOrFail($id);
         // Lakukan apapun yang diperlukan untuk menampilkan form edit, misalnya:
-        return view('edit_prestasi', compact('prestasi'));
+        return view('adminpg.prestasi.edit', compact('prestasi'));
     }
     public function store(Request $request): RedirectResponse
     {
@@ -78,9 +78,8 @@ class PrestasiController extends Controller
             'judul.required'        => 'Judul harus diisi.',
             'judul.string'          => 'Judul harus berupa teks.',
             'judul.max'             => 'Judul tidak boleh lebih dari 255 karakter.',
-            'tahun.required'        => 'Tahun harus diisi.',
             'tahun.numeric'         => 'Tahun harus berupa angka.',
-            'file.required'         => 'File harus diunggah.',
+            // 'file.required'         => 'File harus diunggah.',
             'file.file'             => 'File harus berupa file.',
             'logo.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
             'deskripsi.required'    => 'Deskripsi harus diisi.',
