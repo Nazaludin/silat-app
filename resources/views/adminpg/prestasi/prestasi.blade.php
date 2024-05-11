@@ -131,13 +131,9 @@
                                                     </a>
 
                                                     <a href="#" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
-                                                    <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
                                                     <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
                                                     <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
-                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a>
-                                                    <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">9</a>
-                                                    <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">10</a>
-                                                    <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a> <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                                         <span class="sr-only">Next</span>
                                                         <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                             <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
@@ -206,30 +202,45 @@
                                                         container.append(tr);
                                                     });
 
-                                                    // Buat elemen div dengan kelas yang ditentukan
-                                                    var divElement = $("<div>").addClass("flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6");
+                                                    function pagination(data) {
+                                                        // Buat elemen div dengan kelas yang ditentukan
+                                                        var divElement = $("<div>").addClass("flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6");
 
-                                                    // Buat elemen div kedua di dalam div utama
-                                                    var divSecond = $("<div>").addClass("hidden sm:flex sm:flex-1 sm:items-center sm:justify-between");
-                                                    // Buat elemen paragraph di dalam divSecond
-                                                    var paragraph = $("<p>").addClass("text-sm text-gray-700").html("Menampilkan <span class='font-medium'>1</span> to <span class='font-medium'>10</span> of <span class='font-medium'>97</span> hasil");
-                                                    // Buat elemen nav di dalam divSecond
-                                                    var navElement = $("<nav>").addClass("isolate inline-flex -space-x-px rounded-md shadow-sm").attr("aria-label", "Pagination");
-                                                    // Buat elemen anchor pertama di dalam navElement
-                                                    var anchorPrev = $("<a>").attr("href", "#").addClass("relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0").html("<span class='sr-only'>Previous</span><svg class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'><path fill-rule='evenodd' d='M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z' clip-rule='evenodd' /></svg>");
-                                                    // Buat elemen anchor kedua di dalam navElement
-                                                    var anchorCurrent = $("<a>").attr("href", "#").addClass("relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600").text("1");
-                                                    // Masukkan anchor pertama dan kedua ke dalam navElement
-                                                    navElement.append(anchorPrev, anchorCurrent);
+                                                        // Buat elemen div kedua di dalam div utama
+                                                        var divSecond = $("<div>").addClass("hidden sm:flex sm:flex-1 sm:items-center sm:justify-between");
+                                                        // Buat elemen paragraph di dalam divSecond
+                                                        var paragraph = $("<p>").addClass("text-sm text-gray-700").html("Tampil <span class='font-medium'>" + data.from + "</span> sampai <span class='font-medium'>" + data.to + "</span> dari total <span class='font-medium'>" + data.total + "</span> hasil");
+                                                        // Buat elemen nav di dalam divSecond
 
-                                                    // Masukkan semua elemen ke dalam divSecond
-                                                    divSecond.append(paragraph, navElement);
+                                                        var navElement = $("<nav>").addClass("isolate inline-flex -space-x-px rounded-md shadow-sm").attr("aria-label", "Pagination");
 
-                                                    // Masukkan divFirst dan divSecond ke dalam div utama
-                                                    divElement.append(divFirst, divSecond);
+                                                        var anchorPrev = $("<a>").attr("href", "#").addClass("relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0").html("<span class='sr-only'>Previous</span><svg class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'><path fill-rule='evenodd' d='M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z' clip-rule='evenodd' /></svg>");
+                                                        var anchorNext = $("<a>").attr("href", "#").addClass("relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex").html("<span class='sr-only'>Next</span><svg class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'><path fill-rule='evenodd' d='M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z' clip-rule='evenodd' /></svg>");
 
-                                                    // Masukkan div utama ke dalam elemen dengan id "container"
-                                                    $("#container_pagination").append(divElement);
+                                                        if (data.last_page > 6) {
+                                                            for (let index = 1; index < 6; index++) {
+                                                                var anchorCurrent = $("<a>").attr("href", "#").addClass("relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex").text("1");
+                                                                navElement.append(anchorCurrent);
+                                                            }
+                                                        } else {
+                                                            for (let index = 1; index < data.last_page; index++) {
+                                                                var anchorCurrent = $("<a>").attr("href", "#").addClass("relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex").text("1");
+                                                                navElement.append(anchorCurrent);
+                                                            }
+                                                        }
+
+
+
+                                                        // Masukkan semua elemen ke dalam divSecond
+                                                        divSecond.append(paragraph, navElement);
+
+                                                        // Masukkan divFirst dan divSecond ke dalam div utama
+                                                        divElement.append(divSecond);
+
+                                                        // Masukkan div utama ke dalam elemen dengan id "container"
+                                                        $("#container_pagination").append(divElement);
+                                                    }
+
 
                                                     // var index = 1;
                                                     // do {
