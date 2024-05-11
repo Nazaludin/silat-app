@@ -31,9 +31,10 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         // Simpan informasi perguruan ke dalam session
-        $perguruan = Perguruan::where('user_id', Auth::id())->first(); // Sesuaikan dengan logika pengambilan informasi perguruan
-        session()->put('perguruan_id', $perguruan->id);
-
+        $perguruan = Perguruan::where('id_user', Auth::id())->first(); // Sesuaikan dengan logika pengambilan informasi perguruan
+        $request->session()->put('id_perguruan', $perguruan->id_perguruan);
+        // dd($request->session()->all());
+        // dd(session('id_perguruan'));
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -43,7 +44,7 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
 
-        $request->session()->forget('perguruan_id');
+        $request->session()->forget('id_perguruan');
 
         Auth::guard('web')->logout();
 

@@ -61,8 +61,8 @@
                                                     <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="divide-y divide-gray-200">
-                                                <tr>
+                                            <tbody id="container_row_prestasi" class="divide-y divide-gray-200">
+                                                <!-- <tr>
                                                     <td class="py-3 ps-4">
                                                         <div class="flex items-center h-5">
                                                             <input id="hs-table-pagination-checkbox-1" type="checkbox" class="border-gray-200 rounded text-blue-600 focus:ring-blue-500">
@@ -84,12 +84,14 @@
                                                     <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                                         <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2">Hapus</button>
                                                     </td>
-                                                </tr>
+                                                </tr> -->
 
 
                                             </tbody>
                                         </table>
                                     </div>
+
+
                                     <!-- <div class="py-1 px-4">
                                         <nav class="flex items-center space-x-1">
                                             <button type="button" class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
@@ -106,11 +108,7 @@
                                         </nav>
                                     </div> -->
 
-                                    <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                                        <div class="flex flex-1 justify-between sm:hidden">
-                                            <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
-                                            <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
-                                        </div>
+                                    <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
                                         <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
                                             <div>
                                                 <p class="text-sm text-gray-700">
@@ -131,8 +129,8 @@
                                                             <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
                                                         </svg>
                                                     </a>
-                                                    <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
-                                                    <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+
+                                                    <a href="#" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
                                                     <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
                                                     <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
                                                     <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
@@ -148,6 +146,116 @@
                                                 </nav>
                                             </div>
                                         </div>
+
+                                        <script type="module">
+                                            $(document).ready(function() {
+                                                const container = $('#container_row_prestasi');
+                                                $.get('/api/adminpg/prestasi', function(data) {
+                                                    console.log(data);
+                                                    // Tambahkan opsi berdasarkan data yang diterima dari API
+                                                    $.each(data.data, function(index, item) {
+                                                        // Bangun elemen DOM untuk setiap item
+                                                        console.log(item);
+                                                        // Buat elemen <tbody> baru
+
+                                                        // Buat elemen <tr> baru
+                                                        var tr = $('<tr>');
+
+                                                        // Buat elemen <td> untuk checkbox
+                                                        var tdCheckbox = $('<td>').addClass('py-3 ps-4');
+                                                        var divCheckbox = $('<div>').addClass('flex items-center h-5');
+                                                        var inputCheckbox = $('<input>').attr({
+                                                            id: 'hs-table-pagination-checkbox-1',
+                                                            type: 'checkbox',
+                                                        }).addClass('border-gray-200 rounded text-blue-600 focus:ring-blue-500');
+                                                        var labelCheckbox = $('<label>').attr('for', 'hs-table-pagination-checkbox-1').addClass('sr-only').text('Checkbox');
+                                                        divCheckbox.append(inputCheckbox, labelCheckbox);
+                                                        tdCheckbox.append(divCheckbox);
+
+                                                        // Buat elemen <td> untuk nomor urut
+                                                        var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800').text(index);
+
+                                                        // Buat elemen <td> untuk judul
+                                                        var tdTitle = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800').text(item.judul);
+
+                                                        // Buat elemen <td> untuk tanggal
+                                                        var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800').text(item.tahun + ',');
+
+                                                        // Buat elemen <td> untuk deskripsi
+                                                        var tdDescription = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify').html(item.deskripsi);
+
+                                                        // Buat elemen <td> untuk tombol lihat
+                                                        var tdViewButton = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-end text-sm font-medium');
+                                                        var btnView = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Lihat');
+                                                        tdViewButton.append(btnView);
+
+                                                        // Buat elemen <td> untuk tombol edit
+                                                        var tdEditButton = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-end text-sm font-medium');
+                                                        var btnEdit = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Edit');
+                                                        tdEditButton.append(btnEdit);
+
+                                                        // Buat elemen <td> untuk tombol hapus
+                                                        var tdDeleteButton = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-end text-sm font-medium');
+                                                        var btnDelete = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Hapus');
+                                                        tdDeleteButton.append(btnDelete);
+
+                                                        // Gabungkan semua elemen <td> ke dalam elemen <tr>
+                                                        tr.append(tdCheckbox, tdNumber, tdTitle, tdDate, tdDescription, tdViewButton, tdEditButton, tdDeleteButton);
+
+                                                        // Gabungkan elemen <tr> ke dalam elemen <tbody>
+                                                        container.append(tr);
+                                                    });
+
+                                                    // Buat elemen div dengan kelas yang ditentukan
+                                                    var divElement = $("<div>").addClass("flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6");
+
+                                                    // Buat elemen div kedua di dalam div utama
+                                                    var divSecond = $("<div>").addClass("hidden sm:flex sm:flex-1 sm:items-center sm:justify-between");
+                                                    // Buat elemen paragraph di dalam divSecond
+                                                    var paragraph = $("<p>").addClass("text-sm text-gray-700").html("Menampilkan <span class='font-medium'>1</span> to <span class='font-medium'>10</span> of <span class='font-medium'>97</span> hasil");
+                                                    // Buat elemen nav di dalam divSecond
+                                                    var navElement = $("<nav>").addClass("isolate inline-flex -space-x-px rounded-md shadow-sm").attr("aria-label", "Pagination");
+                                                    // Buat elemen anchor pertama di dalam navElement
+                                                    var anchorPrev = $("<a>").attr("href", "#").addClass("relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0").html("<span class='sr-only'>Previous</span><svg class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'><path fill-rule='evenodd' d='M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z' clip-rule='evenodd' /></svg>");
+                                                    // Buat elemen anchor kedua di dalam navElement
+                                                    var anchorCurrent = $("<a>").attr("href", "#").addClass("relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600").text("1");
+                                                    // Masukkan anchor pertama dan kedua ke dalam navElement
+                                                    navElement.append(anchorPrev, anchorCurrent);
+
+                                                    // Masukkan semua elemen ke dalam divSecond
+                                                    divSecond.append(paragraph, navElement);
+
+                                                    // Masukkan divFirst dan divSecond ke dalam div utama
+                                                    divElement.append(divFirst, divSecond);
+
+                                                    // Masukkan div utama ke dalam elemen dengan id "container"
+                                                    $("#container_pagination").append(divElement);
+
+                                                    // var index = 1;
+                                                    // do {
+                                                    //     var pageDiv = $('<div>', {
+                                                    //         class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+                                                    //         text: index
+                                                    //     });
+                                                    //     index++;
+                                                    //     // Menambahkan elemen div pagination ke dalam DOM
+                                                    //     $('#pagination_perguruan').append(pageDiv);
+
+                                                    //     if (index == 5) {
+                                                    //         var pageDiv = $('<div>', {
+                                                    //             class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+                                                    //             text: '>'
+                                                    //         });
+                                                    //         // Menambahkan elemen div pagination ke dalam DOM
+                                                    //         $('#pagination_perguruan').append(pageDiv);
+                                                    //         break;
+                                                    //     }
+                                                    // } while (index < data.last_page);
+
+
+                                                });
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                             </div>

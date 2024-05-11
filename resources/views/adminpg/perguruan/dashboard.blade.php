@@ -143,64 +143,6 @@
                         </div>
                         <!-- Form End -->
 
-                        <script type="module">
-                            $(document).ready(function() {
-                                $(document).on('click', '#cotainter_provinsi [data-hs-combo-box-output-item]', function() {
-                                    // Mengambil nilai teks dari opsi yang dipilih
-                                    var selectedProvinsi = $(this).find('span[data-hs-combo-box-search-text]').text();
-
-                                    // Mengatur nilai input #provinsi sesuai dengan opsi yang dipilih
-                                    $('#provinsi').val(selectedProvinsi);
-                                    console.log($('#provinsi').val());
-                                    $('#provinsi').attr('data-hs-combo-box-input', selectedProvinsi);
-                                    // Menyembunyikan kotak opsi
-                                    $('#cotainter_provinsi').hide();
-                                });
-
-                                $('#provinsi').on('input', function() {
-                                    var searchValue = $(this).val();
-                                    if (searchValue.length > 0) {
-                                        // Lakukan pencarian ke API
-                                        $.get('/api/provinsi/search/' + searchValue, function(data) {
-                                            console.log(data.data);
-
-                                            // Kosongkan konten container_provinsi sebelum menambahkan opsi baru
-                                            $('#cotainter_provinsi').empty();
-
-                                            // Jika data tidak ditemukan, tambahkan pesan bahwa tidak ada hasil
-                                            if (data.data.length === 0) {
-                                                $('#cotainter_provinsi').append('<div class="text-main py-2 px-4">Tidak ada hasil yang ditemukan.</div>');
-                                                return; // Keluar dari fungsi karena tidak ada opsi yang perlu ditambahkan
-                                            }
-
-                                            // Tambahkan opsi berdasarkan data yang diterima dari API
-                                            $.each(data.data, function(index, provinsi) {
-                                                var option = $('<div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75 selected" tabindex="0" data-hs-combo-box-output-item="">');
-                                                option.append('<div class="flex justify-between items-center w-full">');
-                                                option.find('div').append('<span data-hs-combo-box-search-text="' + provinsi.provinsi + '" data-hs-combo-box-value="' + provinsi.provinsi + '">' + provinsi.provinsi + '</span>');
-                                                option.find('div').append('<span class="hidden hs-combo-box-selected:block">');
-                                                option.find('span.hs-combo-box-selected').append('<svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>');
-
-                                                // Tambahkan opsi ke dalam container_provinsi
-                                                $('#cotainter_provinsi').append(option);
-                                            });
-                                            // Tampilkan hasil pencarian
-                                            $('#cotainter_provinsi').show();
-
-
-                                            // Inisialisasi ulang elemen select
-                                            // window.HSStaticMethods.autoInit(['select']);
-                                        });
-                                    } else {
-                                        // Sembunyikan hasil pencarian jika input kosong
-                                        $('#cotainter_provinsi').hide();
-                                    }
-                                });
-                            });
-                        </script>
-
-
-
 
                         <!-- Form -->
                         <label for="kabupaten" class="form-label">Kota</label>
@@ -216,16 +158,36 @@
                             </div>
                             <div id="container_kabupaten" class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
                                 <!-- select -->
-                                <div class="cursor-pointer py-2 px-4 w-full text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-neutral-200 dark:focus:bg-neutral-800" data-hs-combo-box-output-item>
+                                <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
                                     <div class="flex justify-between items-center w-full">
-                                        <span data-hs-combo-box-search-text></span>
+                                        <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="">Argentina</span>
                                         <span class="hidden hs-combo-box-selected:block">
                                             <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="20 6 9 17 4 12"></polyline>
+                                                <path d="M20 6 9 17l-5-5"></path>
                                             </svg>
                                         </span>
                                     </div>
                                 </div>
+                                <!-- select -->
+                            </div>
+                            <x-input-error :messages="$errors->get('kota')" class="mt-2" />
+                        </div>
+                        <!-- Form End -->
+
+                        <!-- Form -->
+                        <label for="kecamatan" class="form-label">Kecamatan</label>
+                        <div id="combobox-kecamatan" class="relative mb-4" data-hs-combo-box="">
+                            <div class="relative">
+                                <input placeholder="Kecamatan..." id="kecamatan" name="kecamatan" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="{{old('kecamatan')}}" data-hs-combo-box-input="" />
+                                <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
+                                    <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7 15 5 5 5-5"></path>
+                                        <path d="m7 9 5-5 5 5"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="container_kecamatan" class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
+                                <!-- select -->
                                 <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
                                     <div class="flex justify-between items-center w-full">
                                         <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="">Argentina</span>
@@ -247,20 +209,6 @@
                                     </div>
                                 </div>
                                 <!-- select -->
-                            </div>
-                        </div>
-                        <!-- Form End -->
-                        <!-- Form -->
-                        <label for="kecamatan" class="form-label">Kecamatan</label>
-                        <div class="relative mb-4" data-hs-combo-box="">
-                            <div class="relative">
-                                <input placeholder="Kecamatan..." id="kecamatan" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
-                                <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
-                                    <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7 15 5 5 5-5"></path>
-                                        <path d="m7 9 5-5 5 5"></path>
-                                    </svg>
-                                </div>
                             </div>
                             <x-input-error :messages="$errors->get('kecamatan')" class="mt-2" />
                         </div>

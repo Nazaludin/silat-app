@@ -9,6 +9,7 @@ class Prestasi extends Model
 {
     use HasFactory;
     protected $table = "prestasi";
+    protected $primaryKey = 'id_prestasi';
 
     /**
      * The attributes that are mass assignable.

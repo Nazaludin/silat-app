@@ -33,9 +33,7 @@ Route::prefix('adminpg')->group(function () {
         return view('adminpg.prestasi.prestasi');
     })->name('prestasi');
     Route::prefix('prestasi')->group(function () {
-        Route::get('/add', function () {
-            return view('adminpg.prestasi.add');
-        })->name('adminpg.prestasi.add');
+        Route::get('/add', [PrestasiController::class, 'create'])->name('adminpg.prestasi.add');
         Route::post('/store', [PrestasiController::class, 'store'])
             ->name('adminpg.prestasi.store');
     });

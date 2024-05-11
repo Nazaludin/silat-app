@@ -94,7 +94,7 @@ class PerguruanController extends Controller
         $lokasi = $file->move(storage_path('images'),  $nama_file);
 
         $perguruan = Perguruan::where('id_user', Auth::user()->id)->first();
-
+        // dd($perguruan);
         if ($perguruan) {
             $perguruan->nama            = $validatedData['nama'];
             $perguruan->arti_nama       = $validatedData['arti_nama'];

@@ -9,6 +9,7 @@ class Tokoh extends Model
 {
     use HasFactory;
     protected $table = "tokoh";
+    protected $primaryKey = 'id_tokoh';
 
     /**
      * The attributes that are mass assignable.

@@ -10,8 +10,8 @@ class PerguruanHelper
     public static function id()
     {
         // Periksa apakah session perguruan_id ada
-        if (Session::has('perguruan_id')) {
-            return Session::get('perguruan_id');
+        if (Session::has('id_perguruan')) {
+            return Session::get('id_perguruan');
         }
 
         // Jika session tidak ada, kembalikan null
