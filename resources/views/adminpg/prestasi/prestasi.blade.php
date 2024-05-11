@@ -10,11 +10,19 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <div class="divider">daftar Prestasi</div>
 
-
-
-
+                    <div class="flex flex-wrap items-center justify-center h-full">
+                        <div class="flex flex-col gap-5 text-center justify-center items-center md:items-start md:text-left">
+                            <p class="font-bold text-3xl text-center">Data yang kamu cari tidak ada nih!</p>
+                            
+                            <div class="btn-main">
+                                Buat Data Baru
+                            </div>
+                        </div>
+                            <img class="w-[30rem] object-contain" src="{{ url('/view-image/404.svg') }}/" alt="">
+                      
+                    </div>
+                    <div class="divider">Daftar Prestasi</div>
                     <!-- upload Gambar -->
                     <div class="flex flex-col">
                         <div class="-m-1.5 overflow-x-auto">
@@ -37,10 +45,7 @@
                                         <a href="{{ route('adminpg.prestasi.add') }}" class="btn-main my-2 mx-4">
                                             Tambah Prestasi
                                         </a>
-
                                     </div>
-
-
                                     <div class="overflow-hidden">
                                         <table class="min-w-full divide-y divide-gray-200 border-seperate">
                                             <thead class="bg-slate-100">
