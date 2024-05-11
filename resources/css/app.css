@@ -119,3 +119,29 @@ section:nth-child(odd) {
 .body {
     margin:0!important;
 }
+
+/* Custom Tooltip HTML bobrok */
+
+[customToolTip] {
+    position: relative;
+  }
+
+  [customToolTip]:after {
+    content: attr(customToolTip);
+    position: absolute;
+    bottom: 100%;
+    background-color: white;
+    box-shadow: 0 0 18px 4px rgba(221,221,221,0.75);
+    border-radius: 10px;
+    padding:10px;
+    font-size: 15px;
+    font-weight: 500;
+    width: max-content;
+    opacity: 0;
+    color:rgba(0, 0, 0, 0.703);
+    -webkit-transition: opacity 100ms ease-in-out;
+  }
+
+  [customToolTip]:hover:after {
+    opacity: 1;
+  }
