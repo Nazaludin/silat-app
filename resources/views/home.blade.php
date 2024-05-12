@@ -11,6 +11,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/scrollreveal"></script>
 
 </head>
 <!-- header -->
@@ -44,7 +45,7 @@
 
 <!-- header -->
 <body style="margin: 0;" class="font-primary">
-  <section id="beranda">
+  <section id="beranda" class="reveal">
     <div class="w-100 flex justify-center ">
       <div class="container flex flex-col-reverse md:flex-row w-100 justify-center">
         <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
@@ -63,7 +64,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section  class="reveal">
     <div class="flex flex-col justify-center items-center">
       <h1 class="text-3xl mb-3 font-bold text-center text-main">
         Lembaga Sertifikasi Profesi
@@ -190,7 +191,7 @@
     </div>
   </section>
 
-  <section id="perguruan">
+  <section id="perguruan"  class="reveal">
     <div id="container_perguruan" class="flex flex-wrap gap-2 justify-center mb-4">
 <!-- 
  <a href="" class="flex flex-col w-[3rem] text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
@@ -293,6 +294,15 @@
 
 
   <!-- Javascript -->
+  <script>
+    ScrollReveal().reveal('.reveal', {
+        reset: true,
+        duration: 2000,
+        distance: '100px'
+      },
+
+    );
+  </script>
   <script src="resources\js\app.js"></script>
   <script src="../node_modules/preline/dist/preline.js"></script>
   <!-- <script src="../node_modules/jquery/dist/jquery.js"></script> -->
