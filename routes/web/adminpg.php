@@ -4,6 +4,7 @@ use App\Http\Controllers\PerguruanController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\TokohController;
 use App\Http\Resources\ProvinsiCollection;
+use App\Models\Perguruan;
 use App\Models\Provinsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,10 @@ Route::prefix('adminpg')->middleware('role:adminpg')->group(function () {
             ->name('adminpg.perguruan.add');
         Route::post('/store', [PerguruanController::class, 'store'])
             ->name('adminpg.perguruan.store');
+        Route::get('/edit', [PerguruanController::class, 'edit'])
+            ->name('adminpg.perguruan.edit');
+        Route::put('/update', [PerguruanController::class, 'update'])
+            ->name('adminpg.perguruan.update');
     });
 
     // SEJARAH
