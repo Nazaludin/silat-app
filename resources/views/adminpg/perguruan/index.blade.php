@@ -162,7 +162,7 @@
                                     <p class="mb-5 line-clamp-3">
                                         {!! $guru['deskripsi'] !!}
                                     </p>
-                                    <div class="flex justify-center">
+                                    <div class="flex justify-center" data-hs-overlay="#modal-tokoh" data-id-tokoh="{{ $guru['id_tokoh'] }}">
                                         <div class="btn-main flex gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -197,7 +197,7 @@
                                 <p class="mb-5 line-clamp-3 text-sm">
                                     {!! $tokoh['deskripsi'] !!}
                                 </p>
-                                <div class="flex justify-center">
+                                <div class="flex justify-center" data-hs-overlay="#modal-tokoh" data-id-tokoh="{{ $tokoh['id_tokoh'] }}">
                                     <div class="btn-main flex gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -221,6 +221,7 @@
             </div>
 
         </section>
+        @if($perguruan->sejarah !== null && $perguruan->sejarah !== '')
         <section id="sejarahView" class="mt-10 reveal h-dvh">
             <div class="flex flex-col lg:flex-row w-full">
                 <div class="flex flex-col justify-center w-full  p-5 text-justify">
@@ -238,8 +239,40 @@
             </div>
 
         </section>
+        @endif
+        <!-- modal -->
+        <div id="modal-tokoh" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
+            <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all w-full sm:max-w-[70rem] sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] flex items-center justify-center">
+                <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+                    <div class="flex justify-between items-center py-3 px-4 border-b">
 
-    </div>
+                        <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#modal-tokoh">
+                            <span class="sr-only">Close</span>
+                            <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-4 overflow-y-auto">
+                        <div class="space-y-4">
+
+                            <div class="flex flex-col justify-center items-center">
+                                <div class="w-[10rem] rounded-full overflow-hidden ">
+                                    <img id="tokoh_foto" src="" alt="">
+                                </div>
+                                <div id="tokoh_nama" class="form-label text-center"></div>
+                                <div id="tokoh_tipe" class="font-semibold text-xs uppercase mb-5 text-center text-slate-600">/div>
+                                    <p id="tokoh_deskripsi" class="mb-5 text-sm max-w-[35rem] text-justify"> </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
+        </div>
     </div>
 
     <script type="module">
@@ -249,7 +282,21 @@
                 $('#content').addClass('hidden');
             }
 
+            $('[data-hs-overlay="#modal-tokoh"]').on('click', function() {
+                fillModal($(this).data('id-tokoh'));
+            });
 
+            function fillModal(id) {
+                var api_url = '/api/adminpg/tokoh/' + id;
+
+                $.get(api_url, function(data) {
+                    $('#tokoh_foto').attr('src', "{{ url('/view-image/' )}}" + "/" + data.nama_file);
+                    $('#tokoh_nama').html(data.nama);
+                    $('#tokoh_tipe').html(data.tipe);
+                    $('#tokoh_deskripsi').html(data.deskripsi);
+                    console.log(data);
+                });
+            }
         });
     </script>
 </x-app-layout>
