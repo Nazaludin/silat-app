@@ -298,4 +298,5 @@
   <!-- <script src="../node_modules/jquery/dist/jquery.js"></script> -->
 </body>
 
+@include('layouts.footer')
 </html>
