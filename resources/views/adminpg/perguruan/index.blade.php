@@ -6,8 +6,12 @@
         </h2>
     </x-slot>
 
-
-    <section id="profilView" class="mt-10 bg-white">
+    <div class="flex w-full justify-end p-5">
+        <div class="btn-main">
+            Edit
+        </div>
+    </div>
+    <section id="profilView" class=" bg-white">
         <div class="flex flex-col lg:flex-row w-full">
             <div class="static lg:absolute flex flex-col w-full lg:w-[15rem] text-justify z-[2]">
                 <div class="p-5 shadow-lg rounded-2xl w-full flex justify-center bg-white backdrop-blur-3xl mb-3">

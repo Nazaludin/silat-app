@@ -139,7 +139,7 @@
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id doloribus maiores, quae accusantium cupiditate ab incidunt eius nostrum consectetur labore minima quis aliquam, modi quo ipsam? Voluptatum sint sapiente quae, labore maxime veniam numquam beatae libero voluptates placeat suscipit optio similique magnam amet fugit inventore eos officiis porro quo blanditiis?
                 </p>
                 <div class="flex justify-center">
-                  <div class="btn-main flex gap-2">
+                  <div class="btn-main flex gap-2" data-hs-overlay="#modal-tokoh">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
@@ -209,7 +209,39 @@
 
   </section>
 
+  <!-- modal -->
+  <div id="modal-tokoh" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
+    <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all w-full sm:max-w-[70rem] sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] flex items-center justify-center">
+      <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+        <div class="flex justify-between items-center py-3 px-4 border-b">
 
+          <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#modal-tokoh">
+            <span class="sr-only">Close</span>
+            <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-4 overflow-y-auto">
+          <div class="space-y-4">
+            
+            <div class="flex flex-col justify-center items-center">
+            <div class="w-[10rem] rounded-full overflow-hidden ">
+                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+              </div>
+              <div class="form-label text-center">Triandi Aprilio</div>
+              <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> Guru Kecil</div>
+              <p class="mb-5 text-sm max-w-[35rem] text-justify">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est molestiae, veritatis voluptatibus at ipsam nulla unde quaerat dicta accusantium ipsum reiciendis possimus enim eum cupiditate laboriosam quisquam doloribus ratione! Ratione modi dolore, tenetur praesentium hic veniam perspiciatis deserunt dolores vitae exercitationem suscipit, ea nulla voluptatum quia amet nihil recusandae incidunt facilis, deleniti animi ipsum? Deserunt esse, vel assumenda repudiandae itaque magni dicta totam quia beatae, maxime quod nisi voluptas. Quos harum, dolor illum repellat minima accusamus neque? Alias odit nemo quidem laborum sed perferendis consequatur voluptas fuga delectus quisquam voluptate non officia provident ad adipisci ratione tempore est vitae, sequi hic quos ipsum. Necessitatibus tempora aspernatur quos veritatis repellat? Ratione, sit inventore a eaque consectetur quaerat quam delectus aliquid maiores. Consequuntur soluta, cum earum dolorum modi sit vitae accusamus mollitia possimus obcaecati itaque, ipsa quidem tempora voluptatem inventore! Magnam alias quas ut beatae delectus consequatur hic vel eaque accusantium quidem fugit eum ea quod sequi minima at ipsam, neque atque sint facere! Eaque reprehenderit consequatur tempore nostrum quis nisi quam similique iusto, perferendis maxime necessitatibus aliquam! Quia ducimus recusandae incidunt facilis eius, explicabo ratione dolorum doloribus necessitatibus vel quo et aut reiciendis quisquam ab! Reprehenderit exercitationem ipsum perferendis quod.              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
 
   @include('layouts.footer')
 

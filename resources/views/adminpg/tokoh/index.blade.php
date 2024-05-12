@@ -104,7 +104,7 @@
                     <div id="container_tokoh" class="flex flex-wrap justify-center">
                         <!-- tokoh card -->
 
-                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
+                        <!-- <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
                             <div class="w-[10rem] rounded-full overflow-hidden ">
                                 <img src="{{ asset('img/tokoh.jpg')}}" alt="">
                             </div>
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- tokoh card -->
 
 
@@ -239,20 +239,21 @@
                                     });
 
                                     var imageDiv = $("<div>", {
-                                        "class": "w-[10rem] rounded-full overflow-hidden"
+                                        "class": "h-[12rem] w-[10rem] rounded-full overflow-hidden"
                                     }).appendTo(card);
 
                                     $("<img>", {
                                         "src": "{{ url('/view-image/') }}/" + item.nama_file,
+                                        "class": "object-cover object-center w-full h-full",
                                         "alt": ""
                                     }).appendTo(imageDiv);
 
                                     $("<div>", {
-                                        "class": "form-label mb-5",
+                                        "class": "form-label",
                                         "text": item.nama
                                     }).appendTo(card);
                                     $("<div>", {
-                                        "class": "form-label mb-5",
+                                        "class": "font-semibold mb-5 text-xs text-slate-500",
                                         "text": item.tipe
                                     }).appendTo(card);
 
@@ -551,20 +552,16 @@
                         </svg>
                     </button>
                 </div>
-
-
                 <div class="p-4 overflow-y-auto">
                     <div class="space-y-4">
                         <p id="container_deskripsi"></p>
-
+                        
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
+    <!-- modal -->
     <script type="module">
         // function openModal(modalID) {
         //     console.log('INN');
@@ -595,4 +592,5 @@
             });
         });
     </script>
+    
 </x-app-layout>
