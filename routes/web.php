@@ -37,6 +37,9 @@ Route::get('/', function () {
 // })->name('dashboard');
 Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage'])->name('view-image');
 
+Route::get('perguruanView', function () {
+    return view('perguruanView');
+})->name('perguruanView');
 // Route::get('dashboard/sejarah', function () {
 //     return view('sejarah');
 // })->name('sejarah');

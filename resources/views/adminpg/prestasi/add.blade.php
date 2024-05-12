@@ -110,7 +110,7 @@
 
                         <hr class="mb-3">
                         <div class="flex justify-end">
-                            <button type="button" class="btn" data-hs-overlay="#submit-alert">Simpan Perubahan</button>
+                            <button type="button" class="btn-main" data-hs-overlay="#submit-alert">Simpan Perubahan</button>
                         </div>
                         <!-- End form  -->
                     </form>

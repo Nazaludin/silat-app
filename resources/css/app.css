@@ -7,6 +7,9 @@
 html {
     scroll-behavior: smooth;
 }
+body {
+    margin: 0 !important;;
+}
 
 * {
     @apply font-primary
@@ -50,7 +53,7 @@ section:nth-child(odd) {
     @apply relative
 }
 
-.nav-hover > li > a::after, li > a.active::after {
+.nav-hover > li > a::after, li > a.active::after  {
     content:"";
     position: absolute;
     background-color: black;
@@ -62,7 +65,7 @@ section:nth-child(odd) {
     opacity:0;
     transition:all 200ms ease-in-out;
 }
-.nav-hover > li > a:hover::after, li > a.active::after{
+.nav-hover > li > a:hover::after, li > a.active::after {
     bottom: 10;
     left: 0;
     scale:1px;
@@ -73,9 +76,11 @@ section:nth-child(odd) {
 
 }
 
+
+
 @media screen and (min-width: 768px) {
 
-    .nav-hover > li > a::after, li > a.active::after {
+    .nav-hover > li > a::after, li > a.active::after  {
     content:"";
     position: absolute;
     background-color: black;
@@ -87,7 +92,7 @@ section:nth-child(odd) {
     opacity:0;
     transition:all 200ms ease-in-out;
 }
-.nav-hover > li > a:hover::after, li > a.active::after{
+.nav-hover > li > a:hover::after, li > a.active::after {
     bottom: 10;
     left: 0;
     scale:1px;
@@ -149,3 +154,8 @@ section:nth-child(odd) {
   [customToolTip]:hover:after {
     opacity: 1;
   }
+
+
+  /* Scroll Show Element */
+
+  

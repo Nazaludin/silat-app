@@ -20,7 +20,7 @@ const hamburger = document.querySelector('#hamburger')
 const navMenu = document.querySelector('#nav-menu')
 hamburger.addEventListener('click', function(){
     hamburger.classList.toggle('hamburger-active')
-    navMenu.classList.toggle('-translate-y-64')
+    navMenu.classList.toggle('-translate-y-[30rem]')
 
 }); 
 
@@ -52,3 +52,38 @@ window.onscroll = function() {
             }
         });
     });
+
+
+// Scroll Show Element 
+
+// window.addEventListener('scroll', reveal);
+
+// function reveal(){
+//     var reveals = document.querySelectorAll('.reveal');
+
+//     for(var i = 0; i < reveals.length; i++){
+
+//         var windowheight = window.innerHeight;
+//         var revealtop = reveals[i].getBoundingClientRect().top;
+//         var revealpoint = 50;
+
+//         if(revealtop < windowheight - revealpoint){
+//             reveals[i],classList.add('scrollShow');
+//         }else{
+//             reveals[i].classList.remove('scrollShow');
+//         }
+        
+//     }
+// }
+
+document.querySelector('#progressbar').animate(
+    {
+      backgroundColor: ['red', 'darkred'],
+      transform: ['scaleX(0)', 'scaleX(1)'],
+    },
+    {
+      duration: 2500,
+      fill: 'forwards',
+      easing: 'linear',
+     }
+  );

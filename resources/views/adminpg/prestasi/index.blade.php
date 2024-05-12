@@ -257,7 +257,7 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
                                                 var tdTitle = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.judul);
                                                 var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.tahun + ',');
-                                                var tdDescription = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200').html(item.deskripsi);
+                                                var tdDescription = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.deskripsi);
 
                                                 // Buat elemen <td> untuk tombol lihat
 

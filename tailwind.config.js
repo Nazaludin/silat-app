@@ -9,6 +9,7 @@ export default {
         './resources/views/**/*.blade.php',
         './node_modules/preline/dist/*.js',
         './node_modules/tinymce/**/*.js',
+        './node_modules/scrollreveal/**/*.js'
     ],
 
     theme: {
