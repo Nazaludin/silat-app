@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PerguruanController extends Controller
 {
+    public function index(Request $request): View
+    {
+        $perguruan = Perguruan::where('id_user', Auth::user()->id);
+        return view('adminpg.perguruan.index', compact('perguruan'));
+    }
     public function create(Request $request): View
     {
         // $myClass = new AliranSilat;

@@ -29,8 +29,10 @@ Route::prefix('adminpg')->middleware('role:adminpg')->group(function () {
 
     // PERGURUAN
     Route::prefix('perguruan')->group(function () {
-        Route::get('/index', [PerguruanController::class, 'create'])
+        Route::get('/index', [PerguruanController::class, 'index'])
             ->name('adminpg.perguruan.index');
+        Route::get('/add', [PerguruanController::class, 'create'])
+            ->name('adminpg.perguruan.add');
         Route::post('/store', [PerguruanController::class, 'store'])
             ->name('adminpg.perguruan.store');
     });
