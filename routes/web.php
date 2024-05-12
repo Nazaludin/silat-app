@@ -37,26 +37,26 @@ Route::get('/', function () {
 // })->name('dashboard');
 Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage'])->name('view-image');
 
-Route::get('dashboard/sejarah', function () {
-    return view('sejarah');
-})->name('sejarah');
-Route::get('dashboard/prestasi', function () {
-    return view('prestasi');
-})->name('prestasi');
+// Route::get('dashboard/sejarah', function () {
+//     return view('sejarah');
+// })->name('sejarah');
+// Route::get('dashboard/prestasi', function () {
+//     return view('prestasi');
+// })->name('prestasi');
 
-Route::get('dashboard/tokoh', function () {
-    return view('adminpg.tokoh.tokoh');
-})->name('tokoh');
+// Route::get('dashboard/tokoh', function () {
+//     return view('adminpg.tokoh.tokoh');
+// })->name('tokoh');
 
 Route::get('/wilayah', function () {
     return view('wilayah');
 })->name('wilayah');
 Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('wilayah.tambah');
 
-Route::get('/dashboard', [PerguruanController::class, 'create'])
-    ->name('dashboard');
-Route::post('/perguruan/store', [PerguruanController::class, 'store'])
-    ->name('perguruan.store');
+// Route::get('/dashboard', [PerguruanController::class, 'create'])
+//     ->name('dashboard');
+// Route::post('/perguruan/store', [PerguruanController::class, 'store'])
+//     ->name('perguruan.store');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

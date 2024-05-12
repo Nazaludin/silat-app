@@ -80,11 +80,11 @@
                             <input placeholder="Motto..." id="motto" name="motto" class="form-default" type="text" value="{{old('motto')}}" data-hs-combo-box-input="" />
                             <x-input-error :messages="$errors->get('motto')" class="mt-2" />
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="sejarah" class="form-label">Sejarah</label>
                             <input placeholder="Sejarah..." id="sejarah" name="sejarah" class="form-default" type="text" value="{{old('sejarah')}}" data-hs-combo-box-input="" />
                             <x-input-error :messages="$errors->get('sejarah')" class="mt-2" />
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
                             <input placeholder="Deskripsi..." id="deskripsi" name="deskripsi" class="form-default" type="text" value="{{old('deskripsi')}}" data-hs-combo-box-input="" />

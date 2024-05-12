@@ -17,7 +17,24 @@ class PerguruanController extends Controller
         // $myClass->add('Muaitai');
         // dd($myClass->get());
 
-        return view('adminpg.perguruan.dashboard');
+        return view('adminpg.perguruan.add');
+    }
+    public function createSejarah(Request $request): View
+    {
+        // $myClass = new AliranSilat;
+        // $myClass->add('Muaitai');
+        // dd($myClass->get());
+        $perguruan = Perguruan::where('id_user', Auth::user()->id)
+            ->where('sejarah', '<>', '') // Exclude empty strings
+            ->first();
+        // dd($sejarah);
+        if ($perguruan) {
+            $sejarah = $perguruan->sejarah;
+            $exist = true;
+        } else {
+            $exist = false;
+        }
+        return view('adminpg.sejarah.add', compact('exist', 'sejarah'));
     }
     public function store(Request $request): RedirectResponse
     {
@@ -25,7 +42,7 @@ class PerguruanController extends Controller
             'nama'          => 'required|string|max:255',
             'arti_nama'     => 'required|string|max:255',
             'motto'         => 'required|string|max:255',
-            'sejarah'       => 'required|string|max:255',
+            // 'sejarah'       => 'required|string|max:255',
             'deskripsi'     => 'required|string|max:255',
             'logo'          => 'required|file|max:2048|mimes:jpeg,png',
             // 'lokasi_logo'   => 'required|string|max:255',
@@ -47,9 +64,9 @@ class PerguruanController extends Controller
             'motto.required'         => 'Motto perguruan harus diisi.',
             'motto.string'           => 'Motto perguruan harus berupa teks.',
             'motto.max'              => 'Motto perguruan tidak boleh lebih dari 255 karakter.',
-            'sejarah.required'       => 'Sejarah perguruan harus diisi.',
-            'sejarah.string'         => 'Sejarah perguruan harus berupa teks.',
-            'sejarah.max'            => 'Sejarah perguruan tidak boleh lebih dari 255 karakter.',
+            // 'sejarah.required'       => 'Sejarah perguruan harus diisi.',
+            // 'sejarah.string'         => 'Sejarah perguruan harus berupa teks.',
+            // 'sejarah.max'            => 'Sejarah perguruan tidak boleh lebih dari 255 karakter.',
             'deskripsi.required'     => 'Deskripsi perguruan harus diisi.',
             'deskripsi.string'       => 'Deskripsi perguruan harus berupa teks.',
             'deskripsi.max'          => 'Deskripsi perguruan tidak boleh lebih dari 255 karakter.',
@@ -99,7 +116,7 @@ class PerguruanController extends Controller
             $perguruan->nama            = $validatedData['nama'];
             $perguruan->arti_nama       = $validatedData['arti_nama'];
             $perguruan->motto           = $validatedData['motto'];
-            $perguruan->sejarah         = $validatedData['sejarah'];
+            // $perguruan->sejarah         = $validatedData['sejarah'];
             $perguruan->deskripsi       = $validatedData['deskripsi'];
             $perguruan->nama_file_logo  = $nama_file;
             $perguruan->makna_logo      = $validatedData['makna_logo'];
@@ -118,5 +135,25 @@ class PerguruanController extends Controller
 
         dd($status);
         // return redirect()->route('perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');
+    }
+    public function storeSejarah(Request $request): RedirectResponse
+    {
+        $validatedData = $request->validate([
+            'sejarah'       => 'required|string',
+        ], [
+            'sejarah.required'       => 'Sejarah perguruan harus diisi.',
+            'sejarah.string'         => 'Sejarah perguruan harus berupa teks.',
+            // 'sejarah.max'            => 'Sejarah perguruan tidak boleh lebih dari 255 karakter.',
+        ]);
+
+        $perguruan = Perguruan::where('id_user', Auth::user()->id)->first();
+        // dd($perguruan);
+        if ($perguruan) {
+            $perguruan->sejarah         = $validatedData['sejarah'];
+            $status = $perguruan->save();
+        } else {
+            $status = false;
+        }
+        return redirect()->route('adminpg.sejarah.index')->with('success', 'Sejarah berhasil diperbarui!');
     }
 }

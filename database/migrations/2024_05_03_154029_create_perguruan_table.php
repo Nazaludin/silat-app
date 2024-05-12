@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nama')->nullable();;
             $table->string('arti_nama')->nullable();;
             $table->string('motto')->nullable();;
-            $table->string('sejarah')->nullable();;
-            $table->string('deskripsi')->nullable();;
+            $table->longText('sejarah')->nullable();;
+            $table->longText('deskripsi')->nullable();;
             $table->string('nama_file_logo')->nullable();;
             $table->string('makna_logo')->nullable();;
             $table->string('tahun_berdiri')->nullable();;

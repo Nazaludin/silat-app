@@ -12,10 +12,10 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('adminpg.perguruan.index')" :active="request()->routeIs('adminpg.perguruan.*')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('sejarah')" :active="request()->routeIs('sejarah')">
+                    <x-nav-link :href="route('adminpg.sejarah.index')" :active="request()->routeIs('adminpg.sejarah.*')">
                         {{ __('Sejarah') }}
                     </x-nav-link>
                     <x-nav-link :href="route('adminpg.tokoh.index')" :active="request()->routeIs('adminpg.tokoh.*')">

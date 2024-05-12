@@ -23,10 +23,21 @@ Route::get('/provinsi', function (Request $request) {
     return new ProvinsiCollection(Provinsi::all());
 });
 Route::prefix('adminpg')->group(function () {
-    Route::get('/dashboard', [PerguruanController::class, 'create'])
-        ->name('dashboard');
-    Route::post('/perguruan/store', [PerguruanController::class, 'store'])
-        ->name('perguruan.store');
+    // PERGURUAN
+    Route::prefix('perguruan')->group(function () {
+        Route::get('/index', [PerguruanController::class, 'create'])
+            ->name('adminpg.perguruan.index');
+        Route::post('/store', [PerguruanController::class, 'store'])
+            ->name('adminpg.perguruan.store');
+    });
+
+    // SEJARAH
+    Route::prefix('sejarah')->group(function () {
+        Route::get('/index', [PerguruanController::class, 'createSejarah'])
+            ->name('adminpg.sejarah.index');
+        Route::post('/sejarah/store', [PerguruanController::class, 'storeSejarah'])
+            ->name('adminpg.sejarah.store');
+    });
 
     // PRESTASI ROUTE
     Route::get('/prestasi', [PrestasiController::class, 'index'])
