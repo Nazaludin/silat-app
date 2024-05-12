@@ -25,7 +25,7 @@
                             <div class="flex gap-2">
 
                                 <div class="hs-tooltip">
-                                    <div class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <path d="M4 7l16 0" />
@@ -37,11 +37,11 @@
                                         <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
                                             Hapus
                                         </span>
-                                    </div>
+                                    </button>
                                 </div>
 
                                 <div class="hs-tooltip">
-                                    <div class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
@@ -51,10 +51,10 @@
                                         <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
                                             Edit
                                         </span>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="hs-tooltip">
-                                    <div class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
@@ -64,8 +64,333 @@
                                         <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
                                             Lihat
                                         </span>
-                                    </div>
+                                    </button>
                                 </div>
+
+                            </div>
+                        </div>
+                        <!-- tokoh card -->
+                        <!-- tokoh card -->
+                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
+                            <div class="w-[10rem] rounded-full overflow-hidden ">
+                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+                            </div>
+                            <div class="form-label mb-5">Tokoh 1</div>
+                            <div class="flex gap-2">
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Hapus
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Edit
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                        <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                        <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Lihat
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- tokoh card -->
+                        <!-- tokoh card -->
+                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
+                            <div class="w-[10rem] rounded-full overflow-hidden ">
+                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+                            </div>
+                            <div class="form-label mb-5">Tokoh 1</div>
+                            <div class="flex gap-2">
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Hapus
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Edit
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                        <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                        <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Lihat
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- tokoh card -->
+                        <!-- tokoh card -->
+                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
+                            <div class="w-[10rem] rounded-full overflow-hidden ">
+                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+                            </div>
+                            <div class="form-label mb-5">Tokoh 1</div>
+                            <div class="flex gap-2">
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Hapus
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Edit
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                        <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                        <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Lihat
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- tokoh card -->
+                        <!-- tokoh card -->
+                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
+                            <div class="w-[10rem] rounded-full overflow-hidden ">
+                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+                            </div>
+                            <div class="form-label mb-5">Tokoh 1</div>
+                            <div class="flex gap-2">
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Hapus
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Edit
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                        <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                        <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Lihat
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- tokoh card -->
+                        <!-- tokoh card -->
+                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
+                            <div class="w-[10rem] rounded-full overflow-hidden ">
+                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+                            </div>
+                            <div class="form-label mb-5">Tokoh 1</div>
+                            <div class="flex gap-2">
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Hapus
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Edit
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                        <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                        <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Lihat
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- tokoh card -->
+                        <!-- tokoh card -->
+                        <div class="flex justify-center flex-col items-center p-5 m-4 bg-white rounded-xl shadow-md">
+                            <div class="w-[10rem] rounded-full overflow-hidden ">
+                                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+                            </div>
+                            <div class="form-label mb-5">Tokoh 1</div>
+                            <div class="flex gap-2">
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Hapus
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Edit
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="hs-tooltip">
+                                    <button class="hs-tooltip-toggle [--trigger:hover] btn bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
+                                        <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
+                                        <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
+                                    </svg>
+                                        <span class="hs-tooltip-content font-bold hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white border text-sm text-gray-600 rounded-lg shadow-md" role="tooltip">
+                                            Lihat
+                                        </span>
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
                         <!-- tokoh card -->
