@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('sejarah')" :active="request()->routeIs('sejarah')">
                         {{ __('Sejarah') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('tokoh')" :active="request()->routeIs('tokoh')">
+                    <x-nav-link :href="route('adminpg.tokoh.index')" :active="request()->routeIs('adminpg.tokoh.*')">
                         {{ __('Tokoh') }}
                     </x-nav-link>
                     <x-nav-link :href="route('adminpg.prestasi.index')" :active="request()->routeIs('adminpg.prestasi.*')">
