@@ -4,7 +4,8 @@ use App\Http\Controllers\FunctionalController;
 use App\Http\Controllers\PerguruanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WilayahController;
-
+use App\Models\Perguruan;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,6 +66,10 @@ Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('w
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/perguruan/full-view/{id_perguruan}', function (Request $request, $id_perguruan) {
+    $perguruan = Perguruan::where('id_perguruan', $id_perguruan)->firstOrFail();
+    return view('perguruan-fullview', compact('perguruan'));
+})->name('perguruan.fullview');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

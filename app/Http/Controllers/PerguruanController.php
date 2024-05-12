@@ -39,6 +39,7 @@ class PerguruanController extends Controller
         // dd($perguruan);
         return view('adminpg.perguruan.edit', compact('perguruan'));
     }
+
     public function createSejarah(Request $request): View
     {
         // $myClass = new AliranSilat;
