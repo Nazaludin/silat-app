@@ -7,14 +7,23 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Classes\AliranSilat;
+use App\Helpers\PerguruanHelper;
+use App\Models\Tokoh;
 use Illuminate\Support\Facades\Auth;
 
 class PerguruanController extends Controller
 {
     public function index(Request $request): View
     {
-        $perguruan = Perguruan::where('id_user', Auth::user()->id);
-        return view('adminpg.perguruan.index', compact('perguruan'));
+        $perguruan = Perguruan::where('id_user', Auth::user()->id)->first();
+        $guru_besar = Tokoh::where('id_perguruan', PerguruanHelper::id())->where('tipe', 'Guru Besar')->get()->toArray();
+        $tokoh_lain = Tokoh::where('id_perguruan', PerguruanHelper::id())->whereNotIn('tipe', ['Guru Besar'])->get()->toArray();
+
+        $exist = false;
+        if ($perguruan && $perguruan->nama !== null && $perguruan->nama !== '') {
+            $exist = true;
+        }
+        return view('adminpg.perguruan.index', compact('exist', 'perguruan', 'guru_besar', 'tokoh_lain'));
     }
     public function create(Request $request): View
     {
