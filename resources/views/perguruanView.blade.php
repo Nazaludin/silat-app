@@ -191,7 +191,7 @@
     </div>
 
   </section>
-  <section id="sejarahView" class="mt-10 reveal h-dvh">
+  <section id="sejarahView" class="mt-10 reveal">
     <div class="flex flex-col lg:flex-row w-full">
       <div class="flex flex-col justify-center w-full lg:ml-[17rem] p-5 text-justify">
         <div class="my-5">
@@ -210,14 +210,14 @@
   </section>
 
 
-  </div>
 
+  @include('layouts.footer')
 
 
   <!-- Javascript -->
   <script>
     ScrollReveal().reveal('.reveal', {
-        // reset: true,
+        reset: true,
         duration: 2000,
         distance: '100px'
       },
