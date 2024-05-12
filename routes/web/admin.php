@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/provinsi', function (Request $request) {
     return new ProvinsiCollection(Provinsi::all());
 });
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('role:admin')->group(function () {
     // Route::get('/users', function () {
     //     // Matches The "/admin/users" URL
     // });

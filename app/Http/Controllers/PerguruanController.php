@@ -28,6 +28,7 @@ class PerguruanController extends Controller
             ->where('sejarah', '<>', '') // Exclude empty strings
             ->first();
         // dd($sejarah);
+        $sejarah = '';
         if ($perguruan) {
             $sejarah = $perguruan->sejarah;
             $exist = true;

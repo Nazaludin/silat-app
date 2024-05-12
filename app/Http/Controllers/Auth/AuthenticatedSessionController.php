@@ -33,9 +33,19 @@ class AuthenticatedSessionController extends Controller
         // Simpan informasi perguruan ke dalam session
         $perguruan = Perguruan::where('id_user', Auth::id())->first(); // Sesuaikan dengan logika pengambilan informasi perguruan
         $request->session()->put('id_perguruan', $perguruan->id_perguruan);
-        // dd($request->session()->all());
-        // dd(session('id_perguruan'));
-        return redirect()->intended(RouteServiceProvider::HOME);
+
+        $user = auth()->user();
+
+        if ($user) {
+            if ($user->hasRole('admin')) {
+                $route = 'admin.dashboard';
+            } else {
+                $route = 'adminpg.dashboard';
+            }
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
+        return redirect()->route($route);
     }
 
     /**

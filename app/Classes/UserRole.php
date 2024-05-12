@@ -4,7 +4,7 @@ namespace App\Classes;
 
 
 
-class AliranSilat
+class UserRole
 {
     protected $role = ['admin', 'adminpg'];
 
@@ -24,7 +24,7 @@ class AliranSilat
 
         // Jika aliran ditemukan, kembalikan nilainya
         if ($index !== false) {
-            return $this->aliran[$index];
+            return $this->role[$index - 1];
         }
 
         // Jika aliran tidak ditemukan, kembalikan null
@@ -33,11 +33,11 @@ class AliranSilat
     public function getIndex($name)
     {
         // Cari aliran dalam array
-        $index = array_search($name, $this->aliran);
+        $index = array_search($name, $this->role);
 
         // Jika aliran ditemukan, kembalikan nilainya
         if ($index !== false) {
-            return $this->aliran[$index];
+            return $this->role[$index + 1];
         }
 
         // Jika aliran tidak ditemukan, kembalikan null

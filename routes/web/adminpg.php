@@ -22,7 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/provinsi', function (Request $request) {
     return new ProvinsiCollection(Provinsi::all());
 });
-Route::prefix('adminpg')->group(function () {
+Route::prefix('adminpg')->middleware('role:adminpg')->group(function () {
+    Route::get('/dashboard', function () {
+        return redirect('/adminpg/perguruan/index');
+    })->name('adminpg.dashboard');;
+
     // PERGURUAN
     Route::prefix('perguruan')->group(function () {
         Route::get('/index', [PerguruanController::class, 'create'])
