@@ -21,7 +21,7 @@
                     <x-nav-link :href="route('tokoh')" :active="request()->routeIs('tokoh')">
                         {{ __('Tokoh') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('prestasi')" :active="request()->routeIs('prestasi')">
+                    <x-nav-link :href="route('adminpg.prestasi.index')" :active="request()->routeIs('adminpg.prestasi.*')">
                         {{ __('Prestasi') }}
                     </x-nav-link>
 

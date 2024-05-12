@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class PrestasiController extends Controller
 {
+    public function index(Request $request): View
+    {
+        // dd(session()->all());
+        $exist = Prestasi::where('id_perguruan', PerguruanHelper::id())->exists();
+        return view('adminpg.prestasi.index', compact('exist'));
+    }
     public function create(Request $request): View
     {
         // dd(session()->all());
@@ -39,7 +45,7 @@ class PrestasiController extends Controller
             // 'tahun.max'             => 'Tahun tidak boleh lebih dari 255 karakter.',
             'file.required'         => 'File harus diunggah.',
             'file.file'             => 'File harus berupa file.',
-            'logo.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
+            'file.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
             'deskripsi.required'    => 'Deskripsi harus diisi.',
             'deskripsi.string'      => 'Deskripsi harus berupa teks.',
             // tambahkan pesan validasi untuk input lainnya
@@ -62,7 +68,7 @@ class PrestasiController extends Controller
         $status =  $prestasi->save();
 
 
-        return redirect()->route('perguruan.index')->with('success', 'Prestasi berhasil diperbarui!');
+        return redirect()->route('adminpg.prestasi.index')->with('success', 'Prestasi berhasil diperbarui!');
     }
 
 
@@ -81,7 +87,7 @@ class PrestasiController extends Controller
             'tahun.numeric'         => 'Tahun harus berupa angka.',
             // 'file.required'         => 'File harus diunggah.',
             'file.file'             => 'File harus berupa file.',
-            'logo.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
+            'file.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
             'deskripsi.required'    => 'Deskripsi harus diisi.',
             'deskripsi.string'      => 'Deskripsi harus berupa teks.',
         ]);
@@ -101,7 +107,7 @@ class PrestasiController extends Controller
 
         $prestasi->save();
 
-        return redirect()->route('perguruan.index')->with('success', 'Prestasi berhasil diperbarui!');
+        return redirect()->route('adminpg.prestasi.index')->with('success', 'Prestasi berhasil diperbarui!');
     }
 
     public function destroy($id): RedirectResponse
@@ -109,6 +115,6 @@ class PrestasiController extends Controller
         $prestasi = Prestasi::findOrFail($id);
         $prestasi->delete();
 
-        return redirect()->route('perguruan.index')->with('success', 'Prestasi berhasil dihapus!');
+        return redirect()->route('adminpg.prestasi.index')->with('success', 'Prestasi berhasil dihapus!');
     }
 }

@@ -9,20 +9,77 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
 
+
+                @if (null !== session('success'))
+                <div class="bg-green-50 border-s-4 border-green-500 p-4 my-1" role="alert">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <!-- Icon -->
+                            <span class="inline-flex justify-center items-center size-8 rounded-full border-4 border-green-100 bg-green-200 text-green-800">
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </span>
+                            <!-- End Icon -->
+                        </div>
+                        <div class="ms-3">
+                            <h3 class="text-gray-800 font-semibold">
+                                Berhasil
+                            </h3>
+                            <p class="text-sm text-gray-700">
+                                {{ session('success')}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endif
+
+                @if (isset($errors->any))
+                @foreach ($errors->all() as $error)
+                <div class="bg-red-50 border-s-4 border-red-500 p-4 my-1" role="alert">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <!-- Icon -->
+                            <span class="inline-flex justify-center items-center size-8 rounded-full border-4 border-red-100 bg-red-200 text-red-800">
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </span>
+                            <!-- End Icon -->
+                        </div>
+                        <div class="ms-3">
+                            <h3 class="text-gray-800 font-semibold">
+                                Peringatan!!
+                            </h3>
+                            <p class="text-sm text-gray-700">
+                                {{ $error }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @endif
+
+
+
+                <div class="p-6 text-gray-900">
+                    <div class="divider">Daftar Prestasi</div>
+                    @if (!$exist))
                     <div class="flex flex-wrap items-center justify-center h-full">
                         <div class="flex flex-col gap-5 text-center justify-center items-center md:items-start md:text-left">
                             <p class="font-bold text-3xl text-center">Data yang kamu cari tidak ada nih!</p>
-                            
-                            <div class="btn-main">
+
+                            <a href="{{ route('adminpg.prestasi.add') }}" class="btn-main">
                                 Buat Data Baru
-                            </div>
+                            </a>
                         </div>
-                            <img class="w-[30rem] object-contain" src="{{ url('/view-image/404.svg') }}/" alt="">
-                      
+                        <img class="w-[30rem] object-contain" src="{{ url('/view-image/404.svg') }}/" alt="">
                     </div>
-                    <div class="divider">Daftar Prestasi</div>
+
+                    @else
                     <!-- upload Gambar -->
                     <div class="flex flex-col">
                         <div class="-m-1.5 overflow-x-auto">
@@ -220,14 +277,14 @@
                                                     $('#form_delete').attr('action', "{{ route('adminpg.prestasi.destroy', '') }}/" + item.id_prestasi);
                                                 });
                                                 var btnEdit = $('<div>').addClass('hs-tooltip').html(`
-                                                <button customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                                <a  href="{{ route('adminpg.prestasi.edit','') }}/` + item.id_prestasi + `" customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                                                     <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                                     <path d="M16 5l3 3" />
                                                 </svg>
-                                                </button>
+                                                </a>
                                                 `);
                                                 var btnView = $('<div>').addClass('hs-tooltip').html(`
                                                 <button customToolTip="View" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
@@ -331,6 +388,7 @@
                         </div>
 
                     </div>
+                    @endif
 
                 </div>
 

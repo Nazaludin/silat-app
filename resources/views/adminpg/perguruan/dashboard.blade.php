@@ -10,30 +10,33 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-1">
             <div class="bg-white shadow-sm sm:rounded-lg">
-
-            <div class="bg-green-50 border-s-4 border-green-500 p-4 my-1" role="alert">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <!-- Icon -->
-                        <span class="inline-flex justify-center items-center size-8 rounded-full border-4 border-green-100 bg-green-200 text-green-800">
-                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 6 6 18"></path>
-                                <path d="m6 6 12 12"></path>
-                            </svg>
-                        </span>
-                        <!-- End Icon -->
-                    </div>
-                    <div class="ms-3">
-                        <h3 class="text-gray-800 font-semibold">
-                            Berhasil
-                        </h3>
-                        <p class="text-sm text-gray-700">
-                            Your purchase has been declined.
-                        </p>
+                @if (isset($success))
+                <div class="bg-green-50 border-s-4 border-green-500 p-4 my-1" role="alert">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <!-- Icon -->
+                            <span class="inline-flex justify-center items-center size-8 rounded-full border-4 border-green-100 bg-green-200 text-green-800">
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </span>
+                            <!-- End Icon -->
+                        </div>
+                        <div class="ms-3">
+                            <h3 class="text-gray-800 font-semibold">
+                                Berhasil
+                            </h3>
+                            <p class="text-sm text-gray-700">
+                                {{ $success }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+                @endif
 
+                @if ($errors->any)
+                @foreach ($errors->all() as $error)
                 <div class="bg-red-50 border-s-4 border-red-500 p-4 my-1" role="alert">
                     <div class="flex">
                         <div class="flex-shrink-0">
@@ -51,11 +54,14 @@
                                 Peringatan!!
                             </h3>
                             <p class="text-sm text-gray-700">
-                                Your purchase has been declined.
+                                {{ $error }}
                             </p>
                         </div>
                     </div>
                 </div>
+                @endforeach
+                @endif
+
                 <form id="form_store_perguruan" action="{{ route('perguruan.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="p-6 text-gray-900">
