@@ -82,7 +82,7 @@
                         <!-- form sejarah -->
                         <div class="form-group">
                             <div class="mb-3">
-                                <label for="sejarah" class="form-label">Tuliskan Sejarah Perguruan Silat</label>
+                                <label for="sejarah" class="form-label mb-3">Tuliskan Sejarah Perguruan Silat</label>
                                 <textarea id="sejarah" class="tinyMce" name="sejarah">{{ old('sejarah') ? old('sejarah') : $sejarah }}</textarea>
                                 <x-input-error :messages="$errors->get('sejarah')" class="mt-2" />
 
