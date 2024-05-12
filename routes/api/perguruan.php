@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/perguruan', function (Request $request) {
-    $perguruans = Perguruan::paginate(15);
+    $perguruans = Perguruan::whereNotNull('nama')->paginate(15);
 
     return response()->json($perguruans);
 });
