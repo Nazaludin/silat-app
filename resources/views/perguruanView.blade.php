@@ -53,7 +53,7 @@
   <section id="profilView" class="mt-10">
     <div class="flex flex-col lg:flex-row w-full">
       <div class="static lg:fixed flex flex-col w-full lg:w-[15rem] text-justify z-[2]">
-        <div class="p-5 shadow-lg rounded-2xl w-full flex justify-center bg-transparent backdrop-blur-3xl">
+        <div class="p-5 shadow-lg rounded-2xl w-full flex justify-center bg-transparent backdrop-blur-3xl mb-3">
           <img class="lg:w-full w-[10rem]  object-contain" src="{{ url('/view-image/logoDummy.png') }}/" alt="">
         </div>
         <div class="p-5 shadow-lg rounded-2xl w-full bg-transparent backdrop-blur-3xl">
@@ -153,9 +153,6 @@
 
             </div>
             <!-- tokoh card -->
-
-
-
           </div>
         </div>
         <div class="divider">Guru Kecil</div>
