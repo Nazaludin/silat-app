@@ -47,6 +47,12 @@ Route::get('beritaList', function () {
 Route::get('beritaView', function () {
     return view('beritaView');
 })->name('beritaView');
+Route::get('prestasiList', function () {
+    return view('prestasiList');
+})->name('prestasiList');
+Route::get('prestasiView', function () {
+    return view('prestasiView');
+})->name('prestasiView');
 // Route::get('dashboard/sejarah', function () {
 //     return view('sejarah');
 // })->name('sejarah');

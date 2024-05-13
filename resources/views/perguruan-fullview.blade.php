@@ -208,6 +208,98 @@
     </div>
 
   </section>
+  <section id="prestasiView" class="mt-10 reveal">
+    <div class="flex flex-col lg:flex-row w-full">
+      <div class="flex flex-col justify-center w-full lg:ml-[17rem] p-5 text-justify">
+        <div class="my-5 flex justify-center gap-5 group">
+          <h1 class="font-bold text-3xl text-center">
+            Prestasi
+          </h1>
+        </div>
+        <div class="flex flex-wrap gap-5 justify-center">
+
+
+          <!-- Prestasi Card -->
+          <a class="relative flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+            <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+              <!-- medal -->
+              <img class="size-10 absolute top-3 right-3 group-hover:scale-110 transition-transform duration-200 ease-in-out" src="{{ url('/view-image/trophy-icon.svg') }}/" alt="">
+              <!-- medal -->
+            </div>
+            <div class="p-4 md:p-5">
+              <h3 class="text-lg font-bold text-gray-800">
+                Kejuaraan Nasional Pencak Silat #3
+              </h3>
+              <div class="font-bold text-xs uppercase text-slate-400">
+                10/10/2022
+              </div>
+              <p class="mt-1 text-gray-500 line-clamp-3">
+                Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </a>
+          <!-- Prestasi Card -->
+          <!-- Prestasi Card -->
+          <a class="relative flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+            <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+              <!-- medal -->
+              <img class="size-10 absolute top-3 right-3 group-hover:scale-110 transition-transform duration-200 ease-in-out" src="{{ url('/view-image/trophy-icon.svg') }}/" alt="">
+              <!-- medal -->
+            </div>
+            <div class="p-4 md:p-5">
+              <h3 class="text-lg font-bold text-gray-800">
+                Kejuaraan Nasional Pencak Silat #3
+              </h3>
+              <div class="font-bold text-xs uppercase text-slate-400">
+                10/10/2022
+              </div>
+              <p class="mt-1 text-gray-500 line-clamp-3">
+                Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </a>
+          <!-- Prestasi Card -->
+          <!-- Prestasi Card -->
+          <a class="relative flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+            <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+              <!-- medal -->
+              <img class="size-10 absolute top-3 right-3 group-hover:scale-110 transition-transform duration-200 ease-in-out" src="{{ url('/view-image/trophy-icon.svg') }}/" alt="">
+              <!-- medal -->
+            </div>
+            <div class="p-4 md:p-5">
+              <h3 class="text-lg font-bold text-gray-800">
+                Kejuaraan Nasional Pencak Silat #3
+              </h3>
+              <div class="font-bold text-xs uppercase text-slate-400">
+                10/10/2022
+              </div>
+              <p class="mt-1 text-gray-500 line-clamp-3">
+                Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </a>
+          <!-- Prestasi Card -->
+
+
+        </div>
+        <!-- selengkapnya -->
+        <div class="flex justify-end my-5">
+          <a href="" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+            Selengkapnya
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M7 7l5 5l-5 5" />
+              <path d="M13 7l5 5l-5 5" />
+            </svg> </a>
+        </div>
+        <!-- selengkapnya -->
+      </div>
+    </div>
+
+  </section>
 
   <!-- modal -->
   <div id="modal-tokoh" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
@@ -225,15 +317,15 @@
         </div>
         <div class="p-4 overflow-y-auto">
           <div class="space-y-4">
-            
+
             <div class="flex flex-col justify-center items-center">
-            <div class="w-[10rem] rounded-full overflow-hidden ">
+              <div class="w-[10rem] rounded-full overflow-hidden ">
                 <img src="{{ asset('img/tokoh.jpg')}}" alt="">
               </div>
               <div class="form-label text-center">Triandi Aprilio</div>
               <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> Guru Kecil</div>
               <p class="mb-5 text-sm max-w-[35rem] text-justify">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est molestiae, veritatis voluptatibus at ipsam nulla unde quaerat dicta accusantium ipsum reiciendis possimus enim eum cupiditate laboriosam quisquam doloribus ratione! Ratione modi dolore, tenetur praesentium hic veniam perspiciatis deserunt dolores vitae exercitationem suscipit, ea nulla voluptatum quia amet nihil recusandae incidunt facilis, deleniti animi ipsum? Deserunt esse, vel assumenda repudiandae itaque magni dicta totam quia beatae, maxime quod nisi voluptas. Quos harum, dolor illum repellat minima accusamus neque? Alias odit nemo quidem laborum sed perferendis consequatur voluptas fuga delectus quisquam voluptate non officia provident ad adipisci ratione tempore est vitae, sequi hic quos ipsum. Necessitatibus tempora aspernatur quos veritatis repellat? Ratione, sit inventore a eaque consectetur quaerat quam delectus aliquid maiores. Consequuntur soluta, cum earum dolorum modi sit vitae accusamus mollitia possimus obcaecati itaque, ipsa quidem tempora voluptatem inventore! Magnam alias quas ut beatae delectus consequatur hic vel eaque accusantium quidem fugit eum ea quod sequi minima at ipsam, neque atque sint facere! Eaque reprehenderit consequatur tempore nostrum quis nisi quam similique iusto, perferendis maxime necessitatibus aliquam! Quia ducimus recusandae incidunt facilis eius, explicabo ratione dolorum doloribus necessitatibus vel quo et aut reiciendis quisquam ab! Reprehenderit exercitationem ipsum perferendis quod.              </p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est molestiae, veritatis voluptatibus at ipsam nulla unde quaerat dicta accusantium ipsum reiciendis possimus enim eum cupiditate laboriosam quisquam doloribus ratione! Ratione modi dolore, tenetur praesentium hic veniam perspiciatis deserunt dolores vitae exercitationem suscipit, ea nulla voluptatum quia amet nihil recusandae incidunt facilis, deleniti animi ipsum? Deserunt esse, vel assumenda repudiandae itaque magni dicta totam quia beatae, maxime quod nisi voluptas. Quos harum, dolor illum repellat minima accusamus neque? Alias odit nemo quidem laborum sed perferendis consequatur voluptas fuga delectus quisquam voluptate non officia provident ad adipisci ratione tempore est vitae, sequi hic quos ipsum. Necessitatibus tempora aspernatur quos veritatis repellat? Ratione, sit inventore a eaque consectetur quaerat quam delectus aliquid maiores. Consequuntur soluta, cum earum dolorum modi sit vitae accusamus mollitia possimus obcaecati itaque, ipsa quidem tempora voluptatem inventore! Magnam alias quas ut beatae delectus consequatur hic vel eaque accusantium quidem fugit eum ea quod sequi minima at ipsam, neque atque sint facere! Eaque reprehenderit consequatur tempore nostrum quis nisi quam similique iusto, perferendis maxime necessitatibus aliquam! Quia ducimus recusandae incidunt facilis eius, explicabo ratione dolorum doloribus necessitatibus vel quo et aut reiciendis quisquam ab! Reprehenderit exercitationem ipsum perferendis quod. </p>
             </div>
 
           </div>
