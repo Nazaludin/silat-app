@@ -297,7 +297,7 @@
   <!-- Javascript -->
   <script>
     ScrollReveal().reveal('.reveal', {
-        reset: true,
+        // reset: true,
         duration: 2000,
         distance: '100px'
       },
