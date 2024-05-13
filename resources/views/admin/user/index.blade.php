@@ -2,7 +2,7 @@
     <x-slot name="header">
 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pengguna') }}
+            {{ __('Super Admin') }}
         </h2>
     </x-slot>
 
@@ -286,7 +286,7 @@
                                                 `);
 
 
-                                                var tdAction = $('<td>').addClass('flex gap-2 px-6 py-4 whitespace-nowrap text-end text-sm font-medium border-r border-r-gray-200');
+                                                var tdAction = $('<td>').addClass('flex justify-end gap-2 px-6 py-4 whitespace-nowrap text-end text-sm font-medium border-r border-r-gray-200');
                                                 // var btnView = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Lihat');
                                                 // var btnEdit = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Edit');
                                                 // var btnDelete = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Hapus');
@@ -294,7 +294,7 @@
 
                                                 tdAction.append(btnDelete);
                                                 tdAction.append(btnEdit);
-                                                tdAction.append(btnView);
+                                                // tdAction.append(btnView);
                                                 tr.append(tdNumber, tdName, tdEmail, tdPerguruan, tdAction);
                                                 container.append(tr);
                                             });

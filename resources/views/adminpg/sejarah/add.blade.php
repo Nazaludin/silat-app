@@ -91,7 +91,7 @@
                         <!-- form sejarah -->
 
                         <div class="flex justify-end">
-                            <button type="button" class="btn bg-green-500 border-green-500 hover:bg-transparent hover:text-green-500" data-hs-overlay="#submit-alert">Simpan Perubahan</button>
+                            <button type="button" class="btn bg-green-600 border-green-600 hover:bg-transparent hover:text-green-600" data-hs-overlay="#submit-alert">Simpan Perubahan</button>
                         </div>
                     </div>
                 </form>

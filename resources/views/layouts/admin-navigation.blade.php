@@ -12,8 +12,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('adminpg.perguruan.index')" :active="request()->routeIs('adminpg.perguruan.*')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('admin.user.index')" :active="request()->routeIs('admin.user.index')">
+                        {{ __('Daftar Pengguna') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.berita.index')" :active="request()->routeIs('admin.berita.index')">
+                        {{ __('Daftar Berita') }}
                     </x-nav-link>
                     <!-- <x-nav-link :href="route('adminpg.sejarah.index')" :active="request()->routeIs('adminpg.sejarah.*')">
                         {{ __('Sejarah') }}
