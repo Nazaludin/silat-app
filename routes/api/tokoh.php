@@ -43,4 +43,8 @@ Route::prefix('adminpg')->group(function () {
 
         return response()->json($tokoh);
     });
+    Route::get('/tokoh/{id_tokoh}', function (Request $request, $id_tokoh) {
+        $tokoh = Tokoh::where('id_tokoh', $id_tokoh)->first();
+        return response()->json($tokoh);
+    });
 });

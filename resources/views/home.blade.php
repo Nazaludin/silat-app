@@ -44,6 +44,7 @@
 </header>
 
 <!-- header -->
+
 <body style="margin: 0;" class="font-primary">
   <section id="beranda" class="reveal">
     <div class="w-100 flex justify-center ">
@@ -64,7 +65,7 @@
       </div>
     </div>
   </section>
-  <section  class="reveal">
+  <section class="reveal">
     <div class="flex flex-col justify-center items-center">
       <h1 class="text-3xl mb-3 font-bold text-center text-main">
         Lembaga Sertifikasi Profesi
@@ -191,9 +192,9 @@
     </div>
   </section>
 
-  <section id="perguruan"  class="reveal">
+  <section id="perguruan" class="reveal">
     <div id="container_perguruan" class="flex flex-wrap gap-2 justify-center mb-4">
-<!-- 
+      <!-- 
  <a href="" class="flex flex-col w-[3rem] text-justify p-4 gap-1 rounded-xl hover:shadow-flat hover:scale-95 transition-all duration-20">
           <div class="flex justify-center items-center gambar">
             <img class="w-[10]" src="{{ url('/view-image/1715422129_1281265.jpg') }}/" alt="" />
@@ -230,7 +231,7 @@
             console.log(item);
             var anchor = $('<a>', {
               // href: "{{ url('storage/public/1715132993_filled_profil.png')}}",
-              href: "{{ url('/view-image/') }}/",
+              href: "{{ route('perguruan.fullview','') }}/" + item.id_perguruan,
               class: 'flex flex-col w-[20rem] text-justify p-4 gap-1 rounded-xl items-center hover:shadow-flat hover:scale-95 transition-all duration-20'
             });
 
@@ -296,7 +297,7 @@
   <!-- Javascript -->
   <script>
     ScrollReveal().reveal('.reveal', {
-        reset: true,
+        // reset: true,
         duration: 2000,
         distance: '100px'
       },
@@ -309,4 +310,5 @@
 </body>
 
 @include('layouts.footer')
+
 </html>
