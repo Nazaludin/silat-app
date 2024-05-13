@@ -5,6 +5,7 @@ use App\Http\Controllers\PerguruanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WilayahController;
 use App\Models\Perguruan;
+use App\Models\Tokoh;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -68,7 +69,14 @@ Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('w
 
 Route::get('/perguruan/full-view/{id_perguruan}', function (Request $request, $id_perguruan) {
     $perguruan = Perguruan::where('id_perguruan', $id_perguruan)->firstOrFail();
-    return view('perguruan-fullview', compact('perguruan'));
+    $guru_besar = Tokoh::where('id_perguruan', $id_perguruan)->where('tipe', 'Guru Besar')->get()->toArray();
+    $tokoh_lain = Tokoh::where('id_perguruan', $id_perguruan)->whereNotIn('tipe', ['Guru Besar'])->get()->toArray();
+
+    $exist = false;
+    if ($perguruan && $perguruan->nama !== null && $perguruan->nama !== '') {
+        $exist = true;
+    }
+    return view('perguruan-fullview', compact('exist', 'perguruan', 'guru_besar', 'tokoh_lain'));
 })->name('perguruan.fullview');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

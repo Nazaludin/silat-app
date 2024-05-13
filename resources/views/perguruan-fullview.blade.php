@@ -54,26 +54,26 @@
     <div class="flex flex-col lg:flex-row w-full">
       <div class="static lg:fixed flex flex-col w-full lg:w-[15rem] text-justify z-[2]">
         <div class="p-5 shadow-lg rounded-2xl w-full flex justify-center bg-transparent backdrop-blur-3xl mb-3">
-          <img class="lg:w-full w-[10rem]  object-contain" src="{{ url('/view-image/logoDummy.png') }}/" alt="">
+          <img class="lg:w-full w-[10rem]  object-contain" src="{{ url('/view-image/'.$perguruan->nama_file_logo) }}" alt="">
         </div>
         <div class="p-5 shadow-lg rounded-2xl w-full bg-transparent backdrop-blur-3xl">
           <div class="mb-3">
             <div class="form-label">
               Tahun Berdiri
             </div>
-            <p>2021</p>
+            <p>{{$perguruan->tahun_berdiri}}</p>
           </div>
           <div class="mb-3">
             <div class="form-label">
               Aliran
             </div>
-            <p>Wushu</p>
+            <p>{{$perguruan->aliran}}</p>
           </div>
           <div class="mb-3">
             <div class="form-label">
               Tempat
             </div>
-            <p>Jl. Sultan Malikul Saleh, Lhong Raya Banda Aceh</p>
+            <p>{{$perguruan->nama_jalan . ' ' . $perguruan->desa. ', ' . $perguruan->kecamatan.', ' . $perguruan->kabupoaten.', ' . $perguruan->provinsi}}</p>
           </div>
         </div>
       </div>
@@ -81,21 +81,21 @@
       <div class="flex flex-col w-full lg:ml-[17rem] p-5 text-justify">
         <div class="my-5">
           <h1 class="font-bold text-3xl text-center lg:text-left">
-            Perguruan Silat Padepokan Sleman
+            {{$perguruan->nama}}
           </h1>
         </div>
         <div class="mb-3">
           <div class="form-label">
             Arti Nama
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam voluptatem tenetur eum omnis ducimus nemo incidunt magni nihil! Libero, assumenda! Architecto, sunt rerum, optio numquam necessitatibus maiores corporis cumque quas voluptatem voluptatibus voluptatum repudiandae, iusto placeat illo deserunt eius ut ad nam a! Similique repellendus iusto dolor nihil blanditiis.</p>
+          <p>{{$perguruan->arti_nama}}</p>
         </div>
         <div class="mb-3">
           <div class="form-label">
             Motto
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ad!
+            {{$perguruan->motto}}
           </p>
         </div>
         <div class="mb-3">
@@ -103,7 +103,7 @@
             Makna Logo
           </div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, minima quidem soluta aspernatur ullam dignissimos vel iure distinctio dolorum tempora, quod expedita id ut sapiente quia odit culpa aliquam quam repellendus! Nemo deleniti placeat eius, harum commodi amet similique nam vero voluptatum molestiae, labore quia inventore voluptas quibusdam hic nostrum?
+            {{$perguruan->makna_logo}}
           </p>
         </div>
         <div class="mb-3">
@@ -111,7 +111,7 @@
             Deskripsi
           </div>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro aut tempora nemo consequatur in dignissimos similique doloribus. Recusandae pariatur totam voluptas modi molestiae quaerat laboriosam, et autem debitis velit. Ratione magni quia tenetur explicabo quisquam autem commodi quos minima laboriosam aspernatur, dolores animi iusto illo debitis laudantium vero officiis nobis nihil aperiam eligendi natus exercitationem, quibusdam id molestiae? Ad quis ex quos distinctio veniam corporis itaque? Tempore nemo et autem similique doloribus, magnam hic quidem quas atque illo iure ipsa asperiores aliquid nostrum dolore praesentium, repellendus maiores qui. Eum rem placeat tenetur quibusdam accusantium, saepe rerum suscipit assumenda unde architecto!
+            {{$perguruan->deskripsi}}
           </p>
         </div>
       </div>
@@ -125,21 +125,25 @@
           <h1 class="font-bold text-3xl text-center">
             Tokoh
           </h1>
+          @if(count($guru_besar) > 0)
           <div class="divider">Guru Besar</div>
           <div class="flex flex-wrap justify-center">
+            @foreach($guru_besar as $guru)
+
+
             <!-- tokoh card -->
             <div class="w-full md:w-[20rem] flex flex-col items-center gap-5 p-5 m-4 bg-white rounded-xl shadow-md transition-all duration-200 hover:scale-95 hover:shadow-2xl">
               <div class="w-[10rem] rounded-full overflow-hidden ">
-                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+                <img src="{{ url('/view-image/') . '/' . $guru['nama_file'] }}" alt="">
               </div>
               <div class="flex flex-col">
-                <div class="form-label text-center">Triandi Aprilio</div>
-                <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> Guru Besar</div>
+                <div class="form-label text-center">{{ $guru['nama'] }}</div>
+                <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> {{ $guru['tipe'] }}</div>
                 <p class="mb-5 line-clamp-3">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id doloribus maiores, quae accusantium cupiditate ab incidunt eius nostrum consectetur labore minima quis aliquam, modi quo ipsam? Voluptatum sint sapiente quae, labore maxime veniam numquam beatae libero voluptates placeat suscipit optio similique magnam amet fugit inventore eos officiis porro quo blanditiis?
+                  {!! $guru['deskripsi'] !!}
                 </p>
-                <div class="flex justify-center">
-                  <div class="btn-main flex gap-2" data-hs-overlay="#modal-tokoh">
+                <div class="flex justify-center" data-hs-overlay="#modal-tokoh" data-id-tokoh="{{ $guru['id_tokoh'] }}">
+                  <div class="btn-main flex gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
@@ -150,26 +154,29 @@
                   </div>
                 </div>
               </div>
-
             </div>
             <!-- tokoh card -->
+            @endforeach
           </div>
+          @endif
         </div>
-        <div class="divider">Guru Kecil</div>
+        @if(count($tokoh_lain) > 0)
+        <div class="divider">Tokoh Lain</div>
         <div class="flex flex-wrap justify-center">
 
+          @foreach($tokoh_lain as $tokoh)
           <!-- tokoh card -->
           <div class="w-full md:w-[15rem] flex flex-col items-center gap-5 p-5 m-4 bg-white rounded-3xl shadow-md transition-all duration-200 hover:scale-95 hover:shadow-2xl">
             <div class="w-[5rem] rounded-full overflow-hidden ">
-              <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+              <img src="{{ url('/view-image/') . '/' . $tokoh['nama_file'] }}" alt="">
             </div>
             <div class="flex flex-col">
-              <div class="form-label text-center">Triandi Aprilio</div>
-              <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> Guru Kecil</div>
+              <div class="form-label text-center">{{ $tokoh['nama'] }}</div>
+              <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> {{ $tokoh['tipe'] }}</div>
               <p class="mb-5 line-clamp-3 text-sm">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id doloribus maiores, quae accusantium cupiditate ab incidunt eius nostrum consectetur labore minima quis aliquam, modi quo ipsam? Voluptatum sint sapiente quae, labore maxime veniam numquam beatae libero voluptates placeat suscipit optio similique magnam amet fugit inventore eos officiis porro quo blanditiis?
+                {!! $tokoh['deskripsi'] !!}
               </p>
-              <div class="flex justify-center">
+              <div class=" flex justify-center" data-hs-overlay="#modal-tokoh" data-id-tokoh="{{ $tokoh['id_tokoh'] }}">
                 <div class="btn-main flex gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -183,14 +190,16 @@
             </div>
           </div>
           <!-- tokoh card -->
-
-
+          @endforeach
         </div>
+        @endif
+
       </div>
 
     </div>
 
   </section>
+  @if($perguruan->sejarah !== null && $perguruan->sejarah !== '')
   <section id="sejarahView" class="mt-10 reveal">
     <div class="flex flex-col lg:flex-row w-full">
       <div class="flex flex-col justify-center w-full lg:ml-[17rem] p-5 text-justify">
@@ -200,7 +209,7 @@
           </h1>
         </div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi fugiat dignissimos, impedit rerum necessitatibus ducimus ipsum nesciunt ad saepe consequuntur laudantium minus nostrum nisi quaerat iste facilis aliquam non soluta dolorum nobis in eos quia. Veniam, optio dolores, nam dolore nemo provident at aut tenetur harum labore consequatur? Molestias molestiae recusandae quos, necessitatibus eius, fugiat illo sed dolorum nesciunt id eveniet architecto vero rem voluptatibus voluptatem alias aspernatur, magnam iste ex? Architecto dolores officiis cupiditate numquam eveniet ut autem ab aspernatur quia beatae delectus explicabo, eius illo odit consequatur harum, sapiente sequi at, ratione fugit perspiciatis minima? Fugiat, aspernatur perferendis blanditiis alias corrupti eos sapiente porro dignissimos reiciendis iusto accusamus ut tempore vitae animi? Perferendis unde autem asperiores labore mollitia cupiditate exercitationem. Corrupti, blanditiis eaque perspiciatis cumque error esse non nostrum dolores iste quae, molestiae alias delectus ratione? Neque saepe hic amet sunt, modi explicabo ab eum autem tempora, accusantium, tenetur sequi doloremque nemo assumenda molestias debitis laudantium nam itaque. Qui autem doloribus corporis? Quidem adipisci accusantium itaque maiores atque libero error eaque est quam minima placeat aspernatur tempore eius, fugit doloribus repudiandae odio recusandae sint doloremque vero necessitatibus veritatis ut similique? Repellendus obcaecati temporibus laboriosam suscipit saepe odit nulla optio fugit quidem earum consequatur illo, voluptatum harum inventore totam, numquam, placeat laborum fuga quis accusantium molestias reiciendis laudantium voluptatibus reprehenderit? Architecto maiores eveniet vel iste debitis ipsa unde quis sit tenetur eligendi neque, cum sed quas saepe quod labore! Perferendis consequuntur, voluptas aliquam tempora perspiciatis repellat eaque a sint quam eum voluptate reprehenderit incidunt. Ducimus eius nobis dolores, voluptatum debitis magni. Quos in officia ut beatae accusantium tempore consectetur voluptates, fuga unde ab quam tempora molestias commodi amet voluptate adipisci quis iusto culpa? Libero ea dolores quas omnis consequatur magnam voluptatum aperiam perferendis ad, facilis, pariatur ullam non accusamus quia excepturi rerum rem accusantium suscipit, temporibus recusandae voluptatem asperiores. Ab doloremque asperiores dignissimos nihil, expedita nostrum aperiam exercitationem adipisci explicabo, praesentium quibusdam, debitis non quo quam quas perferendis reiciendis id cumque accusantium itaque dolore. Cum, soluta id aliquam veritatis labore sit eligendi quam error itaque quasi perspiciatis, ea fugiat laboriosam, in sunt adipisci totam. Inventore minima veniam perspiciatis rem error veritatis quas aliquam. Delectus error, asperiores exercitationem nisi, sed odit adipisci recusandae quam odio harum ipsum ducimus modi nemo porro pariatur, amet totam dolorum quae. Ea aut ad saepe inventore sapiente blanditiis laborum repudiandae natus cum nulla modi eaque debitis, deserunt, neque magnam esse animi atque enim culpa, nostrum maxime. Qui ducimus dolorum asperiores doloribus ex! Esse perspiciatis corrupti magnam ratione illum aut deleniti hic, alias cupiditate quo harum architecto rem error quisquam repellat voluptatibus enim quaerat adipisci dolore optio? Sed error aperiam sunt praesentium, nostrum rerum, nesciunt voluptatibus perferendis, labore minima soluta neque facilis! Explicabo molestiae, sit numquam expedita, eveniet quisquam eligendi, quibusdam dicta nihil dolores pariatur quaerat totam iste cumque! Voluptas, a! Corporis, quaerat eum voluptatum nam temporibus tempora optio aut consequuntur delectus dicta dolorum adipisci, ipsum eveniet, explicabo distinctio perferendis velit possimus repellendus non facilis nesciunt?
+          {!!$perguruan->sejarah!!}
         </p>
 
 
@@ -208,6 +217,7 @@
     </div>
 
   </section>
+  @endif
 
   <!-- modal -->
   <div id="modal-tokoh" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
@@ -225,15 +235,14 @@
         </div>
         <div class="p-4 overflow-y-auto">
           <div class="space-y-4">
-            
+
             <div class="flex flex-col justify-center items-center">
-            <div class="w-[10rem] rounded-full overflow-hidden ">
-                <img src="{{ asset('img/tokoh.jpg')}}" alt="">
+              <div class="w-[10rem] rounded-full overflow-hidden ">
+                <img id="tokoh_foto" src="" alt="">
               </div>
-              <div class="form-label text-center">Triandi Aprilio</div>
-              <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> Guru Kecil</div>
-              <p class="mb-5 text-sm max-w-[35rem] text-justify">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est molestiae, veritatis voluptatibus at ipsam nulla unde quaerat dicta accusantium ipsum reiciendis possimus enim eum cupiditate laboriosam quisquam doloribus ratione! Ratione modi dolore, tenetur praesentium hic veniam perspiciatis deserunt dolores vitae exercitationem suscipit, ea nulla voluptatum quia amet nihil recusandae incidunt facilis, deleniti animi ipsum? Deserunt esse, vel assumenda repudiandae itaque magni dicta totam quia beatae, maxime quod nisi voluptas. Quos harum, dolor illum repellat minima accusamus neque? Alias odit nemo quidem laborum sed perferendis consequatur voluptas fuga delectus quisquam voluptate non officia provident ad adipisci ratione tempore est vitae, sequi hic quos ipsum. Necessitatibus tempora aspernatur quos veritatis repellat? Ratione, sit inventore a eaque consectetur quaerat quam delectus aliquid maiores. Consequuntur soluta, cum earum dolorum modi sit vitae accusamus mollitia possimus obcaecati itaque, ipsa quidem tempora voluptatem inventore! Magnam alias quas ut beatae delectus consequatur hic vel eaque accusantium quidem fugit eum ea quod sequi minima at ipsam, neque atque sint facere! Eaque reprehenderit consequatur tempore nostrum quis nisi quam similique iusto, perferendis maxime necessitatibus aliquam! Quia ducimus recusandae incidunt facilis eius, explicabo ratione dolorum doloribus necessitatibus vel quo et aut reiciendis quisquam ab! Reprehenderit exercitationem ipsum perferendis quod.              </p>
+              <div id="tokoh_nama" class="form-label text-center"></div>
+              <div id="tokoh_tipe" class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"></div>
+              <p id="tokoh_deskripsi" class="mb-5 text-sm max-w-[35rem] text-justify"> </p>
             </div>
 
           </div>
@@ -244,7 +253,30 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est molestiae, 
   <!-- modal -->
 
   @include('layouts.footer')
+  <script type="module">
+    $(document).ready(function() {
 
+      if ($('#content_empty').length > 0) {
+        $('#content').addClass('hidden');
+      }
+
+      $('[data-hs-overlay="#modal-tokoh"]').on('click', function() {
+        fillModal($(this).data('id-tokoh'));
+      });
+
+      function fillModal(id) {
+        var api_url = '/api/adminpg/tokoh/' + id;
+
+        $.get(api_url, function(data) {
+          $('#tokoh_foto').attr('src', "{{ url('/view-image/' )}}" + "/" + data.nama_file);
+          $('#tokoh_nama').html(data.nama);
+          $('#tokoh_tipe').html(data.tipe);
+          $('#tokoh_deskripsi').html(data.deskripsi);
+          console.log(data);
+        });
+      }
+    });
+  </script>
 
   <!-- Javascript -->
   <script>
