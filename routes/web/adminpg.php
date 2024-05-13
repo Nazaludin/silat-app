@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\PerguruanController;
-use App\Http\Controllers\PrestasiController;
-use App\Http\Controllers\TokohController;
+use App\Http\Controllers\Perguruan\PerguruanController;
+use App\Http\Controllers\Perguruan\PrestasiController;
+use App\Http\Controllers\Perguruan\TokohController;
 use App\Http\Resources\ProvinsiCollection;
 use App\Models\Perguruan;
 use App\Models\Provinsi;

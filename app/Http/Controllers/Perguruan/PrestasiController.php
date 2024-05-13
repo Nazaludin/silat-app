@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Perguruan;
 
+use App\Http\Controllers\Controller;
 use App\Helpers\PerguruanHelper;
 use App\Models\Prestasi;
 use Illuminate\Contracts\View\View;

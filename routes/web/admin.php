@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\PerguruanController;
-use App\Http\Resources\ProvinsiCollection;
-use App\Models\Provinsi;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,15 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/provinsi', function (Request $request) {
-    return new ProvinsiCollection(Provinsi::all());
-});
 Route::prefix('admin')->middleware('role:admin')->group(function () {
-    // Route::get('/users', function () {
-    //     // Matches The "/admin/users" URL
-    // });
-    Route::get('/dashboard', [PerguruanController::class, 'create'])
-        ->name('dashboard');
-    Route::post('/perguruan/store', [PerguruanController::class, 'store'])
-        ->name('perguruan.store');
+    // USER ROUTE
+    Route::get('/user', [UserController::class, 'index'])
+        ->name('admin.user.index');
+    Route::prefix('user')->group(function () {
+        Route::get('/add', [UserController::class, 'create'])
+            ->name('admin.user.add');
+        Route::post('/store', [UserController::class, 'store'])
+            ->name('admin.user.store');
+        Route::get('/edit/{id}', [UserController::class, 'edit'])
+            ->name('admin.user.edit');
+        Route::put('/update/{id}', [UserController::class, 'update'])
+            ->name('admin.user.update');
+        Route::delete('/destroy/{id}', [UserController::class, 'destroy'])
+            ->name('admin.user.destroy');
+    });
 });

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\FunctionalController;
-use App\Http\Controllers\PerguruanController;
+use App\Http\Controllers\Perguruan\PerguruanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WilayahController;
 use App\Models\Perguruan;
@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 // Route::get('/dashboard/sejarah', function () {
 //     return view('sejarah');
