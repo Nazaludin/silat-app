@@ -267,17 +267,17 @@
                                     <img id="tokoh_foto" src="" alt="">
                                 </div>
                                 <div id="tokoh_nama" class="form-label text-center"></div>
-                                <div id="tokoh_tipe" class="font-semibold text-xs uppercase mb-5 text-center text-slate-600">/div>
-                                    <p id="tokoh_deskripsi" class="mb-5 text-sm max-w-[35rem] text-justify"> </p>
-                                </div>
-
+                                <div id="tokoh_tipe" class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"></div>
+                                <p id="tokoh_deskripsi" class="mb-5 text-sm max-w-[35rem] text-justify"> </p>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- modal -->
         </div>
+        <!-- modal -->
+    </div>
     </div>
 
     <script type="module">
