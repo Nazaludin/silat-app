@@ -28,7 +28,6 @@
             <a href="#perguruan">Perguruan</a>
           </li>
 
-
         </ul>
       </nav>
     </div>
@@ -46,7 +45,7 @@
 <!-- header -->
 
 <body style="margin: 0;" class="font-primary">
-  <section id="beranda" class="reveal">
+  <section id="beranda" class="mt-[10rem] reveal">
     <div class="w-100 flex justify-center ">
       <div class="container flex flex-col-reverse md:flex-row w-100 justify-center">
         <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
@@ -68,13 +67,13 @@
   <section class="reveal">
     <div class="flex flex-col justify-center items-center">
       <h1 class="text-3xl mb-3 font-bold text-center text-main">
-        Lembaga Sertifikasi Profesi
+        Cari Perguruan Silat
       </h1>
 
       <div class="w-[70%]">
         <!-- Form -->
         <div class="mb-1">
-          <label for="tempat" class="font-bold">Tempat</label>
+          <label for="tempat" class="font-bold">Tempat (Provinsi)</label>
         </div>
         <div class="relative mb-4" data-hs-combo-box="">
           <div class="relative">
@@ -159,11 +158,11 @@
         <!-- Form End -->
         <!-- Form -->
         <div class="mb-1">
-          <label for="namalsp" class="font-bold">Nama LSP</label>
+          <label for="namalsp" class="font-bold">Nama Perguruan Silat</label>
         </div>
         <div class="relative mb-4" data-hs-combo-box="">
           <div class="relative">
-            <input placeholder="Pilih Nama LSP..." id="namalsp" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
+            <input placeholder="Pilih Nama Perguruan Silat..." id="namalsp" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
             <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
               <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m7 15 5 5 5-5"></path>
@@ -289,6 +288,107 @@
     </script>
 
 
+  </section>
+
+  <section class="reveal">
+    <h1 class="text-3xl mb-3 font-bold text-center text-main">
+      Berita
+    </h1>
+    <div class="divider">
+      Terbaru
+    </div>
+
+    <div class="flex gap-5 flex-wrap justify-center">
+
+      <!-- Berita Card -->
+      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+          <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+        </div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">
+            Judul Berita
+          </h3>
+          <div class="font-bold text-xs uppercase text-slate-400">
+            10/10/2022
+          </div>
+          <p class="mt-1 text-gray-500 line-clamp-3">
+            Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+
+          </p>
+        </div>
+      </a>
+      <!-- Berita Card -->
+      <!-- Berita Card -->
+      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+          <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+        </div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">
+            Judul Berita
+          </h3>
+          <div class="font-bold text-xs uppercase text-slate-400">
+            10/10/2022
+          </div>
+          <p class="mt-1 text-gray-500 line-clamp-3">
+            Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+
+          </p>
+        </div>
+      </a>
+      <!-- Berita Card -->
+      <!-- Berita Card -->
+      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+          <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+        </div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">
+            Judul Berita
+          </h3>
+          <div class="font-bold text-xs uppercase text-slate-400">
+            10/10/2022
+          </div>
+          <p class="mt-1 text-gray-500 line-clamp-3">
+            Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+
+          </p>
+        </div>
+      </a>
+      <!-- Berita Card -->
+      <!-- Berita Card -->
+      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+          <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+        </div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">
+            Judul Berita
+          </h3>
+          <div class="font-bold text-xs uppercase text-slate-400">
+            10/10/2022
+          </div>
+          <p class="mt-1 text-gray-500 line-clamp-3">
+            Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+
+          </p>
+        </div>
+      </a>
+      <!-- Berita Card -->
+
+    </div>
+    <!-- selengkapnya -->
+    <div class="flex justify-end my-5">
+      <a href="" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+        Selengkapnya
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M7 7l5 5l-5 5" />
+          <path d="M13 7l5 5l-5 5" />
+        </svg> </a>
+    </div>
+        <!-- selengkapnya -->
   </section>
   </div>
 

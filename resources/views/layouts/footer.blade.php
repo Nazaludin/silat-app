@@ -1,4 +1,4 @@
-<footer>
+<footer class=" w-full">
   <div class="flex p-10 justify-center bg-main w-full text-white font-bold">
   <p>&copy; 2024 Copyright</p>
   </div>
