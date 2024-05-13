@@ -230,7 +230,7 @@
             console.log(item);
             var anchor = $('<a>', {
               // href: "{{ url('storage/public/1715132993_filled_profil.png')}}",
-              href: "{{ url('/view-image/') }}/",
+              href: "{{ route('perguruan.fullview','') }}/" + item.id_perguruan,
               class: 'flex flex-col w-[20rem] text-justify p-4 gap-1 rounded-xl items-center hover:shadow-flat hover:scale-95 transition-all duration-20'
             });
 
@@ -397,7 +397,7 @@
   <!-- Javascript -->
   <script>
     ScrollReveal().reveal('.reveal', {
-        reset: true,
+        // reset: true,
         duration: 2000,
         distance: '100px'
       },
