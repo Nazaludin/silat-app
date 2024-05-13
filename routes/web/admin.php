@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BeritaController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,15 +26,32 @@ Route::prefix('admin')->middleware('role:admin')->group(function () {
     Route::prefix('user')->group(function () {
         Route::get('/index', [UserController::class, 'index'])
             ->name('admin.user.index');
-        Route::get('/add', [UserController::class, 'create'])
+            Route::get('/add', [UserController::class, 'create'])
             ->name('admin.user.add');
-        Route::post('/store', [UserController::class, 'store'])
+            Route::post('/store', [UserController::class, 'store'])
             ->name('admin.user.store');
-        Route::get('/edit/{id}', [UserController::class, 'edit'])
+            Route::get('/edit/{id}', [UserController::class, 'edit'])
             ->name('admin.user.edit');
-        Route::put('/update/{id}', [UserController::class, 'update'])
+            Route::put('/update/{id}', [UserController::class, 'update'])
             ->name('admin.user.update');
-        Route::delete('/destroy/{id}', [UserController::class, 'destroy'])
+            Route::delete('/destroy/{id}', [UserController::class, 'destroy'])
             ->name('admin.user.destroy');
-    });
+    
+        });
+    // BERITA ROUTE
+    Route::prefix('berita')->group(function () {
+        Route::get('/index', [BeritaController::class, 'index'])
+            ->name('admin.berita.index');
+            Route::get('/add', [BeritaController::class, 'create'])
+            ->name('admin.berita.add');
+            Route::post('/store', [BeritaController::class, 'store'])
+            ->name('admin.berita.store');
+            Route::get('/edit/{id}', [BeritaController::class, 'edit'])
+            ->name('admin.berita.edit');
+            Route::put('/update/{id}', [BeritaController::class, 'update'])
+            ->name('admin.berita.update');
+            Route::delete('/destroy/{id}', [BeritaController::class, 'destroy'])
+            ->name('admin.berita.destroy');
+    
+        });
 });

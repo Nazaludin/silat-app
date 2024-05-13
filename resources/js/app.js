@@ -87,3 +87,13 @@ document.querySelector('#progressbar').animate(
       easing: 'linear',
      }
   );
+
+  $(function() {
+    var elem = $(".trim-text");
+    if (elem.length > 0){
+        var text = elem.text();
+        if (text.length > 10) {
+            elem.text(text.substring(0, 10));
+        }
+    }
+});

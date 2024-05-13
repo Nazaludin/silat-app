@@ -107,11 +107,11 @@
                                         <table class="min-w-full divide-y divide-gray-200 border-seperate">
                                             <thead class="bg-slate-100">
                                                 <tr>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">No</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Judul</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tanggal</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Berita</th>
-                                                    <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
+                                                    <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">No</th>
+                                                    <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Judul</th>
+                                                    <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tanggal</th>
+                                                    <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Berita</th>
+                                                    <th class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="container_row_prestasi" class="divide-y divide-gray-200 align-top">
@@ -161,7 +161,7 @@
                                         </nav>
                                     </div> -->
 
-                                    <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                                    <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200  bg-white px-4 py-3 sm:px-6">
                                         <!-- <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
                                             <div>
                                                 <p class="text-sm text-gray-700">
@@ -196,6 +196,9 @@
                                             </div>
                                         </div> -->
 
+                                    </div>
+                                    <div class="btn-main" data-hs-overlay="#modal-view-berita">
+                                        Trigger Dummy
                                     </div>
                                 </div>
                                 <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-alert"></button>
@@ -257,7 +260,7 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
                                                 var tdTitle = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.judul);
                                                 var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.hari + ', ' + item.tanggal);
-                                                var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.berita);
+                                                var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200').html('<div class="line-clamp-3">'+item.berita+'</div>');
 
                                                 // Buat elemen <td> untuk tombol lihat
 
@@ -426,7 +429,7 @@
                     <form id="form_delete" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
+                        <button type="submit" class="btn bg-red-600 text-white hover:bg-transparent border-red-600 disabled:opacity-50 disabled:pointer-events-none">
                             Simpan Perubahan
                         </button>
                     </form>
@@ -434,6 +437,42 @@
             </div>
         </div>
     </div>
+    <!-- modal -->
+     <!-- modal -->
+     <div id="modal-view-berita" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
+        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all w-full sm:max-w-[70rem] sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] flex items-center justify-center">
+            <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+                <div class="flex justify-between items-center py-3 px-4 border-b">
+                    <div class="form-label"> Judul Berita</div>
+
+                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#modal-view-berita">
+                        <span class="sr-only">Close</span>
+                        <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18"></path>
+                            <path d="m6 6 12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-4 overflow-y-auto">
+                    <div class="space-y-4">
+
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="w-[30rem] rounded-full overflow-hidden ">
+                                <img src="{{ url('/view-image/404.svg') }}/" alt="">
+                            </div>
+                            <div class="form-label text-center"> Judul Berita</div>
+                            <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600">10/10/2021</div>
+                            <p class="mb-5 text-sm max-w-[35rem] text-justify">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus pariatur facere eaque molestias cumque quos possimus sint soluta? Eaque nesciunt molestiae est quaerat accusantium excepturi delectus consectetur doloribus veritatis. Expedita molestias quas pariatur nihil. Officiis quae nostrum accusamus optio dolorem? Iusto, officiis nemo error nisi id impedit provident harum voluptates a neque vero similique officia natus atque et distinctio sapiente placeat quos, quia iure ullam quibusdam sequi? Adipisci perferendis facere vero nobis error nesciunt sit velit deserunt molestiae harum nulla quo provident deleniti beatae, ut est exercitationem cupiditate, minima sunt atque excepturi facilis libero! Ipsum nulla pariatur, deserunt repellat quia vel placeat adipisci esse. Amet, deleniti? Ipsa voluptatum, quisquam et consequuntur quaerat doloribus veniam ducimus non dicta officia iusto cupiditate delectus ex, autem dolores suscipit accusamus! Eius sed obcaecati eveniet, quas tempora at alias eligendi suscipit itaque eos. Vel modi, ipsa earum impedit doloremque sed, aliquam expedita, id error mollitia dicta. Nostrum, animi dignissimos itaque cupiditate ipsa officia! Doloremque porro alias molestiae ipsa, nobis fugiat mollitia unde earum consectetur eaque. Quibusdam quo eveniet culpa placeat nulla saepe soluta nihil, modi animi enim nostrum quis voluptate, consequuntur reiciendis voluptatem dolores, labore voluptatum? Est dolores, obcaecati asperiores voluptatum suscipit recusandae et dignissimos?
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- modal -->
+    </div>
 </x-app-layout>

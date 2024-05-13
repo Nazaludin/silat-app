@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,105 +8,103 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    margin: 0 !important;;
+    margin: 0 !important;
 }
 
 * {
-    @apply font-primary
+    @apply font-primary;
 }
 section {
-    @apply p-16
+    @apply p-16;
 }
 section:nth-child(odd) {
-    @apply bg-slate-100
+    @apply bg-slate-100;
 }
 .fixed-header {
     @apply fixed m-auto left-0 w-full rounded-full z-[99999] shadow-xl bg-white bg-opacity-30 backdrop-blur-[10px] transition-all duration-500;
 }
 .btn-main {
-    @apply w-fit cursor-pointer px-3 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out 
+    @apply w-fit cursor-pointer px-3 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out;
 }
 .btn {
-    @apply w-fit cursor-pointer px-3 py-3 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out 
+    @apply w-fit cursor-pointer px-3 py-3 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out;
 }
 .btn-secondary {
-    @apply w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out 
+    @apply w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out;
 }
 .btn-full {
-    @apply w-full cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out 
+    @apply w-full cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out;
 }
 /* Hamburger */
 .hamburger-line {
     @apply w-[33px] h-[3px] m-2 block  rounded-full bg-main;
 }
 .hamburger-active > span:nth-child(1) {
-    @apply origin-top-left transition-all duration-500 rotate-45 ;
+    @apply origin-top-left transition-all duration-500 rotate-45;
 }
 .hamburger-active > span:nth-child(2) {
-    @apply transition-all origin-center w-0 ;
+    @apply transition-all origin-center w-0;
 }
 .hamburger-active > span:nth-child(3) {
     @apply origin-bottom-left transition-all duration-500 -rotate-45;
 }
 
 .nav-hover > li > a {
-    @apply relative
+    @apply relative;
 }
 
-.nav-hover > li > a::after, li > a.active::after  {
-    content:"";
+.nav-hover > li > a::after,
+li > a.active::after {
+    content: "";
     position: absolute;
     background-color: black;
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    transform:translateY(-5px);
-    opacity:0;
-    transition:all 200ms ease-in-out;
+    transform: translateY(-5px);
+    opacity: 0;
+    transition: all 200ms ease-in-out;
 }
-.nav-hover > li > a:hover::after, li > a.active::after {
+.nav-hover > li > a:hover::after,
+li > a.active::after {
     bottom: 10;
     left: 0;
-    scale:1px;
+    scale: 1px;
     transform-origin: left;
-    opacity:1;
+    opacity: 1;
     border-radius: 20px;
-    transform:translateY(0);
-
+    transform: translateY(0);
 }
-
-
 
 @media screen and (min-width: 768px) {
-
-    .nav-hover > li > a::after, li > a.active::after  {
-    content:"";
-    position: absolute;
-    background-color: black;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    transform:translateY(-5px);
-    opacity:0;
-    transition:all 200ms ease-in-out;
-}
-.nav-hover > li > a:hover::after, li > a.active::after {
-    bottom: 10;
-    left: 0;
-    scale:1px;
-    transform-origin: left;
-    opacity:1;
-    border-radius: 20px;
-    transform:translateY(0);
-
-}
-    
+    .nav-hover > li > a::after,
+    li > a.active::after {
+        content: "";
+        position: absolute;
+        background-color: black;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        transform: translateY(-5px);
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+    }
+    .nav-hover > li > a:hover::after,
+    li > a.active::after {
+        bottom: 10;
+        left: 0;
+        scale: 1px;
+        transform-origin: left;
+        opacity: 1;
+        border-radius: 20px;
+        transform: translateY(0);
+    }
 }
 
 .form-default {
-   @apply py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none;
+    @apply py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none;
 }
 
 .form-label {
@@ -114,49 +112,43 @@ section:nth-child(odd) {
 }
 
 .form-group {
-    @apply  mb-3
+    @apply mb-3;
 }
 
 .divider {
     @apply py-3 flex items-center text-xs text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 font-bold uppercase;
 }
 
-.tox-promotion  {
-    display:none;
+.tox-promotion {
+    display: none;
 }
 
 .body {
-    margin:0!important;
+    margin: 0 !important;
 }
 
 /* Custom Tooltip HTML bobrok */
 
 [customToolTip] {
     position: relative;
-  }
+}
 
-  [customToolTip]:after {
+[customToolTip]:after {
     content: attr(customToolTip);
     position: absolute;
     bottom: 100%;
     background-color: white;
-    box-shadow: 0 0 18px 4px rgba(221,221,221,0.75);
+    box-shadow: 0 0 18px 4px rgba(221, 221, 221, 0.75);
     border-radius: 10px;
-    padding:10px;
+    padding: 10px;
     font-size: 15px;
     font-weight: 500;
     width: max-content;
     opacity: 0;
-    color:rgba(0, 0, 0, 0.703);
+    color: rgba(0, 0, 0, 0.703);
     -webkit-transition: opacity 100ms ease-in-out;
-  }
-
-  [customToolTip]:hover:after {
-    opacity: 1;
-  }
-
-.shiny {
-    filter: drop-shadow( 1px -1px 67px 16px rgba(255,193,0,0.53));
 }
 
-  
+[customToolTip]:hover:after {
+    opacity: 1;
+}
