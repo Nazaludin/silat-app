@@ -16,10 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('admin')->middleware('role:admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return redirect('/admin/user/index');
+    })->name('admin.dashboard');;
+
+
     // USER ROUTE
-    Route::get('/user', [UserController::class, 'index'])
-        ->name('admin.user.index');
     Route::prefix('user')->group(function () {
+        Route::get('/index', [UserController::class, 'index'])
+            ->name('admin.user.index');
         Route::get('/add', [UserController::class, 'create'])
             ->name('admin.user.add');
         Route::post('/store', [UserController::class, 'store'])
