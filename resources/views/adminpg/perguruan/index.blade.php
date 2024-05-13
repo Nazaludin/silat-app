@@ -11,7 +11,7 @@
             Edit
         </div>
     </div>
-    <section id="profilView" class=" bg-white">
+    <section id="profilView" class=" mt-[10rem] bg-white">
         <div class="flex flex-col lg:flex-row w-full">
             <div class="static lg:absolute flex flex-col w-full lg:w-[15rem] text-justify z-[2]">
                 <div class="p-5 shadow-lg rounded-2xl w-full flex justify-center bg-white backdrop-blur-3xl mb-3">
