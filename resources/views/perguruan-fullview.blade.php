@@ -217,7 +217,98 @@
     </div>
 
   </section>
-  @endif
+  <section id="prestasiView" class="mt-10 reveal">
+    <div class="flex flex-col lg:flex-row w-full">
+      <div class="flex flex-col justify-center w-full lg:ml-[17rem] p-5 text-justify">
+        <div class="my-5 flex justify-center gap-5 group">
+          <h1 class="font-bold text-3xl text-center">
+            Prestasi
+          </h1>
+        </div>
+        <div class="flex flex-wrap gap-5 justify-center">
+
+
+          <!-- Prestasi Card -->
+          <a class="relative flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+            <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+              <!-- medal -->
+              <img class="size-10 absolute top-3 right-3 group-hover:scale-110 transition-transform duration-200 ease-in-out" src="{{ url('/view-image/trophy-icon.svg') }}/" alt="">
+              <!-- medal -->
+            </div>
+            <div class="p-4 md:p-5">
+              <h3 class="text-lg font-bold text-gray-800">
+                Kejuaraan Nasional Pencak Silat #3
+              </h3>
+              <div class="font-bold text-xs uppercase text-slate-400">
+                10/10/2022
+              </div>
+              <p class="mt-1 text-gray-500 line-clamp-3">
+                Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </a>
+          <!-- Prestasi Card -->
+          <!-- Prestasi Card -->
+          <a class="relative flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+            <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+              <!-- medal -->
+              <img class="size-10 absolute top-3 right-3 group-hover:scale-110 transition-transform duration-200 ease-in-out" src="{{ url('/view-image/trophy-icon.svg') }}/" alt="">
+              <!-- medal -->
+            </div>
+            <div class="p-4 md:p-5">
+              <h3 class="text-lg font-bold text-gray-800">
+                Kejuaraan Nasional Pencak Silat #3
+              </h3>
+              <div class="font-bold text-xs uppercase text-slate-400">
+                10/10/2022
+              </div>
+              <p class="mt-1 text-gray-500 line-clamp-3">
+                Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </a>
+          <!-- Prestasi Card -->
+          <!-- Prestasi Card -->
+          <a class="relative flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+            <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
+              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+              <!-- medal -->
+              <img class="size-10 absolute top-3 right-3 group-hover:scale-110 transition-transform duration-200 ease-in-out" src="{{ url('/view-image/trophy-icon.svg') }}/" alt="">
+              <!-- medal -->
+            </div>
+            <div class="p-4 md:p-5">
+              <h3 class="text-lg font-bold text-gray-800">
+                Kejuaraan Nasional Pencak Silat #3
+              </h3>
+              <div class="font-bold text-xs uppercase text-slate-400">
+                10/10/2022
+              </div>
+              <p class="mt-1 text-gray-500 line-clamp-3">
+                Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </a>
+          <!-- Prestasi Card -->
+
+
+        </div>
+        <!-- selengkapnya -->
+        <div class="flex justify-end my-5">
+          <a href="" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+            Selengkapnya
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M7 7l5 5l-5 5" />
+              <path d="M13 7l5 5l-5 5" />
+            </svg> </a>
+        </div>
+        <!-- selengkapnya -->
+      </div>
+    </div>
+
+  </section>
 
   <!-- modal -->
   <div id="modal-tokoh" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">

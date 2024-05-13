@@ -158,8 +158,8 @@
                             @foreach($guru_besar as $guru)
                             <!-- tokoh card -->
                             <div class="w-full md:w-[20rem] flex flex-col items-center gap-5 p-5 m-4 bg-white rounded-xl shadow-md transition-all duration-200 hover:scale-95 hover:shadow-2xl">
-                                <div class="w-[10rem] rounded-full overflow-hidden ">
-                                    <img src="{{ url('/view-image/') . '/' . $guru['nama_file'] }}" alt="">
+                                <div class="h-[12rem] w-[10rem] rounded-full overflow-hidden">
+                                    <img class="object-cover object-center w-full h-full" src="{{ url('/view-image/') . '/' . $guru['nama_file'] }}" alt="">
                                 </div>
                                 <div class="flex flex-col">
                                     <div class="form-label text-center"> {{ $guru['nama'] }}</div>
@@ -193,13 +193,13 @@
                         @foreach($tokoh_lain as $tokoh)
                         <!-- tokoh card -->
                         <div class="w-full md:w-[15rem] flex flex-col items-center gap-5 p-5 m-4 bg-white rounded-3xl shadow-md transition-all duration-200 hover:scale-95 hover:shadow-2xl">
-                            <div class="w-[5rem] rounded-full overflow-hidden ">
-                                <img src="{{ url('/view-image/') . '/' . $tokoh['nama_file'] }}" alt="">
+                            <div class="h-[12rem] w-[10rem] rounded-full overflow-hidden">
+                                <img class="object-cover object-center w-full h-full" src="{{ url('/view-image/') . '/' . $tokoh['nama_file'] }}" alt="">
                             </div>
                             <div class="flex flex-col">
                                 <div class="form-label text-center"> {{ $tokoh['nama'] }}</div>
                                 <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> {{ $tokoh['tipe'] }}</div>
-                                <p class="mb-5 line-clamp-3 text-sm">
+                                <p class="mb-5 line-clamp-5 text-sm">
                                     {!! $tokoh['deskripsi'] !!}
                                 </p>
                                 <div class="flex justify-center" data-hs-overlay="#modal-tokoh" data-id-tokoh="{{ $tokoh['id_tokoh'] }}">

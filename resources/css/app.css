@@ -155,7 +155,8 @@ section:nth-child(odd) {
     opacity: 1;
   }
 
-
-  /* Scroll Show Element */
+.shiny {
+    filter: drop-shadow( 1px -1px 67px 16px rgba(255,193,0,0.53));
+}
 
   

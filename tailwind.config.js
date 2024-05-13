@@ -18,7 +18,11 @@ export default {
                 'main': '#0f172a'
               },
               boxShadow: {
-                 'flat': '0px 0px 30px -3px rgba(163,163,163,1);'
+                 'flat': '0px 0px 30px -3px rgba(163,163,163,1);',
+                 
+              },
+              dropShadow:{
+                'shiny': '0px 0px 67px 16px rgba(255,193,0,0.53);'
               },
               fontFamily: {
                 'primary':['poppins', 'sans-serif']
