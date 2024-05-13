@@ -21,8 +21,19 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/berita', function (Request $request) {
-    $berita = Berita::orderBy('updated_at', 'desc')->paginate(15);
-
+    $key = $request->input('search');
+    // Jika query tidak ada atau kosong, tampilkan semua data
+    if (!$key) {
+        $berita = Berita::orderBy('updated_at', 'desc')->paginate(1);
+    } else {
+        $berita = Berita::orderBy('updated_at', 'desc')
+            ->where('judul', 'like', "%$key%")
+            ->paginate(1);
+    }
+    // Mengubah format tanggal 'created_at' dari setiap berita
+    foreach ($berita as $item) {
+        $item->tanggal = $item->getTanggal();
+    }
     return response()->json($berita);
 });
 Route::prefix('admin')->group(function () {

@@ -19,6 +19,22 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
+Route::get('/prestasi', function (Request $request) {
+    $key = $request->input('search');
+
+    if (!$key) {
+        $prestasi = Prestasi::orderBy('updated_at', 'desc')->paginate(1);
+    } else {
+        $prestasi = Prestasi::orderBy('updated_at', 'desc')
+            ->where('judul', 'like', "%$key%")
+            ->paginate(1);
+    }
+    foreach ($prestasi as $item) {
+        $item->tanggal = $item->getTanggal();
+    }
+    return response()->json($prestasi);
+});
+
 Route::prefix('admin')->group(function () {
     Route::get('/prestasi', function (Request $request) {
         $prestasi = Prestasi::paginate(15);

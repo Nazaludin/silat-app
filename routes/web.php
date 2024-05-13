@@ -4,7 +4,9 @@ use App\Http\Controllers\FunctionalController;
 use App\Http\Controllers\Perguruan\PerguruanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WilayahController;
+use App\Models\Berita;
 use App\Models\Perguruan;
+use App\Models\Prestasi;
 use App\Models\Tokoh;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,61 +26,12 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Route::get('/dashboard/sejarah', function () {
-//     return view('sejarah');
-// });
-// Route::get('/dashboard/prestasi', function () {
-//     return view('prestasi');
-// });
-// Route::get('/dashboard/tokoh', function () {
-//     return view('tokoh');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+// FUNCTIONAL ROUTE
 Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage'])->name('view-image');
-
-Route::get('perguruanView', function () {
-    return view('perguruanView');
-})->name('perguruanView');
-Route::get('beritaList', function () {
-    return view('beritaList');
-})->name('beritaList');
-Route::get('beritaView', function () {
-    return view('beritaView');
-})->name('beritaView');
-Route::get('prestasiList', function () {
-    return view('prestasiList');
-})->name('prestasiList');
-Route::get('prestasiView', function () {
-    return view('prestasiView');
-})->name('prestasiView');
-// Route::get('dashboard/sejarah', function () {
-//     return view('sejarah');
-// })->name('sejarah');
-// Route::get('dashboard/prestasi', function () {
-//     return view('prestasi');
-// })->name('prestasi');
-
-// Route::get('dashboard/tokoh', function () {
-//     return view('adminpg.tokoh.tokoh');
-// })->name('tokoh');
-
-Route::get('/wilayah', function () {
-    return view('wilayah');
-})->name('wilayah');
 Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('wilayah.tambah');
 
-// Route::get('/dashboard', [PerguruanController::class, 'create'])
-//     ->name('dashboard');
-// Route::post('/perguruan/store', [PerguruanController::class, 'store'])
-//     ->name('perguruan.store');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
+// PERGURUAN
 Route::get('/perguruan/full-view/{id_perguruan}', function (Request $request, $id_perguruan) {
     $perguruan = Perguruan::where('id_perguruan', $id_perguruan)->firstOrFail();
     $guru_besar = Tokoh::where('id_perguruan', $id_perguruan)->where('tipe', 'Guru Besar')->get()->toArray();
@@ -90,6 +43,38 @@ Route::get('/perguruan/full-view/{id_perguruan}', function (Request $request, $i
     }
     return view('perguruan-fullview', compact('exist', 'perguruan', 'guru_besar', 'tokoh_lain'));
 })->name('perguruan.fullview');
+
+// BERITA
+Route::get('/berita', function (Request $request) {
+    return view('berita');
+})->name('berita');
+Route::get('/berita/read/{id_berita}', function (Request $request, $id_berita) {
+    $berita = Berita::join('perguruan', 'perguruan.id_perguruan', '=', 'berita.id_perguruan')
+        ->select('berita.*', 'perguruan.nama AS penulis')
+        ->where('id_berita', $id_berita)
+        ->firstOrFail();
+
+    $berita->tanggal = $berita->getTanggal();
+
+    return view('berita-read', compact('berita'));
+})->name('berita.read');
+
+// PRESTASI
+Route::get('/prestasi', function (Request $request) {
+    return view('prestasi');
+})->name('prestasi');
+Route::get('/prestasi/read/{id_prestasi}', function (Request $request, $id_prestasi) {
+    $prestasi = Prestasi::join('perguruan', 'perguruan.id_perguruan', '=', 'prestasi.id_perguruan')
+        ->select('prestasi.*', 'perguruan.nama AS penulis')
+        ->where('id_prestasi', $id_prestasi)
+        ->firstOrFail();
+
+    $prestasi->tanggal = $prestasi->getTanggal();
+
+    return view('prestasi-read', compact('prestasi'));
+})->name('prestasi.read');
+
+// AUTH
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

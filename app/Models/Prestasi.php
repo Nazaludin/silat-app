@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -44,4 +45,10 @@ class Prestasi extends Model
     //     'email_verified_at' => 'datetime',
     //     'password' => 'hashed',
     // ];
+
+    public function getTanggal()
+    {
+        $tanggal = Carbon::parse($this->updated_at)->format('d/m/Y H:i') . ' WIB';
+        return $tanggal;
+    }
 }

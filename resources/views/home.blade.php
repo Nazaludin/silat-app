@@ -258,9 +258,35 @@
       <!-- Berita Card -->
 
     </div>
+
+    </div>
     <!-- selengkapnya -->
     <div class="flex justify-end my-5">
-      <a href="" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+      <a href="{{route('berita')}}" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+        Selengkapnya
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M7 7l5 5l-5 5" />
+          <path d="M13 7l5 5l-5 5" />
+        </svg> </a>
+    </div>
+    <!-- selengkapnya -->
+  </section>
+
+  <section id="berita" class="reveal">
+    <h1 class="text-3xl mb-3 font-bold text-center text-main">
+      Prestasi
+    </h1>
+    <div class="divider">
+      Terbaru
+    </div>
+
+    <div id="container_prestasi" class="flex gap-5 flex-wrap justify-center">
+
+    </div>
+    <!-- selengkapnya -->
+    <div class="flex justify-end my-5">
+      <a href="{{route('prestasi')}}" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
         Selengkapnya
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -284,6 +310,10 @@
       $.get('/api/berita', function(data) {
         console.log(data);
         createCardBerita(data);
+      });
+      $.get('/api/prestasi', function(data) {
+        console.log(data);
+        createCardPrestasi(data);
       });
 
       function paginate(data) {
@@ -356,7 +386,7 @@
           // Membuat elemen berita
           var beritaCard = $('<a>', {
             'class': 'flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out',
-            'href': '#'
+            'href': "{{ route('berita.read','') }}/" + item.id_berita
           });
 
           var imageContainer = $('<div>', {
@@ -390,6 +420,50 @@
 
           // Menambahkan elemen berita ke dalam container
           container.append(beritaCard);
+        });
+      }
+
+      function createCardPrestasi(data) {
+        const container = $('#container_prestasi');
+        container.html('');
+        $.each(data.data, function(index, item) {
+          // Membuat elemen berita
+          var prestasiCard = $('<a>', {
+            'class': 'flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out',
+            'href': "{{ route('prestasi.read','') }}/" + item.id_prestasi
+          });
+
+          var imageContainer = $('<div>', {
+            'class': 'relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden'
+          }).appendTo(prestasiCard);
+
+          $('<img>', {
+            'class': 'size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl',
+            'src': "{{ url('/view-image/') }}/" + item.nama_file,
+            'alt': 'Image Description'
+          }).appendTo(imageContainer);
+
+          var contentContainer = $('<div>', {
+            'class': 'p-4 md:p-5'
+          }).appendTo(prestasiCard);
+
+          $('<h3>', {
+            'class': 'text-lg font-bold text-gray-800',
+            'text': item.judul
+          }).appendTo(contentContainer);
+
+          $('<div>', {
+            'class': 'font-bold text-xs uppercase text-slate-400',
+            'text': item.tanggal
+          }).appendTo(contentContainer);
+
+          $('<p>', {
+            'class': 'mt-1 text-gray-500 line-clamp-3',
+            'text': 'Some quick example text to build on the card title and make up the bulk of the card\'s content. Some quick example text to build on the card title and make up the bulk of the card\'s content.'
+          }).appendTo(contentContainer);
+
+          // Menambahkan elemen berita ke dalam container
+          container.append(prestasiCard);
         });
       }
 

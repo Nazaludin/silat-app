@@ -215,8 +215,8 @@
 
       </div>
     </div>
-
   </section>
+  @endif
   <section id="prestasiView" class="mt-10 reveal">
     <div class="flex flex-col lg:flex-row w-full">
       <div class="flex flex-col justify-center w-full lg:ml-[17rem] p-5 text-justify">
@@ -309,6 +309,7 @@
     </div>
 
   </section>
+
 
   <!-- modal -->
   <div id="modal-tokoh" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">

@@ -44,4 +44,5 @@ class Tokoh extends Model
     //     'email_verified_at' => 'datetime',
     //     'password' => 'hashed',
     // ];
+
 }

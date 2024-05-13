@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Session;
 
 Route::prefix('admin')->group(function () {
     Route::get('/tokoh', function (Request $request) {
-        $prestasi = Tokoh::paginate(15);
+        $tokoh = Tokoh::paginate(15);
 
-        return response()->json($prestasi);
+        return response()->json($tokoh);
     });
 });
 Route::prefix('adminpg')->group(function () {
