@@ -41,6 +41,12 @@ Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage']
 Route::get('perguruanView', function () {
     return view('perguruanView');
 })->name('perguruanView');
+Route::get('beritaList', function () {
+    return view('beritaList');
+})->name('beritaList');
+Route::get('beritaView', function () {
+    return view('beritaView');
+})->name('beritaView');
 // Route::get('dashboard/sejarah', function () {
 //     return view('sejarah');
 // })->name('sejarah');
