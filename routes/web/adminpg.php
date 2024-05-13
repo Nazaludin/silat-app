@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Perguruan\BeritaController;
 use App\Http\Controllers\Perguruan\PerguruanController;
 use App\Http\Controllers\Perguruan\PrestasiController;
 use App\Http\Controllers\Perguruan\TokohController;
@@ -64,6 +65,22 @@ Route::prefix('adminpg')->middleware('role:adminpg')->group(function () {
             ->name('adminpg.prestasi.update');
         Route::delete('/destroy/{id}', [PrestasiController::class, 'destroy'])
             ->name('adminpg.prestasi.destroy');
+    });
+
+    // BERITA ROUTE
+    Route::get('/berita', [BeritaController::class, 'index'])
+        ->name('adminpg.berita.index');
+    Route::prefix('berita')->group(function () {
+        Route::get('/add', [BeritaController::class, 'create'])
+            ->name('adminpg.berita.add');
+        Route::post('/store', [BeritaController::class, 'store'])
+            ->name('adminpg.berita.store');
+        Route::get('/edit/{id}', [BeritaController::class, 'edit'])
+            ->name('adminpg.berita.edit');
+        Route::put('/update/{id}', [BeritaController::class, 'update'])
+            ->name('adminpg.berita.update');
+        Route::delete('/destroy/{id}', [BeritaController::class, 'destroy'])
+            ->name('adminpg.berita.destroy');
     });
 
     // TOKOH ROUTE

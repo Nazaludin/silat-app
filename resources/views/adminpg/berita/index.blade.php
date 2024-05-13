@@ -1,8 +1,8 @@
-<x-admin-layout>
+<x-app-layout>
     <x-slot name="header">
 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pengguna') }}
+            {{ __('Berita') }}
         </h2>
     </x-slot>
 
@@ -66,8 +66,20 @@
 
 
                 <div class="p-6 text-gray-900">
-                    <div class="divider">Daftar Pengguna</div>
+                    <div class="divider">Daftar Berita</div>
+                    @if (!$exist)
+                    <div class="flex flex-wrap items-center justify-center h-full">
+                        <div class="flex flex-col gap-5 text-center justify-center items-center md:items-start md:text-left">
+                            <p class="font-bold text-3xl text-center">Data yang kamu cari tidak ada nih!</p>
 
+                            <a href="{{ route('adminpg.berita.add') }}" class="btn-main">
+                                Buat Data Baru
+                            </a>
+                        </div>
+                        <img class="w-[30rem] object-contain" src="{{ url('/view-image/404.svg') }}/" alt="">
+                    </div>
+
+                    @else
                     <!-- upload Gambar -->
                     <div class="flex flex-col">
                         <div class="-m-1.5 overflow-x-auto">
@@ -77,7 +89,7 @@
                                         <div>
                                             <label for="hs-trailing-button-add-on-with-icon-and-button" class="sr-only">Label</label>
                                             <div class="relative flex rounded-lg shadow-sm my-2 mx-2">
-                                                <input type="text" id="search" name="hs-trailing-button-add-on-with-icon-and-button" class="py-3 px-4 ps-11 block w-full border-gray-200 shadow-sm rounded-s-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none">
+                                                <input placeholder="Cari Prestasi..." type="text" id="search" name="hs-trailing-button-add-on-with-icon-and-button" class="py-3 px-4 ps-11 block w-full border-gray-200 shadow-sm rounded-s-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none">
                                                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
                                                     <svg class="flex-shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <circle cx="11" cy="11" r="8"></circle>
@@ -87,18 +99,18 @@
                                                 <button id="btn_search" type="button" class="w-fit cursor-pointer px-5 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out  rounded-l-none mx-0">Cari</button>
                                             </div>
                                         </div>
-                                        <!-- <a href="{{ route('adminpg.prestasi.add') }}" class="btn-main my-2 mx-4">
-                                            Tambah Prestasi
-                                        </a> -->
+                                        <a href="{{ route('adminpg.berita.add') }}" class="btn-main my-2 mx-4">
+                                            Tambah Berita
+                                        </a>
                                     </div>
                                     <div class="overflow-hidden">
                                         <table class="min-w-full divide-y divide-gray-200 border-seperate">
                                             <thead class="bg-slate-100">
                                                 <tr>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">No</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Nama</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Email</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Perguruan</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Judul</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tanggal</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Berita</th>
                                                     <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
                                             </thead>
@@ -196,7 +208,7 @@
                                         setPage(1);
 
                                         function loadData() {
-                                            var api_url = '/api/admin/user?page=' + page;
+                                            var api_url = '/api/adminpg/berita?page=' + page;
                                             if (searchKey && searchKey.trim() !== '') {
                                                 api_url += '&search=' + searchKey.trim(); // Menambahkan kata kunci pencarian ke URL API
                                             }
@@ -243,9 +255,9 @@
 
                                                 // Buat elemen <td> u
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
-                                                var tdName = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.name);
-                                                var tdEmail = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.email);
-                                                var tdPerguruan = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.perguruan);
+                                                var tdTitle = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.judul);
+                                                var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.hari + ', ' + item.tanggal);
+                                                var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.berita);
 
                                                 // Buat elemen <td> untuk tombol lihat
 
@@ -262,10 +274,10 @@
                                                 </button>
                                                 `).on("click", function() {
                                                     $('#btn_trigger_delete').click();
-                                                    $('#form_delete').attr('action', "{{ route('adminpg.prestasi.destroy', '') }}/" + item.id_prestasi);
+                                                    $('#form_delete').attr('action', "{{ route('adminpg.berita.destroy', '') }}/" + item.id_berita);
                                                 });
                                                 var btnEdit = $('<div>').addClass('hs-tooltip').html(`
-                                                <a  href="{{ route('adminpg.prestasi.edit','') }}/` + item.id_prestasi + `" customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                                <a  href="{{ route('adminpg.berita.edit','') }}/` + item.id_berita + `" customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
@@ -295,7 +307,7 @@
                                                 tdAction.append(btnDelete);
                                                 tdAction.append(btnEdit);
                                                 tdAction.append(btnView);
-                                                tr.append(tdNumber, tdName, tdEmail, tdPerguruan, tdAction);
+                                                tr.append(tdNumber, tdTitle, tdDate, tdBerita, tdAction);
                                                 container.append(tr);
                                             });
                                         }
@@ -376,7 +388,7 @@
                         </div>
 
                     </div>
-
+                    @endif
 
                 </div>
 
@@ -424,4 +436,4 @@
     </div>
     </div>
     <!-- modal -->
-</x-admin-layout>
+</x-app-layout>

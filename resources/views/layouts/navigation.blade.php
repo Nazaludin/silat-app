@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('adminpg.prestasi.index')" :active="request()->routeIs('adminpg.prestasi.*')">
                         {{ __('Prestasi') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('adminpg.berita.index')" :active="request()->routeIs('adminpg.berita.*')">
+                        {{ __('Berita') }}
+                    </x-nav-link>
 
 
                 </div>

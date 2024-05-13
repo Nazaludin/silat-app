@@ -219,73 +219,7 @@
           >
         </div> -->
     </div>
-    <script type="module">
-      $(document).ready(function() {
-        const container = $('#container_perguruan');
-        $.get('/api/perguruan', function(data) {
-          console.log(data);
-          // Tambahkan opsi berdasarkan data yang diterima dari API
-          $.each(data.data, function(index, item) {
-            // Bangun elemen DOM untuk setiap item
-            console.log(item);
-            var anchor = $('<a>', {
-              // href: "{{ url('storage/public/1715132993_filled_profil.png')}}",
-              href: "{{ route('perguruan.fullview','') }}/" + item.id_perguruan,
-              class: 'flex flex-col w-[20rem] text-justify p-4 gap-1 rounded-xl items-center hover:shadow-flat hover:scale-95 transition-all duration-20'
-            });
 
-            var img = $('<img>', {
-              src: "{{ url('/view-image/') }}/" + item.nama_file_logo,
-              alt: ''
-            }).addClass('overflow-hidden object-cover object-center h-[10rem] rounded-xl');
-
-            var imgDiv = $('<div>', {
-              class: 'flex justify-center items-center gambar'
-            });
-            var textDiv = $('<div>', {
-              class: 'text w-full text-wrap text-center'
-            });
-
-            var title = $('<h1>', {
-              class: 'font-bold text-xl'
-            }).text(item.nama);
-
-            var paragraph = $('<p>').text(item.deskripsi);
-
-            // Gabungkan elemen-elemen DOM ke dalam hierarki DOM yang benar
-            textDiv.append(title, paragraph);
-            imgDiv.append(img);
-            anchor.append(imgDiv, textDiv);
-
-            // Tambahkan elemen anchor ke dalam kontainer
-            container.append(anchor);
-
-          });
-          var index = 1;
-          do {
-            var pageDiv = $('<div>', {
-              class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
-              text: index
-            });
-            index++;
-            // Menambahkan elemen div pagination ke dalam DOM
-            $('#pagination_perguruan').append(pageDiv);
-
-            if (index == 5) {
-              var pageDiv = $('<div>', {
-                class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
-                text: '>'
-              });
-              // Menambahkan elemen div pagination ke dalam DOM
-              $('#pagination_perguruan').append(pageDiv);
-              break;
-            }
-          } while (index < data.last_page);
-
-
-        });
-      });
-    </script>
 
 
   </section>
@@ -298,10 +232,10 @@
       Terbaru
     </div>
 
-    <div class="flex gap-5 flex-wrap justify-center">
+    <div id="container_berita" class="flex gap-5 flex-wrap justify-center">
 
       <!-- Berita Card -->
-      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
+      <!-- <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
         <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
           <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
         </div>
@@ -317,64 +251,7 @@
 
           </p>
         </div>
-      </a>
-      <!-- Berita Card -->
-      <!-- Berita Card -->
-      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
-        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
-          <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
-        </div>
-        <div class="p-4 md:p-5">
-          <h3 class="text-lg font-bold text-gray-800">
-            Judul Berita
-          </h3>
-          <div class="font-bold text-xs uppercase text-slate-400">
-            10/10/2022
-          </div>
-          <p class="mt-1 text-gray-500 line-clamp-3">
-            Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
-
-          </p>
-        </div>
-      </a>
-      <!-- Berita Card -->
-      <!-- Berita Card -->
-      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
-        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
-          <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
-        </div>
-        <div class="p-4 md:p-5">
-          <h3 class="text-lg font-bold text-gray-800">
-            Judul Berita
-          </h3>
-          <div class="font-bold text-xs uppercase text-slate-400">
-            10/10/2022
-          </div>
-          <p class="mt-1 text-gray-500 line-clamp-3">
-            Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
-
-          </p>
-        </div>
-      </a>
-      <!-- Berita Card -->
-      <!-- Berita Card -->
-      <a class="flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
-        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
-          <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
-        </div>
-        <div class="p-4 md:p-5">
-          <h3 class="text-lg font-bold text-gray-800">
-            Judul Berita
-          </h3>
-          <div class="font-bold text-xs uppercase text-slate-400">
-            10/10/2022
-          </div>
-          <p class="mt-1 text-gray-500 line-clamp-3">
-            Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
-
-          </p>
-        </div>
-      </a>
+      </a> -->
       <!-- Berita Card -->
 
     </div>
@@ -388,12 +265,133 @@
           <path d="M13 7l5 5l-5 5" />
         </svg> </a>
     </div>
-        <!-- selengkapnya -->
+    <!-- selengkapnya -->
   </section>
   </div>
 
 
+  <script type="module">
+    $(document).ready(function() {
+      $.get('/api/perguruan', function(data) {
+        console.log(data);
+        createCardBPerguruan(data);
+        paginate(data);
+      });
 
+      $.get('/api/berita', function(data) {
+        console.log(data);
+        createCardBerita(data);
+      });
+
+      function paginate(data) {
+        var index = 1;
+        do {
+          var pageDiv = $('<div>', {
+            class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+            text: index
+          });
+          index++;
+          // Menambahkan elemen div pagination ke dalam DOM
+          $('#pagination_perguruan').append(pageDiv);
+
+          if (index == 5) {
+            var pageDiv = $('<div>', {
+              class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
+              text: '>'
+            });
+            // Menambahkan elemen div pagination ke dalam DOM
+            $('#pagination_perguruan').append(pageDiv);
+            break;
+          }
+        } while (index < data.last_page);
+      }
+
+      function createCardBPerguruan(data) {
+        const container = $('#container_perguruan');
+        $.each(data.data, function(index, item) {
+          // Bangun elemen DOM untuk setiap item
+          console.log(item);
+          var anchor = $('<a>', {
+            // href: "{{ url('storage/public/1715132993_filled_profil.png')}}",
+            href: "{{ route('perguruan.fullview','') }}/" + item.id_perguruan,
+            class: 'flex flex-col w-[20rem] text-justify p-4 gap-1 rounded-xl items-center hover:shadow-flat hover:scale-95 transition-all duration-20'
+          });
+
+          var img = $('<img>', {
+            src: "{{ url('/view-image/') }}/" + item.nama_file_logo,
+            alt: ''
+          }).addClass('overflow-hidden object-cover object-center h-[10rem] rounded-xl');
+
+          var imgDiv = $('<div>', {
+            class: 'flex justify-center items-center gambar'
+          });
+          var textDiv = $('<div>', {
+            class: 'text w-full text-wrap text-center'
+          });
+
+          var title = $('<h1>', {
+            class: 'font-bold text-xl'
+          }).text(item.nama);
+
+          var paragraph = $('<p>').text(item.deskripsi);
+
+          // Gabungkan elemen-elemen DOM ke dalam hierarki DOM yang benar
+          textDiv.append(title, paragraph);
+          imgDiv.append(img);
+          anchor.append(imgDiv, textDiv);
+
+          // Tambahkan elemen anchor ke dalam kontainer
+          container.append(anchor);
+
+        });
+      }
+
+      function createCardBerita(data) {
+        const container = $('#container_berita');
+        container.html('');
+        $.each(data.data, function(index, item) {
+          // Membuat elemen berita
+          var beritaCard = $('<a>', {
+            'class': 'flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out',
+            'href': '#'
+          });
+
+          var imageContainer = $('<div>', {
+            'class': 'relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden'
+          }).appendTo(beritaCard);
+
+          $('<img>', {
+            'class': 'size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl',
+            'src': "{{ url('/view-image/') }}/" + item.nama_file,
+            'alt': 'Image Description'
+          }).appendTo(imageContainer);
+
+          var contentContainer = $('<div>', {
+            'class': 'p-4 md:p-5'
+          }).appendTo(beritaCard);
+
+          $('<h3>', {
+            'class': 'text-lg font-bold text-gray-800',
+            'text': item.judul
+          }).appendTo(contentContainer);
+
+          $('<div>', {
+            'class': 'font-bold text-xs uppercase text-slate-400',
+            'text': item.tanggal
+          }).appendTo(contentContainer);
+
+          $('<p>', {
+            'class': 'mt-1 text-gray-500 line-clamp-3',
+            'text': 'Some quick example text to build on the card title and make up the bulk of the card\'s content. Some quick example text to build on the card title and make up the bulk of the card\'s content.'
+          }).appendTo(contentContainer);
+
+          // Menambahkan elemen berita ke dalam container
+          container.append(beritaCard);
+        });
+      }
+
+    });
+  </script>
   <!-- Javascript -->
   <script>
     ScrollReveal().reveal('.reveal', {
