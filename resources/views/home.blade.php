@@ -30,9 +30,7 @@
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
             <a href="#berita">Berita</a>
           </li>
-          <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
-            <a href="#prestasi">Prestasi</a>
-          </li>
+
 
         </ul>
       </nav>
@@ -51,6 +49,8 @@
 <!-- header -->
 
 <body style="margin: 0;" class="font-primary">
+
+
   <section id="beranda" class="mt-[10rem] reveal">
     <div class="w-100 flex justify-center ">
       <div class="container flex flex-col-reverse md:flex-row w-100 justify-center">

@@ -98,9 +98,9 @@
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">No</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Nama</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Email</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Status Email</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Perguruan</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Email Terverifikasi</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Akses</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Status Akun</th>
                                                     <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
                                             </thead>
@@ -117,6 +117,28 @@
                                 <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-user"></button>
                                 <button id="btn_trigger_accept" type="hidden" data-hs-overlay="#accept-user"></button>
                                 <button id="btn_trigger_ban" type="hidden" data-hs-overlay="#ban-user"></button>
+
+                                <div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
+                                    <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
+                                    <span class="text-green-700">Verified</span>
+                                </div>
+                                <div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
+                                    <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
+                                    <span class="text-red-700">Not Verified</span>
+                                </div>
+                                <div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
+                                    <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
+                                    <span class="text-green-700">Active</span>
+                                </div>
+                                <div class="inline-flex items-center  bg-orange-100 px-4 rounded-full">
+                                    <span class="size-2 inline-block bg-orange-500 rounded-full me-2"></span>
+                                    <span class="text-orange-700">Inactive</span>
+                                </div>
+                                <div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
+                                    <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
+                                    <span class="text-red-700">Banned</span>
+                                </div>
+                                <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-alert"></button>
                                 <script type="module">
                                     $(document).ready(function() {
                                         var page = 1;
@@ -175,9 +197,9 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
                                                 var tdName = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.name);
                                                 var tdEmail = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.email);
-                                                var tdEmailStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.email_verified);
-                                                var tdAccess = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.access_status);
+                                                var tdStatusEmail = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text('item.email');
                                                 var tdPerguruan = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.perguruan);
+                                                var tdStatusAkun = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html('item.perguruan');
 
                                                 // Buat elemen <td> untuk tombol lihat
 
@@ -242,7 +264,7 @@
                                                 tdAction.append(btnBan);
                                                 tdAction.append(btnDelete);
                                                 // tdAction.append(btnView);
-                                                tr.append(tdNumber, tdName, tdEmail, tdPerguruan, tdEmailStatus, tdAccess, tdAction);
+                                                tr.append(tdNumber, tdName, tdEmail, tdStatusEmail, tdPerguruan, tdStatusAkun, tdAction);
                                                 container.append(tr);
                                             });
                                         }
