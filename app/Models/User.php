@@ -24,6 +24,8 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'email_verified',
+        'access_status',
     ];
 
     /**
@@ -42,6 +44,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'allow_access_at' => 'datetime',
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
@@ -55,4 +58,16 @@ class User extends Authenticatable
         // dd($role, $roleName);
         return $role === $roleName;
     }
+    // Di dalam model pengguna (User.php) atau model terpisah
+    // public function getVerified()
+    // {
+    //     $status = isset($this->email_verified_at);
+    //     return $status;
+    // }
+    // public function getAccess()
+    // {
+    //     $tanggal = Carbon::parse($this->updated_at)->format('d/m/Y H:i') . ' WIB';
+    //     return $tanggal;
+    // }
+
 }

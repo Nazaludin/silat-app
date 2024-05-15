@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nama_file');
             $table->longText('berita');
             $table->string('hari');
+            $table->unsignedBigInteger('id_status_berita')->default(1);
+            $table->foreign('id_status_berita')->references('id_status_berita')->on('status_berita');
             $table->timestamps();
         });
     }

@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Berita extends Model
+class StatusBerita extends Model
 {
     use HasFactory;
-    protected $table = "berita";
-    protected $primaryKey = 'id_berita';
+
+    protected $table = "status_berita";
+    protected $primaryKey = 'id_status_berita';
 
     /**
      * The attributes that are mass assignable.
@@ -18,13 +18,7 @@ class Berita extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'id_perguruan',
-        'judul',
-        'nama_file',
-        'hari',
-        'berita',
-        'id_status_berita',
-
+        'nama',
     ];
 
     /**
@@ -46,9 +40,5 @@ class Berita extends Model
     //     'email_verified_at' => 'datetime',
     //     'password' => 'hashed',
     // ];
-    public function getTanggal()
-    {
-        $tanggal = Carbon::parse($this->updated_at)->format('d/m/Y H:i') . ' WIB';
-        return $tanggal;
-    }
+
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prestasi', function (Blueprint $table) {
             $table->id('id_prestasi');
             $table->unsignedBigInteger('id_perguruan');
-            $table->foreign('id_perguruan')->references('id_perguruan')->on('perguruan');
+            $table->foreign('id_perguruan')->references('id_perguruan')->on('perguruan')->onDelete('cascade')->onUpdate('cascade');
             $table->string('judul');
             $table->string('nama_file');
             $table->string('tahun');

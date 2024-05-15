@@ -27,6 +27,11 @@ class BeritaController extends Controller
         $berita = Berita::findOrFail($id);
         return view('adminpg.berita.edit', compact('berita'));
     }
+    public function revisi($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('adminpg.berita.revisi', compact('berita'));
+    }
     public function store(Request $request): RedirectResponse
     {
 
@@ -96,6 +101,45 @@ class BeritaController extends Controller
         $berita->judul          = $validatedData['judul'];
         $berita->hari           = $hari;
         $berita->berita         = $validatedData['berita'];
+        $status =  $berita->save();
+
+        if ($request->hasFile('file')) {
+            // Jika ada file baru diupload, lakukan proses update file
+            $file = $request->file('file');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $lokasi = $file->move(storage_path('images'),  $nama_file);
+            $berita->nama_file = $nama_file;
+        }
+
+        $status = $berita->save();
+
+        return redirect()->route('adminpg.berita.index')->with('success', 'Berita berhasil diperbarui!');
+    }
+    public function updateRevisi(Request $request, $id): RedirectResponse
+    {
+        $validatedData = $request->validate([
+            'judul'     => 'required|string|max:255',
+            'file'      => 'nullable|file|max:2048|mimes:jpeg,png', // Ubah menjadi nullable agar tidak wajib diisi pada update
+            'berita'    => 'required|string',
+        ], [
+            'judul.required'        => 'Judul harus diisi.',
+            'judul.string'          => 'Judul harus berupa teks.',
+            'judul.max'             => 'Judul tidak boleh lebih dari 255 karakter.',
+            'file.file'             => 'File harus berupa file.',
+            'file.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
+            'berita.required'       => 'Berita harus diisi.',
+            'berita.string'         => 'Berita harus berupa teks.',
+            // tambahkan pesan validasi untuk input lainnya
+        ]);
+        // Mendapatkan waktu saat ini dengan zona waktu Asia/Jakarta menggunakan Carbon
+        $tanggal = Carbon::now();
+        $hari = $tanggal->dayName;
+
+        $berita = Berita::findOrFail($id);
+        $berita->judul              = $validatedData['judul'];
+        $berita->hari               = $hari;
+        $berita->berita             = $validatedData['berita'];
+        $berita->id_status_berita   = 3;
         $status =  $berita->save();
 
         if ($request->hasFile('file')) {

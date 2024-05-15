@@ -110,6 +110,7 @@
                                                     <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">No</th>
                                                     <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Judul</th>
                                                     <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tanggal</th>
+                                                    <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Status</th>
                                                     <th class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Berita</th>
                                                     <th class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
@@ -197,11 +198,10 @@
                                         </div> -->
 
                                     </div>
-                                    <div class="btn-main" data-hs-overlay="#modal-view-berita">
-                                        Trigger Dummy
-                                    </div>
+
                                 </div>
                                 <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-alert"></button>
+                                <button id="btn_trigger_view" type="hidden" data-hs-overlay="#view-berita"></button>
                                 <script type="module">
                                     $(document).ready(function() {
                                         var page = 1;
@@ -260,7 +260,8 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
                                                 var tdTitle = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.judul);
                                                 var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.hari + ', ' + item.tanggal);
-                                                var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200').html('<div class="line-clamp-3">'+item.berita+'</div>');
+                                                var tdStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.id_status_berita);
+                                                var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200').html('<div class="line-clamp-3">' + item.berita + '</div>');
 
                                                 // Buat elemen <td> untuk tombol lihat
 
@@ -289,8 +290,13 @@
                                                 </svg>
                                                 </a>
                                                 `);
+                                                var btnRevisi = $('<div>').addClass('hs-tooltip').html(`
+                                                <a  href="{{ route('adminpg.berita.revisi','') }}/` + item.id_berita + `" customToolTip="Revisi" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-replace"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M15 15m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3" /><path d="M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3" /></svg>
+                                                </a>
+                                                `);
                                                 var btnView = $('<div>').addClass('hs-tooltip').html(`
-                                                <button customToolTip="View" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
+                                                <button customToolTip="Lihat" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
@@ -298,7 +304,14 @@
                                                     <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
                                                 </svg>
                                                 </button>
-                                                `);
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_view').click();
+                                                    $('#gambar_berita').attr("src", "{{ url('/view-image/' )}}" + "/" + item.nama_file);
+                                                    $('#judul_berita').html(item.judul);
+                                                    $('#tanggal_berita').html(item.tanggal);
+                                                    $('#content_berita').html(item.berita);
+                                                    // $('#form_delete').attr('action', "{{ route('adminpg.berita.destroy', '') }}/" + item.id_berita);
+                                                });
 
 
                                                 var tdAction = $('<td>').addClass('flex gap-2 px-6 py-4 whitespace-nowrap text-end text-sm font-medium border-r border-r-gray-200');
@@ -308,9 +321,13 @@
 
 
                                                 tdAction.append(btnDelete);
-                                                tdAction.append(btnEdit);
+                                                if (item.id_status_berita == 2) {
+                                                    tdAction.append(btnRevisi);
+                                                } else {
+                                                    tdAction.append(btnEdit);
+                                                }
                                                 tdAction.append(btnView);
-                                                tr.append(tdNumber, tdTitle, tdDate, tdBerita, tdAction);
+                                                tr.append(tdNumber, tdTitle, tdDate, tdStatus, tdBerita, tdAction);
                                                 container.append(tr);
                                             });
                                         }
@@ -438,14 +455,14 @@
         </div>
     </div>
     <!-- modal -->
-     <!-- modal -->
-     <div id="modal-view-berita" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
+    <!-- modal -->
+    <div id="view-berita" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
         <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all w-full sm:max-w-[70rem] sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] flex items-center justify-center">
             <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
                 <div class="flex justify-between items-center py-3 px-4 border-b">
-                    <div class="form-label"> Judul Berita</div>
+                    <div class="form-label"> Berita</div>
 
-                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#modal-view-berita">
+                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#view-berita">
                         <span class="sr-only">Close</span>
                         <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
@@ -459,13 +476,11 @@
 
                         <div class="flex flex-col justify-center items-center">
                             <div class="w-[30rem] rounded-full overflow-hidden ">
-                                <img src="{{ url('/view-image/404.svg') }}/" alt="">
+                                <img id="gambar_berita" alt="">
                             </div>
-                            <div class="form-label text-center"> Judul Berita</div>
-                            <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600">10/10/2021</div>
-                            <p class="mb-5 text-sm max-w-[35rem] text-justify">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus pariatur facere eaque molestias cumque quos possimus sint soluta? Eaque nesciunt molestiae est quaerat accusantium excepturi delectus consectetur doloribus veritatis. Expedita molestias quas pariatur nihil. Officiis quae nostrum accusamus optio dolorem? Iusto, officiis nemo error nisi id impedit provident harum voluptates a neque vero similique officia natus atque et distinctio sapiente placeat quos, quia iure ullam quibusdam sequi? Adipisci perferendis facere vero nobis error nesciunt sit velit deserunt molestiae harum nulla quo provident deleniti beatae, ut est exercitationem cupiditate, minima sunt atque excepturi facilis libero! Ipsum nulla pariatur, deserunt repellat quia vel placeat adipisci esse. Amet, deleniti? Ipsa voluptatum, quisquam et consequuntur quaerat doloribus veniam ducimus non dicta officia iusto cupiditate delectus ex, autem dolores suscipit accusamus! Eius sed obcaecati eveniet, quas tempora at alias eligendi suscipit itaque eos. Vel modi, ipsa earum impedit doloremque sed, aliquam expedita, id error mollitia dicta. Nostrum, animi dignissimos itaque cupiditate ipsa officia! Doloremque porro alias molestiae ipsa, nobis fugiat mollitia unde earum consectetur eaque. Quibusdam quo eveniet culpa placeat nulla saepe soluta nihil, modi animi enim nostrum quis voluptate, consequuntur reiciendis voluptatem dolores, labore voluptatum? Est dolores, obcaecati asperiores voluptatum suscipit recusandae et dignissimos?
-                            </p>
+                            <div id="judul_berita" class="form-label text-center"></div>
+                            <div id="tanggal_berita" class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"></div>
+                            <p id="content_berita" class="mb-5 text-sm max-w-[35rem] text-justify"></p>
                         </div>
 
                     </div>

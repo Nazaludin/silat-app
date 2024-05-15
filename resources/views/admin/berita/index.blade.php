@@ -36,7 +36,7 @@
                 </div>
                 @endif
 
-                @if (isset($errors->any))
+                @if ($errors->any)
                 @foreach ($errors->all() as $error)
                 <div class="bg-red-50 border-s-4 border-red-500 p-4 my-1" role="alert">
                     <div class="flex">
@@ -96,37 +96,16 @@
                                             <thead class="bg-slate-100">
                                                 <tr>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">No</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tanggal</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Perguruan</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tanggal</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Status</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Judul</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Berita</th>
                                                     <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="container_row_prestasi" class="divide-y divide-gray-200 align-top">
-                                                <!-- <tr>
-                                                    <td class="py-3 ps-4">
-                                                        <div class="flex items-center h-5">
-                                                            <input id="hs-table-pagination-checkbox-1" type="checkbox" class="border-gray-200 rounded text-blue-600 focus:ring-blue-500">
-                                                            <label for="hs-table-pagination-checkbox-1" class="sr-only">Checkbox</label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">1</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Juara 1 Lomba Pencak Silat</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">3 Januari 2022</td>
-                                                    <td class="px-6 py-4 text-sm text-gray-800 text-justify">
-                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, amet optio consequatur, quisquam ad, possimus facilis facere distinctio suscipit ut reiciendis? Temporibus, cum aut inventore unde, voluptatibus, saepe quas eum ipsam molestias numquam explicabo fugit natus magni iste modi! Exercitationem temporibus illum error amet deleniti accusamus incidunt dolor asperiores! Corrupti!
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2">Lihat</button>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2">Edit</button>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2">Hapus</button>
-                                                    </td>
-                                                </tr> -->
+                                            <tbody id="container_row_berita" class="divide-y divide-gray-200 align-top">
+
 
 
                                             </tbody>
@@ -134,72 +113,16 @@
                                     </div>
 
 
-                                    <!-- <div class="py-1 px-4">
-                                        <nav class="flex items-center space-x-1">
-                                            <button type="button" class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-                                                <span aria-hidden="true">«</span>
-                                                <span class="sr-only">Previous</span>
-                                            </button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none" aria-current="page">1</button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none">2</button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none">3</button>
-                                            <button type="button" class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-                                                <span class="sr-only">Next</span>
-                                                <span aria-hidden="true">»</span>
-                                            </button>
-                                        </nav>
-                                    </div> -->
+
 
                                     <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                                        <!-- <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-                                            <div>
-                                                <p class="text-sm text-gray-700">
-                                                    Showing
-                                                    <span class="font-medium">1</span>
-                                                    to
-                                                    <span class="font-medium">10</span>
-                                                    of
-                                                    <span class="font-medium">97</span>
-                                                    results
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                                                    <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                                        <span class="sr-only">Previous</span>
-                                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
-                                                        </svg>
-                                                    </a>
 
-                                                    <a href="#" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
-                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
-                                                    <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
-                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a> <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                                        <span class="sr-only">Next</span>
-                                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                                                        </svg>
-                                                    </a>
-                                                </nav>
-                                            </div>
-                                        </div> -->
-
-                                    </div>
-                                    <div class="btn-main" data-hs-overlay="#tolak-berita">
-                                        Dummy Tolak
-                                    </div>
-                                    <div class="btn-main" data-hs-overlay="#revisi-berita">
-                                        Dummy Revisi
-                                    </div>
-                                    <div class="btn-main" data-hs-overlay="#validasi-berita">
-                                        Dummy Validasi
-                                    </div>
-                                    <div class="btn-main" data-hs-overlay="#lihat-berita">
-                                        Dummy Lihat
                                     </div>
                                 </div>
-                                <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-alert"></button>
+                                <button id="btn_trigger_reject" type="hidden" data-hs-overlay="#tolak-berita"></button>
+                                <button id="btn_trigger_revisi" type="hidden" data-hs-overlay="#revisi-berita"></button>
+                                <button id="btn_trigger_accept" type="hidden" data-hs-overlay="#validasi-berita"></button>
+                                <button id="btn_trigger_view" type="hidden" data-hs-overlay="#lihat-berita"></button>
                                 <script type="module">
                                     $(document).ready(function() {
                                         var page = 1;
@@ -209,7 +132,7 @@
                                         setPage(1);
 
                                         function loadData() {
-                                            var api_url = '/api/admin/user?page=' + page;
+                                            var api_url = '/api/admin/berita?page=' + page;
                                             if (searchKey && searchKey.trim() !== '') {
                                                 api_url += '&search=' + searchKey.trim(); // Menambahkan kata kunci pencarian ke URL API
                                             }
@@ -248,7 +171,7 @@
                                         }
 
                                         function fillTable(data) {
-                                            const container = $('#container_row_prestasi');
+                                            const container = $('#container_row_berita');
                                             container.html('');
                                             $.each(data.data, function(index, item) {
 
@@ -256,10 +179,11 @@
 
                                                 // Buat elemen <td> u
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text('1');
-                                                var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.name);
-                                                var tdPerguruan = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.email);
-                                                var tdJudul = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.perguruan);
-                                                var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.perguruan);
+                                                var tdPerguruan = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.penulis);
+                                                var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.tanggal);
+                                                var tdStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.id_status_berita);
+                                                var tdJudul = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.judul);
+                                                var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.berita);
 
                                                 // Buat elemen <td> untuk tombol lihat
 
@@ -268,19 +192,25 @@
                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-ban"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M5.7 5.7l12.6 12.6" /></svg>
                                                 </button>
                                                 `).on("click", function() {
-                                                    $('#btn_trigger_delete').click();
-                                                    $('#form_delete').attr('action', "{{ route('adminpg.prestasi.destroy', '') }}/" + item.id_prestasi);
+                                                    $('#btn_trigger_reject').click();
+                                                    $('#form_reject_berita').attr('action', "{{ route('admin.berita.reject', '') }}/" + item.id_berita);
                                                 });
                                                 var btnRevisi = $('<div>').addClass('hs-tooltip').html(`
-                                                <a  href="{{ route('adminpg.prestasi.edit','') }}/` + item.id_prestasi + `" customToolTip="Revisi" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                                <button customToolTip="Revisi" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-replace"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M15 15m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3" /><path d="M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3" /></svg>
-                                                </a>
-                                                `);
+                                                </button>
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_revisi').click();
+                                                    $('#form_revisi_berita').attr('action', "{{ route('admin.berita.revisi', '') }}/" + item.id_berita);
+                                                });
                                                 var btnValidate = $('<div>').addClass('hs-tooltip').html(`
                                                 <button customToolTip="Validasi" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-green-500 border-green-500 hover:bg-transparent hover:text-green-500 ">
                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg>
                                                 </button>
-                                                `);
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_accept').click();
+                                                    $('#form_accept_berita').attr('action', "{{ route('admin.berita.accept', '') }}/" + item.id_berita);
+                                                });
                                                 var btnView = $('<div>').addClass('hs-tooltip').html(`
                                                 <button customToolTip="Lihat" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500" data-hs-overlay="#modal-view-prestasi">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -290,7 +220,13 @@
                                                     <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
                                                 </svg>
                                                 </button>
-                                                `);
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_view').click();
+                                                    $('#gambar_berita').attr("src", "{{ url('/view-image/' )}}" + "/" + item.nama_file);
+                                                    $('#judul_berita').html(item.judul);
+                                                    $('#tanggal_berita').html(item.tanggal);
+                                                    $('#content_berita').html(item.berita);
+                                                });
 
 
                                                 var tdAction = $('<td>').addClass('flex justify-end gap-2 px-6 py-4 whitespace-nowrap text-end text-sm font-medium border-r border-r-gray-200');
@@ -303,7 +239,7 @@
                                                 tdAction.append(btnRevisi);
                                                 tdAction.append(btnValidate);
                                                 tdAction.append(btnView);
-                                                tr.append(tdNumber, tdDate, tdPerguruan, tdJudul,tdBerita, tdAction);
+                                                tr.append(tdNumber, tdPerguruan, tdDate, tdStatus, tdJudul, tdBerita, tdAction);
                                                 container.append(tr);
                                             });
                                         }
@@ -409,24 +345,28 @@
                         </svg>
                     </button>
                 </div>
-                <div class="flex gap-5 flex-col items-center p-4 overflow-y-auto">
-                    <p class="mt-1 text-gray-800">
-                        Berikan masukkan untuk revisi berita
-                    </p>
 
-                    <div class="w-[28rem] space-y-3">
-                        <textarea class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" rows="3" placeholder="Masukkan Saran..."></textarea>
+                <form id="form_revisi_berita" method="POST">
+                    @csrf
+                    <div class="flex gap-5 flex-col items-center p-4 overflow-y-auto">
+                        <p class="mt-1 text-gray-800">
+                            Berikan masukkan untuk revisi berita
+                        </p>
+
+                        <div class="w-[28rem] space-y-3">
+                            <textarea id="saran" name="saran" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" rows="3" placeholder="Masukkan Saran..."></textarea>
+                        </div>
+                        <x-input-error :messages="$errors->get('saran')" class="mt-2" />
+
                     </div>
-                </div>
-                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
-
-        
+                    <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
 
                         <button type="submit" class="btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500">
                             Revisi
                         </button>
-                 
-                </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
@@ -448,18 +388,21 @@
                         </svg>
                     </button>
                 </div>
-                <div class="p-4 overflow-y-auto">
-                    <p class="text-center mt-1 text-gray-800">
-                        Tolak Berita ini? Berita yang ditolak <b>tidak bisa</b> dipublikasikan oleh perguruan ini. Lanjutkan?
-                    </p>
-                </div>
-                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
 
+                <form id="form_reject_berita" method="POST">
+                    @csrf
+                    <div class="p-4 overflow-y-auto">
+                        <p class="text-center mt-1 text-gray-800">
+                            Tolak Berita ini? Berita yang ditolak <b>tidak bisa</b> dipublikasikan oleh perguruan ini. Lanjutkan?
+                        </p>
+                    </div>
+                    <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
                         <button type="submit" class="btn bg-red-600 border-red-600 hover:bg-transparent hover:text-red-600">
                             Tolak
                         </button>
-               
-                </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
@@ -471,7 +414,7 @@
             <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
                 <div class="flex justify-between items-center py-3 px-4 border-b">
                     <h3 class="font-bold text-gray-800">
-                        Tolak Berita
+                        Validasi Berita
                     </h3>
                     <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#validasi-berita">
                         <span class="sr-only">Close</span>
@@ -481,29 +424,32 @@
                         </svg>
                     </button>
                 </div>
-                <div class="p-4 overflow-y-auto">
-                    <p class="text-center mt-1 text-gray-800">
-                        Validasi Berita ini? Berita yang divalidasi akan dipublikasikan atas nama perguruan ini. Lanjutkan?
-                    </p>
-                </div>
-                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
 
+                <form id="form_accept_berita" method="POST">
+                    @csrf
+                    <div class="p-4 overflow-y-auto">
+                        <p class="text-center mt-1 text-gray-800">
+                            Validasi Berita ini? Berita yang divalidasi akan dipublikasikan atas nama perguruan ini. Lanjutkan?
+                        </p>
+                    </div>
+                    <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
                         <button type="submit" class="btn bg-green-600 border-green-600 hover:bg-transparent hover:text-green-600">
                             Validasi
                         </button>
-               
-                </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
     </div>
     <!-- modal -->
-         <!-- modal -->
-         <div id="lihat-berita" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
+    <!-- modal -->
+    <div id="lihat-berita" class="hs-overlay hidden size-full fixed top-0 start-0 z-[999999] overflow-x-hidden overflow-y-auto pointer-events-none [--overlay-backdrop:static]" data-hs-overlay-keyboard="false">
         <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all w-full sm:max-w-[70rem] sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)] flex items-center justify-center">
             <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
                 <div class="flex justify-between items-center py-3 px-4 border-b">
-                    <div class="form-label"> Judul Berita</div>
+                    <div class="form-label"> Berita</div>
 
                     <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#lihat-berita">
                         <span class="sr-only">Close</span>
@@ -519,13 +465,11 @@
 
                         <div class="flex flex-col justify-center items-center">
                             <div class="w-[30rem] rounded-full overflow-hidden ">
-                                <img src="{{ url('/view-image/404.svg') }}/" alt="">
+                                <img id="gambar_berita" alt="">
                             </div>
-                            <div class="form-label text-center"> Judul Berita</div>
-                            <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600">10/10/2021</div>
-                            <p class="mb-5 text-sm max-w-[35rem] text-justify">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus pariatur facere eaque molestias cumque quos possimus sint soluta? Eaque nesciunt molestiae est quaerat accusantium excepturi delectus consectetur doloribus veritatis. Expedita molestias quas pariatur nihil. Officiis quae nostrum accusamus optio dolorem? Iusto, officiis nemo error nisi id impedit provident harum voluptates a neque vero similique officia natus atque et distinctio sapiente placeat quos, quia iure ullam quibusdam sequi? Adipisci perferendis facere vero nobis error nesciunt sit velit deserunt molestiae harum nulla quo provident deleniti beatae, ut est exercitationem cupiditate, minima sunt atque excepturi facilis libero! Ipsum nulla pariatur, deserunt repellat quia vel placeat adipisci esse. Amet, deleniti? Ipsa voluptatum, quisquam et consequuntur quaerat doloribus veniam ducimus non dicta officia iusto cupiditate delectus ex, autem dolores suscipit accusamus! Eius sed obcaecati eveniet, quas tempora at alias eligendi suscipit itaque eos. Vel modi, ipsa earum impedit doloremque sed, aliquam expedita, id error mollitia dicta. Nostrum, animi dignissimos itaque cupiditate ipsa officia! Doloremque porro alias molestiae ipsa, nobis fugiat mollitia unde earum consectetur eaque. Quibusdam quo eveniet culpa placeat nulla saepe soluta nihil, modi animi enim nostrum quis voluptate, consequuntur reiciendis voluptatem dolores, labore voluptatum? Est dolores, obcaecati asperiores voluptatum suscipit recusandae et dignissimos?
-                            </p>
+                            <div id="judul_berita" class="form-label text-center"></div>
+                            <div id="tanggal_berita" class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"></div>
+                            <p id="content_berita" class="mb-5 text-sm max-w-[35rem] text-justify"></p>
                         </div>
 
                     </div>
@@ -535,40 +479,5 @@
     </div>
     <!-- modal -->
 
-    <!-- modal -->
-    <div id="delete-alert" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
-        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
-                <div class="flex justify-between items-center py-3 px-4 border-b">
-                    <h3 class="font-bold text-gray-800">
-                        Simpan Perubahan?
-                    </h3>
-                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#delete-alert">
-                        <span class="sr-only">Close</span>
-                        <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 6 6 18"></path>
-                            <path d="m6 6 12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="p-4 overflow-y-auto">
-                    <p class="mt-1 text-gray-800">
-                        Data akan berubah sesuai dengan input yang telah dimasukkan
-                    </p>
-                </div>
-                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
 
-
-                    <form id="form_delete" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn bg-red-600 text-white border-red-600 hover:text-red-600 hover:bg-transparent disabled:opacity-50 disabled:pointer-events-none">
-                            Simpan Perubahan
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal -->
 </x-admin-layout>

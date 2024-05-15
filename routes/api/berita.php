@@ -24,9 +24,12 @@ Route::get('/berita', function (Request $request) {
     $key = $request->input('search');
     // Jika query tidak ada atau kosong, tampilkan semua data
     if (!$key) {
-        $berita = Berita::orderBy('updated_at', 'desc')->paginate(1);
+        $berita = Berita::orderBy('updated_at', 'desc')
+            ->where('id_status_berita', 4)
+            ->paginate(1);
     } else {
         $berita = Berita::orderBy('updated_at', 'desc')
+            ->where('id_status_berita', 4)
             ->where('judul', 'like', "%$key%")
             ->paginate(1);
     }
@@ -41,6 +44,29 @@ Route::prefix('admin')->group(function () {
         $prestasi = Prestasi::paginate(15);
 
         return response()->json($prestasi);
+    });
+
+    Route::get('/berita', function (Request $request) {
+        $key = $request->input('search');
+
+        // Jika query tidak ada atau kosong, tampilkan semua data
+        if (!$key) {
+            $berita = Berita::join('perguruan', 'perguruan.id_perguruan', '=', 'berita.id_perguruan')
+                ->select('berita.*', 'perguruan.nama AS penulis')
+                ->orderBy('updated_at', 'desc')
+                ->paginate(1);
+        } else {
+            $berita = Berita::join('perguruan', 'perguruan.id_perguruan', '=', 'berita.id_perguruan')
+                ->select('berita.*', 'perguruan.nama AS penulis')
+                ->orderBy('updated_at', 'desc')
+                ->where('judul', 'like', "%$key%")
+                ->paginate(1);
+        }
+        // Mengubah format tanggal 'created_at' dari setiap berita
+        foreach ($berita as $item) {
+            $item->tanggal = $item->getTanggal();
+        }
+        return response()->json($berita);
     });
 });
 Route::prefix('adminpg')->group(function () {

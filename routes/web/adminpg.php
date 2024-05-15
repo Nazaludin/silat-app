@@ -79,6 +79,10 @@ Route::prefix('adminpg')->middleware('role:adminpg')->group(function () {
             ->name('adminpg.berita.edit');
         Route::put('/update/{id}', [BeritaController::class, 'update'])
             ->name('adminpg.berita.update');
+        Route::get('/revisi/{id}', [BeritaController::class, 'revisi'])
+            ->name('adminpg.berita.revisi');
+        Route::put('/revisi/{id}', [BeritaController::class, 'updateRevisi'])
+            ->name('adminpg.berita.update-revisi');
         Route::delete('/destroy/{id}', [BeritaController::class, 'destroy'])
             ->name('adminpg.berita.destroy');
     });

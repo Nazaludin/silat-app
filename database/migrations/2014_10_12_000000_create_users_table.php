@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('role');
             $table->string('email')->unique();
+            $table->tinyInteger('email_verified')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('allow_access_at')->nullable();
+            $table->enum('access_status', ['active', 'inactive', 'banned'])->default('inactive');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
