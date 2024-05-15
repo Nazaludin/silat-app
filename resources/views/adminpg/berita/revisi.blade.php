@@ -2,13 +2,13 @@
     <x-slot name="header">
 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Sejarah') }}
+            {{ __('Revisi Berita') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white shadow-sm sm:rounded-lg">
+        <div class="flex flex-col lg:flex-row max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white shadow-sm sm:rounded-lg w-full lg:w-[70%]">
                 @if (null !== session('success'))
                 <div class="bg-green-50 border-s-4 border-green-500 p-4 my-1" role="alert">
                     <div class="flex">
@@ -60,7 +60,15 @@
                 </div>
                 @endforeach
                 @endif
+                
                 <div class="p-6 text-gray-900">
+                    <div class="flex w-full justify-end">
+
+                        <a class="btn mb-3 bg-orange-600 border-orange-600 hover:bg-transparent hover:text-orange-600 block lg:hidden" href="#revisi">
+                            Lihat Revisi
+                        </a>
+                    </div>
+
                     <form id="form_update_berita" action="{{ route('adminpg.berita.update-revisi',$berita->id_berita) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -105,11 +113,40 @@
                         </div>
 
                         <hr class="mb-3">
-                        <div class="flex justify-end">
+                        <div class="flex gap-5 justify-end">
                             <button type="button" class="btn bg-green-600 border-green-600 hover:bg-transparent hover:text-green-600" data-hs-overlay="#submit-alert">Simpan Perubahan</button>
                         </div>
                         <!-- End form  -->
                     </form>
+                </div>
+            </div>
+            <div id="revisi" class="bg-white shadow-sm sm:rounded-lg w-full lg:w-[30%] p-6">
+                <div class="flex flex-col h-[40rem] overflow-y-scroll">
+                    <div class="p-1 m-2">
+                        <div class="font-bold uppercase text-sm">
+                            Revisi 3
+                        </div>
+                        <div class="text-justify p-4 border-[1px] border-slate-200 rounded-xl bg-yellow-100 text-yellow-800">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos unde libero aliquid quae eveniet ad neque rerum eaque ex iste vero expedita vel animi dolorem, officiis voluptates? Quia quasi repellendus obcaecati, officia nobis minus? Ea illum quia velit ad laudantium.
+                        </div>
+                    </div>
+                    <div class="p-1 m-2">
+                        <div class="font-bold uppercase text-sm">
+                            Revisi 2
+                        </div>
+                        <div class="text-justify p-4 border-[1px] border-slate-200 rounded-xl bg-green-100 text-green-800">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos unde libero aliquid quae eveniet ad neque rerum eaque ex iste vero expedita vel animi dolorem, officiis voluptates? Quia quasi repellendus obcaecati, officia nobis minus? Ea illum quia velit ad laudantium.
+                        </div>
+                    </div>
+                    <div class="p-1 m-2">
+                        <div class="font-bold uppercase text-sm">
+                            Revisi 1
+                        </div>
+                        <div class="text-justify p-4 border-[1px] border-slate-200 rounded-xl bg-green-100 text-green-800">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos unde libero aliquid quae eveniet ad neque rerum eaque ex iste vero expedita vel animi dolorem, officiis voluptates? Quia quasi repellendus obcaecati, officia nobis minus? Ea illum quia velit ad laudantium.
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

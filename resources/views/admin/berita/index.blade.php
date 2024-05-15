@@ -98,9 +98,9 @@
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">No</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Perguruan</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tanggal</th>
-                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Status</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Judul</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Berita</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Status</th>
                                                     <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
                                             </thead>
@@ -117,6 +117,26 @@
 
                                     <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
 
+                                    </div>
+                                    <div class="inline-flex items-center bg-blue-200 px-4 rounded-full">
+                                        <span class="size-2 inline-block bg-blue-500 rounded-full me-2"></span>
+                                        <span class="text-blue-700">Pending</span>
+                                    </div>
+                                    <div class="inline-flex items-center  bg-orange-100 px-4 rounded-full">
+                                        <span class="size-2 inline-block bg-orange-500 rounded-full me-2"></span>
+                                        <span class="text-orange-700">Revised</span>
+                                    </div>
+                                    <div class="inline-flex items-center  bg-yellow-100 px-4 rounded-full">
+                                        <span class="size-2 inline-block bg-yellow-500 rounded-full me-2"></span>
+                                        <span class="text-yellow-700">Resubmitted</span>
+                                    </div>
+                                    <div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
+                                        <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
+                                        <span class="text-green-700">Accepted</span>
+                                    </div>
+                                    <div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
+                                        <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
+                                        <span class="text-red-700">Rejected</span>
                                     </div>
                                 </div>
                                 <button id="btn_trigger_reject" type="hidden" data-hs-overlay="#tolak-berita"></button>
@@ -239,7 +259,7 @@
                                                 tdAction.append(btnRevisi);
                                                 tdAction.append(btnValidate);
                                                 tdAction.append(btnView);
-                                                tr.append(tdNumber, tdPerguruan, tdDate, tdStatus, tdJudul, tdBerita, tdAction);
+                                                tr.append(tdNumber, tdPerguruan, tdDate, tdJudul, tdBerita, tdStatus, tdAction, );
                                                 container.append(tr);
                                             });
                                         }
@@ -461,11 +481,9 @@
                 </div>
                 <div class="p-4 overflow-y-auto">
                     <div class="space-y-4">
-
-
                         <div class="flex flex-col justify-center items-center">
-                            <div class="w-[30rem] rounded-full overflow-hidden ">
-                                <img id="gambar_berita" alt="">
+                            <div class="w-[30rem] rounded-2xl overflow-hidden ">
+                                <img class="object-cover" id="gambar_berita" alt="">
                             </div>
                             <div id="judul_berita" class="form-label text-center"></div>
                             <div id="tanggal_berita" class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"></div>
