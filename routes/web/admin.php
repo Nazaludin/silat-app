@@ -26,14 +26,12 @@ Route::prefix('admin')->middleware('role:admin')->group(function () {
     Route::prefix('user')->group(function () {
         Route::get('/index', [UserController::class, 'index'])
             ->name('admin.user.index');
-        Route::get('/add', [UserController::class, 'create'])
-            ->name('admin.user.add');
-        Route::post('/store', [UserController::class, 'store'])
-            ->name('admin.user.store');
-        Route::get('/edit/{id}', [UserController::class, 'edit'])
-            ->name('admin.user.edit');
         Route::put('/update/{id}', [UserController::class, 'update'])
             ->name('admin.user.update');
+        Route::put('/accept/{id}', [UserController::class, 'accept'])
+            ->name('admin.user.accept');
+        Route::put('/ban/{id}', [UserController::class, 'ban'])
+            ->name('admin.user.ban');
         Route::delete('/destroy/{id}', [UserController::class, 'destroy'])
             ->name('admin.user.destroy');
     });

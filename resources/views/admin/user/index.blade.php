@@ -36,7 +36,7 @@
                 </div>
                 @endif
 
-                @if (isset($errors->any))
+                @if ($errors->any)
                 @foreach ($errors->all() as $error)
                 <div class="bg-red-50 border-s-4 border-red-500 p-4 my-1" role="alert">
                     <div class="flex">
@@ -99,94 +99,24 @@
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Nama</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Email</th>
                                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Perguruan</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Email Terverifikasi</th>
+                                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Akses</th>
                                                     <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="container_row_prestasi" class="divide-y divide-gray-200 align-top">
-                                                <!-- <tr>
-                                                    <td class="py-3 ps-4">
-                                                        <div class="flex items-center h-5">
-                                                            <input id="hs-table-pagination-checkbox-1" type="checkbox" class="border-gray-200 rounded text-blue-600 focus:ring-blue-500">
-                                                            <label for="hs-table-pagination-checkbox-1" class="sr-only">Checkbox</label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">1</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Juara 1 Lomba Pencak Silat</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">3 Januari 2022</td>
-                                                    <td class="px-6 py-4 text-sm text-gray-800 text-justify">
-                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, amet optio consequatur, quisquam ad, possimus facilis facere distinctio suscipit ut reiciendis? Temporibus, cum aut inventore unde, voluptatibus, saepe quas eum ipsam molestias numquam explicabo fugit natus magni iste modi! Exercitationem temporibus illum error amet deleniti accusamus incidunt dolor asperiores! Corrupti!
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2">Lihat</button>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2">Edit</button>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2">Hapus</button>
-                                                    </td>
-                                                </tr> -->
-
 
                                             </tbody>
                                         </table>
                                     </div>
 
-
-                                    <!-- <div class="py-1 px-4">
-                                        <nav class="flex items-center space-x-1">
-                                            <button type="button" class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-                                                <span aria-hidden="true">«</span>
-                                                <span class="sr-only">Previous</span>
-                                            </button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none" aria-current="page">1</button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none">2</button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none">3</button>
-                                            <button type="button" class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-                                                <span class="sr-only">Next</span>
-                                                <span aria-hidden="true">»</span>
-                                            </button>
-                                        </nav>
-                                    </div> -->
-
                                     <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                                        <!-- <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-                                            <div>
-                                                <p class="text-sm text-gray-700">
-                                                    Showing
-                                                    <span class="font-medium">1</span>
-                                                    to
-                                                    <span class="font-medium">10</span>
-                                                    of
-                                                    <span class="font-medium">97</span>
-                                                    results
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                                                    <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                                        <span class="sr-only">Previous</span>
-                                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
-                                                        </svg>
-                                                    </a>
-
-                                                    <a href="#" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
-                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
-                                                    <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
-                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a> <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                                        <span class="sr-only">Next</span>
-                                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                                                        </svg>
-                                                    </a>
-                                                </nav>
-                                            </div>
-                                        </div> -->
-
                                     </div>
                                 </div>
-                                <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-alert"></button>
+                                <button id="btn_trigger_edit" type="hidden" data-hs-overlay="#edit-user"></button>
+                                <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-user"></button>
+                                <button id="btn_trigger_accept" type="hidden" data-hs-overlay="#accept-user"></button>
+                                <button id="btn_trigger_ban" type="hidden" data-hs-overlay="#ban-user"></button>
                                 <script type="module">
                                     $(document).ready(function() {
                                         var page = 1;
@@ -245,6 +175,8 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
                                                 var tdName = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.name);
                                                 var tdEmail = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.email);
+                                                var tdEmailStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.email_verified);
+                                                var tdAccess = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.access_status);
                                                 var tdPerguruan = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.perguruan);
 
                                                 // Buat elemen <td> untuk tombol lihat
@@ -262,28 +194,41 @@
                                                 </button>
                                                 `).on("click", function() {
                                                     $('#btn_trigger_delete').click();
-                                                    $('#form_delete').attr('action', "{{ route('adminpg.prestasi.destroy', '') }}/" + item.id_prestasi);
+                                                    $('#form_delete_user').attr('action', "{{ route('admin.user.destroy', '') }}/" + item.id);
                                                 });
                                                 var btnEdit = $('<div>').addClass('hs-tooltip').html(`
-                                                <a  href="{{ route('adminpg.prestasi.edit','') }}/` + item.id_prestasi + `" customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
+                                                <button  customToolTip="Edit" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                                                     <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                                     <path d="M16 5l3 3" />
                                                 </svg>
-                                                </a>
-                                                `);
-                                                var btnView = $('<div>').addClass('hs-tooltip').html(`
-                                                <button customToolTip="View" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-blue-500 border-blue-500 hover:bg-transparent hover:text-blue-500 ">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-1a3 3 0 0 1 3 -3z" />
-                                                    <path d="M8 12a3 3 0 0 1 3 3v3a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-3a3 3 0 0 1 3 -3z" />
-                                                    <path d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-2a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3z" />
-                                                </svg>
                                                 </button>
-                                                `);
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_edit').click();
+                                                    $('#form_edit_user').attr('action', "{{ route('admin.user.update', '') }}/" + item.id);
+                                                    $('#user_name').val(item.name);
+                                                    $('#user_email').val(item.email);
+                                                });
+                                                var btnAccept = $('<div>').addClass('hs-tooltip').html(`
+                                                <button customToolTip="Terima" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-green-500 border-green-500 hover:bg-transparent hover:text-green-500 ">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg>
+                                                </button>
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_accept').click();
+                                                    $('#form_accept_user').attr('action', "{{ route('admin.user.accept', '') }}/" + item.id);
+
+                                                });
+                                                var btnBan = $('<div>').addClass('hs-tooltip').html('hs-tooltip').html(`
+                                                <button customToolTip="Ban" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-ban"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M5.7 5.7l12.6 12.6" /></svg>
+                                                </button>
+                                                `).on("click", function() {
+                                                    $('#btn_trigger_ban').click();
+                                                    $('#form_ban_user').attr('action', "{{ route('admin.user.ban', '') }}/" + item.id);
+                                                });
+
 
 
                                                 var tdAction = $('<td>').addClass('flex justify-end gap-2 px-6 py-4 whitespace-nowrap text-end text-sm font-medium border-r border-r-gray-200');
@@ -292,10 +237,12 @@
                                                 // var btnDelete = $('<button>').attr('type', 'button').addClass('inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2').text('Hapus');
 
 
-                                                tdAction.append(btnDelete);
                                                 tdAction.append(btnEdit);
+                                                tdAction.append(btnAccept);
+                                                tdAction.append(btnBan);
+                                                tdAction.append(btnDelete);
                                                 // tdAction.append(btnView);
-                                                tr.append(tdNumber, tdName, tdEmail, tdPerguruan, tdAction);
+                                                tr.append(tdNumber, tdName, tdEmail, tdPerguruan, tdEmailStatus, tdAccess, tdAction);
                                                 container.append(tr);
                                             });
                                         }
@@ -384,17 +331,63 @@
         </div>
 
     </div>
-
     <!-- modal -->
-    <div id="delete-alert" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+    <div id="edit-user" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
         <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
             <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
                 <div class="flex justify-between items-center py-3 px-4 border-b">
                     <h3 class="font-bold text-gray-800">
-                        Simpan Perubahan?
+                        Ubah Pengguna?
                     </h3>
-                    <button type="button" class="hs-dropup-toggle flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " data-hs-overlay="#submit-alert">
+                    <button type="button" class=" group flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-main text-gray-800 hover:bg-main disabled:opacity-50 disabled:pointer-events-none transition duration-200 ease-in-out" data-hs-overlay="#edit-user">
                         <span class="sr-only">Close</span>
+                        <svg class="flex-shrink-0 size-4 group-hover:text-white transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18"></path>
+                            <path d="m6 6 12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <form id="form_edit_user" method="POST">
+                    @method('PUT')
+                    @csrf
+                    <div class="form-group">
+                        <label for="user_name" class="form-label">Nama</label>
+                        <input placeholder="Nama..." id="user_name" name="name" class="form-default" type="text" value="" data-hs-combo-box-input="" />
+                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email" class="form-label">Email</label>
+                        <input placeholder="Email..." id="user_email" name="email" class="form-default" type="text" value="" data-hs-combo-box-input="" />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password" class="form-label">Kata Sandi</label>
+                        <input placeholder="Email..." id="user_password" name="password" class="form-default" type="text" value="" data-hs-combo-box-input="" />
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    </div>
+                    <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
+
+                        <button type="submit" class="btn bg-yellow-500 border-yellow-500 hover:bg-transparent hover:text-yellow-500">
+                            Ubah
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <!-- modal -->
+    <div id="ban-user" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+                <div class="flex justify-between items-center py-3 px-4 border-b">
+                    <h3 class="font-bold text-gray-800">
+                        Ban Pengguna?
+                    </h3>
+                    <button type="button" class="hs-dropup-toggle flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " data-hs-overlay="#ban-user">
+                        <span class=" sr-only">Close</span>
                         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
                             <path d="m6 6 12 12"></path>
@@ -403,19 +396,93 @@
                 </div>
                 <div class="p-4 overflow-y-auto">
                     <p class="mt-1 text-gray-800">
-                        Data akan berubah sesuai dengan input yang telah dimasukkan
+                        Pengguna tidak dapat login jika telah di ban
                     </p>
                 </div>
                 <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
-                    <button type="button" class="hs-dropup-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#submit-alert">
+                    <button type="button" class="hs-dropup-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#ban-user">
                         Tutup
                     </button>
 
-                    <form id="form_delete" method="POST">
+                    <form id="form_ban_user" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
+                            Ban
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div id="accept-user" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+                <div class="flex justify-between items-center py-3 px-4 border-b">
+                    <h3 class="font-bold text-gray-800">
+                        Terima Pengguna?
+                    </h3>
+                    <button type="button" class="hs-dropup-toggle flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " data-hs-overlay="#accept-user">
+                        <span class=" sr-only">Close</span>
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18"></path>
+                            <path d="m6 6 12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-4 overflow-y-auto">
+                    <p class="mt-1 text-gray-800">
+                        Pengguna diperbolehkan untuk mengakses sistem
+                    </p>
+                </div>
+                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
+                    <button type="button" class="hs-dropup-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#accept-user">
+                        Tutup
+                    </button>
+
+                    <form id="form_accept_user" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
+                            Terima
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div id="delete-user" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+                <div class="flex justify-between items-center py-3 px-4 border-b">
+                    <h3 class="font-bold text-gray-800">
+                        Hapus Pengguna?
+                    </h3>
+                    <button type="button" class="hs-dropup-toggle flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " data-hs-overlay="#delete-user">
+                        <span class=" sr-only">Close</span>
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18"></path>
+                            <path d="m6 6 12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-4 overflow-y-auto">
+                    <p class="mt-1 text-gray-800">
+                        Data pengguna akan dihapus dari sistem
+                    </p>
+                </div>
+                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
+                    <button type="button" class="hs-dropup-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#delete-user">
+                        Tutup
+                    </button>
+
+                    <form id="form_delete_user" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
-                            Simpan Perubahan
+                            Hapus
                         </button>
                     </form>
                 </div>

@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules;
 
 class UserController extends Controller
 {
@@ -14,105 +18,89 @@ class UserController extends Controller
     {
         return view('admin.user.index');
     }
-    public function create(Request $request): View
-    {
-        // dd(session()->all());
-        return view('admin.user.add');
-    }
-    public function edit($id)
+    public function accept($id)
     {
         $user = User::findOrFail($id);
-        // Lakukan apapun yang diperlukan untuk menampilkan form edit, misalnya:
-        return view('admin.user.edit', compact('user'));
+        // Terima User
+        $user->access_status = 'active';
+        $user->allow_access_at = Carbon::now();
+        $user->save();
+        return redirect()->route('admin.user.index')->with('success', 'User ' . $user->name . ' telah aktif!');
     }
-    public function store(Request $request): RedirectResponse
+    public function ban($id)
     {
-
-        // dd($request->deskripsi);
-        $validatedData = $request->validate([
-            'judul'     => 'required|string|max:255',
-            'tahun'     => 'required|numeric',
-            'file'      => 'required|file|max:2048|mimes:jpeg,png',
-            'deskripsi' => 'required|string',
-        ], [
-            'judul.required'        => 'Judul harus diisi.',
-            'judul.string'          => 'Judul harus berupa teks.',
-            'judul.max'             => 'Judul tidak boleh lebih dari 255 karakter.',
-            'tahun.required'        => 'Tahun harus diisi.',
-            'tahun.numeric'         => 'Tahun harus berupa angka.',
-            // 'tahun.max'             => 'Tahun tidak boleh lebih dari 255 karakter.',
-            'file.required'         => 'File harus diunggah.',
-            'file.file'             => 'File harus berupa file.',
-            'file.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
-            'deskripsi.required'    => 'Deskripsi harus diisi.',
-            'deskripsi.string'      => 'Deskripsi harus berupa teks.',
-            // tambahkan pesan validasi untuk input lainnya
-        ]);
-
-        // menyimpan data file yang diupload ke variabel $file
-        $file = $request->file('file');
-        $nama_file = time() . "_" . $file->getClientOriginalName();
-
-        // isi dengan nama folder tempat kemana file diupload
-        $lokasi = $file->move(storage_path('images'),  $nama_file);
-
-
-        $prestasi = new Prestasi();
-        $prestasi->id_perguruan    = PerguruanHelper::id();
-        $prestasi->judul           = $validatedData['judul'];
-        $prestasi->tahun           = $validatedData['tahun'];
-        $prestasi->nama_file       = $nama_file;
-        $prestasi->deskripsi       = $validatedData['deskripsi'];
-        $status =  $prestasi->save();
-
-
-        return redirect()->route('admin.user.index')->with('success', 'Prestasi berhasil diperbarui!');
+        $user = User::findOrFail($id);
+        // Terima User
+        $user->access_status = 'banned';
+        $user->save();
+        return redirect()->route('admin.user.index')->with('success', 'User ' . $user->name . ' telah diban dari sistem!');
     }
-
-
-
     public function update(Request $request, $id): RedirectResponse
     {
-        $validatedData = $request->validate([
-            'judul'     => 'required|string|max:255',
-            'tahun'     => 'required|numeric',
-            'file'      => 'nullable|file|max:2048|mimes:jpeg,png', // Ubah menjadi nullable agar tidak wajib diisi pada update
-            'deskripsi' => 'required|string',
-        ], [
-            'judul.required'        => 'Judul harus diisi.',
-            'judul.string'          => 'Judul harus berupa teks.',
-            'judul.max'             => 'Judul tidak boleh lebih dari 255 karakter.',
-            'tahun.numeric'         => 'Tahun harus berupa angka.',
-            // 'file.required'         => 'File harus diunggah.',
-            'file.file'             => 'File harus berupa file.',
-            'file.max'              => 'Ukuran logo tidak boleh lebih dari 2MB.',
-            'deskripsi.required'    => 'Deskripsi harus diisi.',
-            'deskripsi.string'      => 'Deskripsi harus berupa teks.',
-        ]);
+        $user = User::findOrFail($id);
 
-        $prestasi = Prestasi::findOrFail($id);
-        $prestasi->judul = $validatedData['judul'];
-        $prestasi->tahun = $validatedData['tahun'];
-        $prestasi->deskripsi = $validatedData['deskripsi'];
+        // Ambil semua data yang ada di request
+        $data = $request->all();
 
-        if ($request->hasFile('file')) {
-            // Jika ada file baru diupload, lakukan proses update file
-            $file = $request->file('file');
-            $nama_file = time() . "_" . $file->getClientOriginalName();
-            $lokasi = $file->move(storage_path('images'),  $nama_file);
-            $prestasi->nama_file = $nama_file;
+        // Menyusun aturan validasi dinamis
+        $rules = [
+            'name' => ['sometimes', 'nullable', 'string', 'max:255'],
+            'password' => ['sometimes', 'nullable',  Rules\Password::defaults()],
+        ];
+
+        // Tambahkan aturan unique untuk email hanya jika email yang dimasukkan berbeda dari yang ada di database
+        if ($request->has('email') && $request->email !== $user->email) {
+            $rules['email'] = ['sometimes', 'nullable', 'string', 'lowercase', 'email', 'max:255', 'unique:users,email'];
+        } else {
+            $rules['email'] = ['sometimes', 'nullable', 'string', 'lowercase', 'email', 'max:255'];
         }
 
-        $prestasi->save();
+        // Validasi data berdasarkan aturan yang disusun
+        $validatedData = Validator::make($data, $rules, [
+            'name.string'           => 'Nama harus berupa teks.',
+            'name.max'              => 'Nama tidak boleh lebih dari 255 karakter.',
+            'email.string'          => 'Email harus berupa teks.',
+            'email.email'           => 'Email tidak valid.',
+            'email.lowercase'       => 'Email harus berupa huruf kecil.',
+            'email.unique'          => 'Email tidak boleh sama.',
+            'email.max'             => 'Email tidak boleh lebih dari 255 karakter.',
+            // 'password.confirmed'    => 'Kata sandi harus terkonfirmasi.',
+        ])->validate();
 
-        return redirect()->route('admin.user.index')->with('success', 'Prestasi berhasil diperbarui!');
+        // Update hanya jika data berubah
+        $updated = false;
+
+        if ($request->has('name') && $validatedData['name'] !== $user->name) {
+            $user->name = $validatedData['name'];
+            $updated = true;
+        }
+
+        if ($request->has('email') && $validatedData['email'] !== $user->email) {
+            $user->email = $validatedData['email'];
+            $updated = true;
+        }
+
+        if ($request->has('password')) {
+            $hashedPassword = bcrypt($validatedData['password']);
+            if (!Hash::check($validatedData['password'], $user->password)) {
+                $user->password = $hashedPassword;
+                $updated = true;
+            }
+        }
+
+        if ($updated) {
+            $user->save();
+            return redirect()->route('admin.user.index')->with('success', 'Pengguna ' . $user->name . ' berhasil diperbarui!');
+        } else {
+            return redirect()->route('admin.user.index')->with('success', 'Pengguna ' . $user->name . ' tidak diperbarui!');
+        }
     }
 
     public function destroy($id): RedirectResponse
     {
-        $prestasi = Prestasi::findOrFail($id);
-        $prestasi->delete();
+        $user = User::findOrFail($id);
+        $user->delete();
 
-        return redirect()->route('admin.user.index')->with('success', 'Prestasi berhasil dihapus!');
+        return redirect()->route('admin.user.index')->with('success', 'Pengguna ' . $user->name . ' berhasil dihapus!');
     }
 }
