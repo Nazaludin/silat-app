@@ -30,6 +30,9 @@
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
             <a href="#berita">Berita</a>
           </li>
+          <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
+            <a href="#prestasi">Prestasi</a>
+          </li>
 
         </ul>
       </nav>
@@ -273,7 +276,7 @@
     <!-- selengkapnya -->
   </section>
 
-  <section id="berita" class="reveal">
+  <section id="prestasi" class="reveal">
     <h1 class="text-3xl mb-3 font-bold text-center text-main">
       Prestasi
     </h1>

@@ -33,6 +33,9 @@
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center ">
             <a href="#sejarahView" class=" cursor-pointer">Sejarah</a>
           </li>
+          <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
+            <a href="#prestasiView">Prestasi</a>
+          </li>
         </ul>
       </nav>
     </div>
