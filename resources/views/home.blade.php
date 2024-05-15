@@ -15,14 +15,14 @@
 
 </head>
 <!-- header -->
-<header class="font-primary flex justify-center w-full bg-white py-5 px-10  fixed top-0 transition-all duration-200">
+<header class="font-primary flex justify-center w-full bg-white py-5 px-10 rounded-[1px] fixed top-0 transition-all duration-200 ease-in-out z-50">
   <div class="container flex justify-between items-center">
     <div class="z-[999]">LOGO</div>
     <div>
       <nav id="nav-menu" class="navigation md:flex md:static md:bg-transparent md:shadow-none shadow-lg bg-white fixed w-full left-0 top-0 -translate-y-[30rem] md:translate-y-0 md:pt-0 pt-[5rem] md:pb-0 pb-[2rem] rounded-b-2xl transition-all duration-500">
         <ul class="flex nav-hover md:flex-row flex-col justify-center items-center w-full">
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3  text-center">
-            <a href="#beranda" class="active">Beranda</a>
+            <a href="#beranda" class="active drop-shadow-shiny">Beranda</a>
           </li>
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
             <a href="#perguruan">Perguruan</a>
@@ -30,8 +30,6 @@
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center">
             <a href="#berita">Berita</a>
           </li>
-
-
         </ul>
       </nav>
     </div>
@@ -51,9 +49,10 @@
 <body style="margin: 0;" class="font-primary">
 
 
-  <section id="beranda" class="mt-[10rem] reveal">
+
+  <section id="beranda" class=" reveal my-20">
     <div class="w-100 flex justify-center ">
-      <div class="container flex flex-col-reverse md:flex-row w-100 justify-center">
+      <div class="container flex flex-col-reverse md:flex-row w-100 justify-center gap-10">
         <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
           <h1 class="text-3xl mb-3 font-bold text-main lg:text-left text-center">Selamat Datang!</h1>
           <p class="mb-3 text-main w-full">
@@ -62,7 +61,75 @@
             quod, laboriosam voluptatum eligendi asperiores vero est vel
             adipisci deleniti laudantium ipsum amet? Eaque, est!
           </p>
-          <a href="" class="btn-main"> Lihat Perguruan </a>
+          <a href="#tentang" class="btn-main"> Lanjutkan </a>
+        </div>
+        <div class="lg:w-1/2 w-full">
+          <!-- Slider -->
+          <div data-hs-carousel='{
+                "loadingClasses": "opacity-0"
+              }' class="relative">
+            <div class="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-[20rem] outline outline-none outline-1 outline-offset-0 hover:outline-slate-500  hover:outline-offset-4 transition-all duration-200 ease-in-out">
+              <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+                <div class="hs-carousel-slide">
+                  <div class="flex justify-center h-full bg-transparent">
+                    <img class="w-full object-cover" src="https://uny.ac.id/sites/default/files/styles/large/public/2023-05/Nairobi.jpg?itok=IRoGjHjO" alt="">
+                  </div>
+                </div>
+                <div class="hs-carousel-slide">
+                  <div class="flex justify-center h-full bg-transparent">
+                    <img class="w-full object-cover" src="https://www.uny.ac.id/sites/default/files/2022-06/WhatsApp%20Image%202022-06-05%20at%2010.55.26.jpeg" alt="">
+                  </div>
+                </div>
+                <div class="hs-carousel-slide">
+                  <div class="flex justify-center h-full bg-transparent">
+                    <img class="w-full object-cover" src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/18/2023/05/19/269f0994-36e4-4003-90b1-51eab17bf61a-3745630281.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div type="button" class="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-white group rounded-e-lg cursor-pointer">
+              <span class="text-2xl" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="size-8 group-hover:-translate-x-2 transition-all duration-200 ease-in-out ">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M13.883 5.007l.058 -.005h.118l.058 .005l.06 .009l.052 .01l.108 .032l.067 .027l.132 .07l.09 .065l.081 .073l.083 .094l.054 .077l.054 .096l.017 .036l.027 .067l.032 .108l.01 .053l.01 .06l.004 .057l.002 .059v12c0 .852 -.986 1.297 -1.623 .783l-.084 -.076l-6 -6a1 1 0 0 1 -.083 -1.32l.083 -.094l6 -6l.094 -.083l.077 -.054l.096 -.054l.036 -.017l.067 -.027l.108 -.032l.053 -.01l.06 -.01z" />
+                </svg>
+              </span>
+              <span class="sr-only">Previous</span>
+            </div>
+            <div type="button" class="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-white group rounded-e-lg cursor-pointer ">
+              <span class="sr-only">Next</span>
+              <span class="text-2xl" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="size-8 group-hover:translate-x-2 transition-all duration-200 ease-in-out">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 6c0 -.852 .986 -1.297 1.623 -.783l.084 .076l6 6a1 1 0 0 1 .083 1.32l-.083 .094l-6 6l-.094 .083l-.077 .054l-.096 .054l-.036 .017l-.067 .027l-.108 .032l-.053 .01l-.06 .01l-.057 .004l-.059 .002l-.059 -.002l-.058 -.005l-.06 -.009l-.052 -.01l-.108 -.032l-.067 -.027l-.132 -.07l-.09 -.065l-.081 -.073l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057l-.002 -12.059z" />
+                </svg>
+              </span>
+            </div>
+
+            <div class="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 space-x-2">
+              <span class="hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-white rounded-full cursor-pointer"></span>
+              <span class="hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-white rounded-full cursor-pointer"></span>
+              <span class="hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-white rounded-full cursor-pointer"></span>
+            </div>
+          </div>
+          <!-- End Slider -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="tentang" class=" reveal">
+    <div class="w-100 flex justify-center ">
+      <div class="container flex flex-col-reverse md:flex-row-reverse justify-center">
+        <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
+          <h1 class="text-3xl mb-3 font-bold text-main lg:text-left text-center">Tentang Kami</h1>
+          <p class="mb-3 text-main w-full">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur fugit similique quis accusantium dolorum mollitia
+            quod, laboriosam voluptatum eligendi asperiores vero est vel
+            adipisci deleniti laudantium ipsum amet? Eaque, est!
+          </p>
+          <a href="#perguruan" class="btn-main">Lihat Perguruan </a>
         </div>
         <div class="flex-col">
           <img src="{{ asset('img/hero.svg')}}" alt="" />

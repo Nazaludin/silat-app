@@ -48,8 +48,8 @@ section {
 section:nth-child(odd) {
     @apply bg-slate-100;
 }
-.fixed-header {
-    @apply fixed m-auto left-0 w-full rounded-full z-[99999] shadow-xl bg-white bg-opacity-30 backdrop-blur-[10px] transition-all duration-500;
+header.fixed-header {
+    @apply fixed m-auto left-0 w-full rounded-[3rem] z-[99999] shadow-xl bg-white bg-opacity-10 backdrop-blur-[10px] transition-all duration-500 translate-y-1  origin-center;
 }
 .btn-main {
     @apply w-fit cursor-pointer px-3 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main hover:text-main hover:bg-transparent transition duration-200 ease-in-out;
