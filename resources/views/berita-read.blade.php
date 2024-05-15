@@ -51,32 +51,102 @@
 
 <body style="margin: 0;" class="font-primary">
 
-  <section id="beritaView" class="mt-[5rem]">
+  <section id="beritaView" class="lg:block flex flex-col-reverse mt-[5rem]">
+  <aside class="lg:sticky top-[8rem] flex flex-col  lg:w-fit float-right h-[40rem]  ">
+    <h1 class="text-3xl mb-3 text-center lg:text-left font-bold text-main">
+      Berita Lainnya
+    </h1>
+    <div class="divider">
+      Terbaru
+    </div>
+    <div class="webkit-box-mobile lg:block overflow-x-scroll lg:overflow-y-scroll lg:overflow-x-hidden lg:h-[50rem]" >
 
-    <div class="flex flex-col">
-      <h1 class="text-3xl mb-3 font-bold text-main">
+      <a class=" m-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out" href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden"><img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="http://127.0.0.1:8000/view-image/1715768212_mengalir.png" alt="Image Description"></div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">Judul Dummy</h3>
+          <div class="font-bold text-xs uppercase text-slate-400">15/05/2024 17:16 WIB</div>
+          <div class="mt-1 text-gray-500 line-clamp-3">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+        </div>
+      </a>
+      <a class=" m-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out" href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden"><img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="http://127.0.0.1:8000/view-image/1715768212_mengalir.png" alt="Image Description"></div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">Judul Dummy</h3>
+          <div class="font-bold text-xs uppercase text-slate-400">15/05/2024 17:16 WIB</div>
+          <div class="mt-1 text-gray-500 line-clamp-3">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+        </div>
+      </a>
+      <a class=" m-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out" href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden"><img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="http://127.0.0.1:8000/view-image/1715768212_mengalir.png" alt="Image Description"></div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">Judul Dummy</h3>
+          <div class="font-bold text-xs uppercase text-slate-400">15/05/2024 17:16 WIB</div>
+          <div class="mt-1 text-gray-500 line-clamp-3">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+        </div>
+      </a>
+      <a class=" m-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out" href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden"><img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="http://127.0.0.1:8000/view-image/1715768212_mengalir.png" alt="Image Description"></div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">Judul Dummy</h3>
+          <div class="font-bold text-xs uppercase text-slate-400">15/05/2024 17:16 WIB</div>
+          <div class="mt-1 text-gray-500 line-clamp-3">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+        </div>
+      </a>
+      <a class=" m-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out" href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden"><img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="http://127.0.0.1:8000/view-image/1715768212_mengalir.png" alt="Image Description"></div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">Judul Dummy</h3>
+          <div class="font-bold text-xs uppercase text-slate-400">15/05/2024 17:16 WIB</div>
+          <div class="mt-1 text-gray-500 line-clamp-3">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+        </div>
+      </a>
+      <a class=" m-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out" href="#">
+        <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden"><img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="http://127.0.0.1:8000/view-image/1715768212_mengalir.png" alt="Image Description"></div>
+        <div class="p-4 md:p-5">
+          <h3 class="text-lg font-bold text-gray-800">Judul Dummy</h3>
+          <div class="font-bold text-xs uppercase text-slate-400">15/05/2024 17:16 WIB</div>
+          <div class="mt-1 text-gray-500 line-clamp-3">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+        </div>
+      </a>
+
+    </div>
+        <!-- selengkapnya -->
+        <div class="flex justify-end my-5">
+      <a href="#" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+        Selengkapnya
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M7 7l5 5l-5 5" />
+          <path d="M13 7l5 5l-5 5" />
+        </svg> </a>
+    </div>
+    <!-- selengkapnya -->
+  </aside>
+    <div class="flex flex-col lg:mr-[25rem]">
+      <h1 class="text-3xl mb-3 text-center lg:text-left font-bold text-main">
         {{$berita->judul}}
       </h1>
-      <div class="font-bold text-xs uppercase text-slate-400">
-        Author : {{$berita->penulis}}
+      <div class="font-bold text-center lg:text-left text-xs uppercase text-slate-400">
+        {{$berita->penulis}} - Berita
       </div>
-      <div class="font-bold text-xs uppercase text-slate-400">
+      <div class="font-bold text-center lg:text-left text-xs uppercase text-slate-400">
         {{$berita->tanggal}}
       </div>
       <div class="divider">
         berita
       </div>
-      <div class="pl-[5rem] pr-[5rem]">
+      <div class="flex justify-center items-center size-full lg:size-[60%] m-auto">
         <img class="rounded-xl" src="{{ url('/view-image/').'/'. $berita->nama_file}}">
       </div>
 
-      <p class="text-justify">
+      <div class="text-justify my-5">
         {!!$berita->berita!!}
-      </p>
-
-
+      </div>
     </div>
   </section>
+
+
 
 
 
