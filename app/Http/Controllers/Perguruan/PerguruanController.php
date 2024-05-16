@@ -246,7 +246,8 @@ class PerguruanController extends Controller
         } else {
             $status = false;
         }
-        if ($request->hasFile('file')) {
+        // dd($request->hasFile('logo'));
+        if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $nama_file = time() . "_" . $file->getClientOriginalName();
 
