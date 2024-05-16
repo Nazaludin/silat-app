@@ -56,10 +56,10 @@
   <section id="profilView" class="mt-10">
     <div class="flex flex-col lg:flex-row w-full">
       <div class="static lg:fixed flex flex-col w-full lg:w-[15rem] text-justify z-[2]">
-        <div class="p-5 shadow-lg rounded-2xl w-full flex justify-center bg-transparent backdrop-blur-3xl mb-3">
+        <div class="p-5 shadow-lg rounded-2xl w-[90%] flex justify-center bg-white backdrop-blur-3xl mb-3">
           <img class="lg:w-full w-[10rem]  object-contain" src="{{ url('/view-image/'.$perguruan->nama_file_logo) }}" alt="">
         </div>
-        <div class="p-5 shadow-lg rounded-2xl w-full bg-transparent backdrop-blur-3xl">
+        <div class="p-5 shadow-lg rounded-2xl w-[90%] bg-white backdrop-blur-3xl">
           <div class="mb-3">
             <div class="form-label">
               Tahun Berdiri
@@ -142,9 +142,9 @@
               <div class="flex flex-col">
                 <div class="form-label text-center">{{ $guru['nama'] }}</div>
                 <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> {{ $guru['tipe'] }}</div>
-                <p class="mb-5 line-clamp-3">
+                <div class="mb-5 line-clamp-3">
                   {!! $guru['deskripsi'] !!}
-                </p>
+</div>
                 <div class="flex justify-center" data-hs-overlay="#modal-tokoh" data-id-tokoh="{{ $guru['id_tokoh'] }}">
                   <div class="btn-main flex gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
