@@ -60,7 +60,7 @@
                 </div>
                 @endforeach
                 @endif
-                
+
                 <div class="p-6 text-gray-900">
                     <div class="flex w-full justify-end">
 
@@ -122,79 +122,80 @@
             </div>
             <div id="revisi" class="bg-white shadow-sm sm:rounded-lg w-full lg:w-[30%] p-6">
                 <div class="flex flex-col h-[40rem] overflow-y-scroll">
+                    @php
+                    $number = $total;
+                    @endphp
+                    @foreach($komen as $index => $item)
+                    @if($index ==0)
                     <div class="p-1 m-2">
                         <div class="font-bold uppercase text-sm">
-                            Revisi 3
+                            Revisi {{$number}}
                         </div>
                         <div class="text-justify p-4 border-[1px] border-slate-200 rounded-xl bg-yellow-100 text-yellow-800">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos unde libero aliquid quae eveniet ad neque rerum eaque ex iste vero expedita vel animi dolorem, officiis voluptates? Quia quasi repellendus obcaecati, officia nobis minus? Ea illum quia velit ad laudantium.
+                            {{$item['komen']}}
                         </div>
                     </div>
+                    @else
                     <div class="p-1 m-2">
                         <div class="font-bold uppercase text-sm">
-                            Revisi 2
+                            Revisi {{$number}}
                         </div>
                         <div class="text-justify p-4 border-[1px] border-slate-200 rounded-xl bg-green-100 text-green-800">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos unde libero aliquid quae eveniet ad neque rerum eaque ex iste vero expedita vel animi dolorem, officiis voluptates? Quia quasi repellendus obcaecati, officia nobis minus? Ea illum quia velit ad laudantium.
+                            {{$item['komen']}}
                         </div>
                     </div>
-                    <div class="p-1 m-2">
-                        <div class="font-bold uppercase text-sm">
-                            Revisi 1
-                        </div>
-                        <div class="text-justify p-4 border-[1px] border-slate-200 rounded-xl bg-green-100 text-green-800">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos unde libero aliquid quae eveniet ad neque rerum eaque ex iste vero expedita vel animi dolorem, officiis voluptates? Quia quasi repellendus obcaecati, officia nobis minus? Ea illum quia velit ad laudantium.
-                        </div>
-                    </div>
-
+                    @endif
+                    @php
+                    $number--;
+                    @endphp
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <div id="submit-alert" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
-        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
-                <div class="flex justify-between items-center py-3 px-4 border-b">
-                    <h3 class="font-bold text-gray-800">
-                        Simpan Perubahan?
-                    </h3>
-                    <button type="button" class="hs-dropup-toggle flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " data-hs-overlay="#submit-alert">
-                        <span class="sr-only">Close</span>
-                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 6 6 18"></path>
-                            <path d="m6 6 12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="p-4 overflow-y-auto">
-                    <p class="mt-1 text-gray-800">
-                        Data akan berubah sesuai dengan input yang telah dimasukkan
-                    </p>
-                </div>
-                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
-                    <button type="button" class="hs-dropup-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#submit-alert">
-                        Tutup
-                    </button>
-                    <button onclick="$('#form_update_berita').submit()" type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
-                        Simpan Perubahan
-                    </button>
+        <div id="submit-alert" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+            <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+                <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+                    <div class="flex justify-between items-center py-3 px-4 border-b">
+                        <h3 class="font-bold text-gray-800">
+                            Simpan Perubahan?
+                        </h3>
+                        <button type="button" class="hs-dropup-toggle flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " data-hs-overlay="#submit-alert">
+                            <span class="sr-only">Close</span>
+                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-4 overflow-y-auto">
+                        <p class="mt-1 text-gray-800">
+                            Data akan berubah sesuai dengan input yang telah dimasukkan
+                        </p>
+                    </div>
+                    <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t">
+                        <button type="button" class="hs-dropup-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#submit-alert">
+                            Tutup
+                        </button>
+                        <button onclick="$('#form_update_berita').submit()" type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
+                            Simpan Perubahan
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        // ..After imports init TinyMCE..
-        window.addEventListener('DOMContentLoaded', () => {
-            tinymce.init({
-                selector: 'textarea',
+        <script>
+            // ..After imports init TinyMCE..
+            window.addEventListener('DOMContentLoaded', () => {
+                tinymce.init({
+                    selector: 'textarea',
 
-                /* TinyMCE configuration options */
-                skin: false,
-                content_css: false
+                    /* TinyMCE configuration options */
+                    skin: false,
+                    content_css: false
+                });
             });
-        });
-    </script>
+        </script>
 </x-app-layout>

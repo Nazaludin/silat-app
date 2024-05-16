@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Perguruan;
 use App\Http\Controllers\Controller;
 use App\Helpers\PerguruanHelper;
 use App\Models\Berita;
+use App\Models\KomenRevisi;
 use App\Models\Prestasi;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
@@ -30,7 +31,12 @@ class BeritaController extends Controller
     public function revisi($id)
     {
         $berita = Berita::findOrFail($id);
-        return view('adminpg.berita.revisi', compact('berita'));
+
+        $komenBuilder = KomenRevisi::where('id_berita', $berita->id_berita)
+            ->orderBy('created_at', 'desc')->get();
+        $komen =  $komenBuilder->toArray();
+        $total =  $komenBuilder->count();
+        return view('adminpg.berita.revisi', compact('berita', 'komen', 'total'));
     }
     public function store(Request $request): RedirectResponse
     {

@@ -118,27 +118,6 @@
                                 <button id="btn_trigger_accept" type="hidden" data-hs-overlay="#accept-user"></button>
                                 <button id="btn_trigger_ban" type="hidden" data-hs-overlay="#ban-user"></button>
 
-                                <div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
-                                    <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
-                                    <span class="text-green-700">Verified</span>
-                                </div>
-                                <div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
-                                    <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
-                                    <span class="text-red-700">Not Verified</span>
-                                </div>
-                                <div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
-                                    <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
-                                    <span class="text-green-700">Active</span>
-                                </div>
-                                <div class="inline-flex items-center  bg-orange-100 px-4 rounded-full">
-                                    <span class="size-2 inline-block bg-orange-500 rounded-full me-2"></span>
-                                    <span class="text-orange-700">Inactive</span>
-                                </div>
-                                <div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
-                                    <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
-                                    <span class="text-red-700">Banned</span>
-                                </div>
-                                <button id="btn_trigger_delete" type="hidden" data-hs-overlay="#delete-alert"></button>
                                 <script type="module">
                                     $(document).ready(function() {
                                         var page = 1;
@@ -197,12 +176,40 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
                                                 var tdName = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.name);
                                                 var tdEmail = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.email);
-                                                var tdStatusEmail = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text('item.email');
+                                                var tdStatusEmail = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200');
                                                 var tdPerguruan = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.perguruan);
-                                                var tdStatusAkun = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html('item.perguruan');
+                                                var tdStatusAkun = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ');
 
+                                                if (item.email_verified == 1) {
+                                                    tdStatusEmail.html(`<div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
+                                                                        <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
+                                                                        <span class="text-green-700">Terverifikasi</span>
+                                                                        </div>`);
+                                                } else {
+                                                    tdStatusEmail.html(`<div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
+                                                                        <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
+                                                                        <span class="text-red-700">Belum Terverifikasi</span>
+                                                                        </div>`);
+                                                }
+
+                                                if (item.access_status == 'active') {
+                                                    tdStatusAkun.html(` <div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
+                                                                        <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
+                                                                        <span class="text-green-700">Aktif</span>
+                                                                        </div>`);
+                                                } else if (item.access_status == 'inactive') {
+                                                    tdStatusAkun.html(` <div class="inline-flex items-center  bg-orange-100 px-4 rounded-full">
+                                                                        <span class="size-2 inline-block bg-orange-500 rounded-full me-2"></span>
+                                                                        <span class="text-orange-700">Tidak Aktif</span>
+                                                                        </div>`);
+                                                } else {
+                                                    tdStatusAkun.html(`<div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
+                                                                        <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
+                                                                        <span class="text-red-700">Ban</span>
+                                                                        </div>`);
+
+                                                }
                                                 // Buat elemen <td> untuk tombol lihat
-
                                                 var btnDelete = $('<div>').addClass('hs-tooltip').html(`
                                                 <button customToolTip="Hapus" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -118,26 +118,11 @@
                                     <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
 
                                     </div>
-                                    <div class="inline-flex items-center bg-blue-200 px-4 rounded-full">
-                                        <span class="size-2 inline-block bg-blue-500 rounded-full me-2"></span>
-                                        <span class="text-blue-700">Pending</span>
-                                    </div>
-                                    <div class="inline-flex items-center  bg-orange-100 px-4 rounded-full">
-                                        <span class="size-2 inline-block bg-orange-500 rounded-full me-2"></span>
-                                        <span class="text-orange-700">Revised</span>
-                                    </div>
-                                    <div class="inline-flex items-center  bg-yellow-100 px-4 rounded-full">
-                                        <span class="size-2 inline-block bg-yellow-500 rounded-full me-2"></span>
-                                        <span class="text-yellow-700">Resubmitted</span>
-                                    </div>
-                                    <div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
-                                        <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
-                                        <span class="text-green-700">Accepted</span>
-                                    </div>
-                                    <div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
-                                        <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
-                                        <span class="text-red-700">Rejected</span>
-                                    </div>
+
+
+
+
+
                                 </div>
                                 <button id="btn_trigger_reject" type="hidden" data-hs-overlay="#tolak-berita"></button>
                                 <button id="btn_trigger_revisi" type="hidden" data-hs-overlay="#revisi-berita"></button>
@@ -201,12 +186,40 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text('1');
                                                 var tdPerguruan = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.penulis);
                                                 var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.tanggal);
-                                                var tdStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.id_status_berita);
+                                                var tdStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200');
                                                 var tdJudul = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.judul);
                                                 var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200 ').html(item.berita);
 
-                                                // Buat elemen <td> untuk tombol lihat
+                                                if (item.id_status_berita == 1) {
+                                                    tdStatus.html(` <div class="inline-flex items-center bg-blue-200 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-blue-500 rounded-full me-2"></span>
+                                                                    <span class="text-blue-700">Pending</span>
+                                                                    </div>`);
+                                                } else if (item.id_status_berita == 2) {
+                                                    tdStatus.html(` <div class="inline-flex items-center  bg-orange-100 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-orange-500 rounded-full me-2"></span>
+                                                                    <span class="text-orange-700">Revisi</span>
+                                                                    </div>`);
+                                                } else if (item.id_status_berita == 3) {
+                                                    tdStatus.html(`<div class="inline-flex items-center  bg-yellow-100 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-yellow-500 rounded-full me-2"></span>
+                                                                    <span class="text-yellow-700">Terkirim Ulang</span>
+                                                                    </div>`);
 
+                                                } else if (item.id_status_berita == 4) {
+                                                    tdStatus.html(`<div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
+                                                                    <span class="text-green-700">Diterima</span>
+                                                                    </div>`);
+                                                } else {
+                                                    tdStatus.html(`<div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
+                                                                    <span class="text-red-700">Ditolak</span>
+                                                                    </div>`);
+                                                }
+
+
+                                                // Buat elemen <td> untuk tombol lihat
                                                 var btnTolak = $('<div>').addClass('hs-tooltip').html(`
                                                 <button customToolTip="Tolak" class="flex justify-center items-center flex-col hs-tooltip-toggle [--trigger:hover] w-fit cursor-pointer p-1 rounded-lg font-extrabold text-white border-2 transition duration-200 ease-in-out bg-red-500 border-red-500 hover:bg-transparent hover:text-red-500 ">
                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-ban"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M5.7 5.7l12.6 12.6" /></svg>

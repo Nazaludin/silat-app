@@ -116,86 +116,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody id="container_row_prestasi" class="divide-y divide-gray-200 align-top">
-                                                <!-- <tr>
-                                                    <td class="py-3 ps-4">
-                                                        <div class="flex items-center h-5">
-                                                            <input id="hs-table-pagination-checkbox-1" type="checkbox" class="border-gray-200 rounded text-blue-600 focus:ring-blue-500">
-                                                            <label for="hs-table-pagination-checkbox-1" class="sr-only">Checkbox</label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">1</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Juara 1 Lomba Pencak Silat</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">3 Januari 2022</td>
-                                                    <td class="px-6 py-4 text-sm text-gray-800 text-justify">
-                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, amet optio consequatur, quisquam ad, possimus facilis facere distinctio suscipit ut reiciendis? Temporibus, cum aut inventore unde, voluptatibus, saepe quas eum ipsam molestias numquam explicabo fugit natus magni iste modi! Exercitationem temporibus illum error amet deleniti accusamus incidunt dolor asperiores! Corrupti!
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none px-2">Lihat</button>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-yellow-600 hover:text-yellow-800 disabled:opacity-50 disabled:pointer-events-none px-2">Edit</button>
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                        <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 disabled:opacity-50 disabled:pointer-events-none px-2">Hapus</button>
-                                                    </td>
-                                                </tr> -->
-
-
                                             </tbody>
                                         </table>
                                     </div>
 
 
-                                    <!-- <div class="py-1 px-4">
-                                        <nav class="flex items-center space-x-1">
-                                            <button type="button" class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-                                                <span aria-hidden="true">«</span>
-                                                <span class="sr-only">Previous</span>
-                                            </button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none" aria-current="page">1</button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none">2</button>
-                                            <button type="button" class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none">3</button>
-                                            <button type="button" class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
-                                                <span class="sr-only">Next</span>
-                                                <span aria-hidden="true">»</span>
-                                            </button>
-                                        </nav>
-                                    </div> -->
 
                                     <div id="container_pagination" class="flex items-center justify-between border-t border-gray-200  bg-white px-4 py-3 sm:px-6">
-                                        <!-- <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-                                            <div>
-                                                <p class="text-sm text-gray-700">
-                                                    Showing
-                                                    <span class="font-medium">1</span>
-                                                    to
-                                                    <span class="font-medium">10</span>
-                                                    of
-                                                    <span class="font-medium">97</span>
-                                                    results
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                                                    <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                                        <span class="sr-only">Previous</span>
-                                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
-                                                        </svg>
-                                                    </a>
-
-                                                    <a href="#" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
-                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
-                                                    <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
-                                                    <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a> <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                                        <span class="sr-only">Next</span>
-                                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                                                        </svg>
-                                                    </a>
-                                                </nav>
-                                            </div>
-                                        </div> -->
 
                                     </div>
 
@@ -260,9 +187,36 @@
                                                 var tdNumber = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(index + data.per_page * data.current_page);
                                                 var tdTitle = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 border-r border-r-gray-200').text(item.judul);
                                                 var tdDate = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.hari + ', ' + item.tanggal);
-                                                var tdStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200').text(item.id_status_berita);
+                                                var tdStatus = $('<td>').addClass('px-6 py-4 whitespace-nowrap text-sm text-gray-800 border-r border-r-gray-200');
                                                 var tdBerita = $('<td>').addClass('px-6 py-4 text-sm text-gray-800 text-justify border-r border-r-gray-200').html('<div class="line-clamp-3">' + item.berita + '</div>');
 
+                                                if (item.id_status_berita == 1) {
+                                                    tdStatus.html(` <div class="inline-flex items-center bg-blue-200 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-blue-500 rounded-full me-2"></span>
+                                                                    <span class="text-blue-700">Pending</span>
+                                                                    </div>`);
+                                                } else if (item.id_status_berita == 2) {
+                                                    tdStatus.html(` <div class="inline-flex items-center  bg-orange-100 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-orange-500 rounded-full me-2"></span>
+                                                                    <span class="text-orange-700">Revisi</span>
+                                                                    </div>`);
+                                                } else if (item.id_status_berita == 3) {
+                                                    tdStatus.html(`<div class="inline-flex items-center  bg-yellow-100 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-yellow-500 rounded-full me-2"></span>
+                                                                    <span class="text-yellow-700">Terkirim Ulang</span>
+                                                                    </div>`);
+
+                                                } else if (item.id_status_berita == 4) {
+                                                    tdStatus.html(`<div class="inline-flex items-center  bg-green-200 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-green-500 rounded-full me-2"></span>
+                                                                    <span class="text-green-700">Diterima</span>
+                                                                    </div>`);
+                                                } else {
+                                                    tdStatus.html(`<div class="inline-flex items-center  bg-red-200 px-4 rounded-full">
+                                                                    <span class="size-2 inline-block bg-red-500 rounded-full me-2"></span>
+                                                                    <span class="text-red-700">Ditolak</span>
+                                                                    </div>`);
+                                                }
                                                 // Buat elemen <td> untuk tombol lihat
 
                                                 var btnDelete = $('<div>').addClass('hs-tooltip').html(`
@@ -327,7 +281,7 @@
                                                     tdAction.append(btnEdit);
                                                 }
                                                 tdAction.append(btnView);
-                                                tr.append(tdNumber, tdTitle, tdDate, tdStatus, tdBerita, tdAction);
+                                                tr.append(tdNumber, tdTitle, tdDate, tdBerita, tdStatus, tdAction);
                                                 container.append(tr);
                                             });
                                         }

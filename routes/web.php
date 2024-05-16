@@ -26,6 +26,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/wait/accept', function (Request $request) {
+    return view('auth.wait-accept');
+})->name('wait.accept');
+
 // FUNCTIONAL ROUTE
 Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage'])->name('view-image');
 Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('wilayah.tambah');

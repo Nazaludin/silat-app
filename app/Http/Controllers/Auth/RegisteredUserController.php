@@ -11,6 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -49,6 +50,8 @@ class RegisteredUserController extends Controller
         session()->put('perguruan_id', $perguruan->id);
 
 
+        // $emailVerificationController = new EmailVerificationNotificationController();
+        // return $emailVerificationController->store($user);
         // event(new Registered($user));
 
         // $emailVerificationController = new EmailVerificationNotificationController();
@@ -57,8 +60,9 @@ class RegisteredUserController extends Controller
         $user->sendEmailVerificationNotification();
 
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::getHome());
+        // Auth::login($user);
+        return  redirect()->route('verification.notice', $user->id);
+        // return redirect(RouteServiceProvider::getHome());
+        // return view('auth.verify-email');
     }
 }
