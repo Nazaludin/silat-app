@@ -66,7 +66,7 @@ class TokohController extends Controller
         $status =  $tokoh->save();
 
 
-        return redirect()->route('adminpg.tokoh.index')->with('success', 'Data tokoh berhasil diperbarui!');
+        return redirect()->route('adminpg.tokoh.index')->with('success', 'Data tokoh berhasil ditambahkan!');
     }
 
 

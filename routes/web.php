@@ -40,12 +40,13 @@ Route::get('/perguruan/full-view/{id_perguruan}', function (Request $request, $i
     $perguruan = Perguruan::where('id_perguruan', $id_perguruan)->firstOrFail();
     $guru_besar = Tokoh::where('id_perguruan', $id_perguruan)->where('tipe', 'Guru Besar')->get()->toArray();
     $tokoh_lain = Tokoh::where('id_perguruan', $id_perguruan)->whereNotIn('tipe', ['Guru Besar'])->get()->toArray();
+    $prestasi = Prestasi::where('id_perguruan', $id_perguruan)->get()->toArray();
 
     $exist = false;
     if ($perguruan && $perguruan->nama !== null && $perguruan->nama !== '') {
         $exist = true;
     }
-    return view('perguruan-fullview', compact('exist', 'perguruan', 'guru_besar', 'tokoh_lain'));
+    return view('perguruan-fullview', compact('exist', 'perguruan', 'guru_besar', 'tokoh_lain', 'prestasi'));
 })->name('perguruan.fullview');
 
 // BERITA

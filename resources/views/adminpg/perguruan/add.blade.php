@@ -136,7 +136,7 @@
                                         <!-- select -->
                                         <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
                                             <div class="flex justify-between items-center w-full">
-                                                <span data-hs-combo-box-search-text="Muaitai" data-hs-combo-box-value="">Muaitai</span>
+                                                <span data-hs-combo-box-search-text="Persaudaraan Setia Hati Terate (PSHT)" data-hs-combo-box-value="">Persaudaraan Setia Hati Terate (PSHT)</span>
                                                 <span class="hidden hs-combo-box-selected:block">
                                                     <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <path d="M20 6 9 17l-5-5"></path>
@@ -148,7 +148,55 @@
                                         <!-- select -->
                                         <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
                                             <div class="flex justify-between items-center w-full">
-                                                <span data-hs-combo-box-search-text="Wushu" data-hs-combo-box-value="">Wushu</span>
+                                                <span data-hs-combo-box-search-text="Pencak Silat Pagar Nusa" data-hs-combo-box-value="">Pencak Silat Pagar Nusa</span>
+                                                <span class="hidden hs-combo-box-selected:block">
+                                                    <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M20 6 9 17l-5-5"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- select -->
+                                        <!-- select -->
+                                        <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+                                            <div class="flex justify-between items-center w-full">
+                                                <span data-hs-combo-box-search-text="Pencak Silat Perisai Diri" data-hs-combo-box-value="">Pencak Silat Perisai Diri</span>
+                                                <span class="hidden hs-combo-box-selected:block">
+                                                    <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M20 6 9 17l-5-5"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- select -->
+                                        <!-- select -->
+                                        <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+                                            <div class="flex justify-between items-center w-full">
+                                                <span data-hs-combo-box-search-text="Pencak Silat Merpati Putih" data-hs-combo-box-value="">Pencak Silat Merpati Putih</span>
+                                                <span class="hidden hs-combo-box-selected:block">
+                                                    <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M20 6 9 17l-5-5"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- select -->
+                                        <!-- select -->
+                                        <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+                                            <div class="flex justify-between items-center w-full">
+                                                <span data-hs-combo-box-search-text="Silat Tapak Suci Putera Muhammadiyah" data-hs-combo-box-value="">Silat Tapak Suci Putera Muhammadiyah</span>
+                                                <span class="hidden hs-combo-box-selected:block">
+                                                    <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M20 6 9 17l-5-5"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- select -->
+                                        <!-- select -->
+                                        <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+                                            <div class="flex justify-between items-center w-full">
+                                                <span data-hs-combo-box-search-text="Pencak Silat Cimande" data-hs-combo-box-value="">Pencak Silat Cimande</span>
                                                 <span class="hidden hs-combo-box-selected:block">
                                                     <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <path d="M20 6 9 17l-5-5"></path>

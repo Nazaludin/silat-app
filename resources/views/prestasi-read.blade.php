@@ -23,7 +23,7 @@
       <nav id="nav-menu" class="navigation md:flex md:static md:bg-transparent md:shadow-none shadow-lg bg-white fixed w-full left-0 top-0 -translate-y-[30rem] md:translate-y-0 md:pt-0 pt-[5rem] z-[99] md:pb-0 pb-[2rem] rounded-b-2xl transition-all duration-500">
         <ul class="flex nav-hover md:flex-row flex-col justify-center items-center w-full">
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3  text-center">
-            <a href="#">Beranda</a>
+            <a href="{{route('home')}}">Beranda</a>
           </li>
           <li class="nav-item w-1/2 md:w-full m-3 md:p-0 px-3 text-center ">
             <a href="#profilView" class=" cursor-pointer">Profil</a>
@@ -38,7 +38,7 @@
       </nav>
     </div>
     <div class="flex items-center">
-      <a href="{{ __('login') }}" class="btn-main"> Login </a>
+      <a href="{{ route('login') }}" class="btn-main"> Login </a>
       <button id="hamburger" class="md:hidden z-[999]">
         <span class="hamburger-line transition-all duration-500 ease-in-out"></span>
         <span class="hamburger-line transition-all duration-500 ease-in-out"></span>

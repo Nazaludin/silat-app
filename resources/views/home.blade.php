@@ -137,132 +137,7 @@
       </div>
     </div>
   </section>
-  <section class="reveal">
-    <div class="flex flex-col justify-center items-center">
-      <h1 class="text-3xl mb-3 font-bold text-center text-main">
-        Cari Perguruan Silat
-      </h1>
 
-      <div class="w-[70%]">
-        <!-- Form -->
-        <div class="mb-1">
-          <label for="tempat" class="font-bold">Tempat (Provinsi)</label>
-        </div>
-        <div class="relative mb-4" data-hs-combo-box="">
-          <div class="relative">
-            <input placeholder="Pilih Tempat..." id="tempat" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
-            <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
-              <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m7 15 5 5 5-5"></path>
-                <path d="m7 9 5-5 5 5"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
-            <!-- select -->
-            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item>
-              <div class="flex justify-between items-center w-full">
-                <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="Argentina">Argentina</span>
-                <span class="hidden hs-combo-box-selected:block">
-                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 6 9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <!-- select -->
-            <!-- select -->
-            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item>
-              <div class="flex justify-between items-center w-full">
-                <span data-hs-combo-box-search-text="Argentina1" data-hs-combo-box-value="Argentina1">Argentina1</span>
-                <span class="hidden hs-combo-box-selected:block">
-                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 6 9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <!-- select -->
-            <!-- select -->
-            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item>
-              <div class="flex justify-between items-center w-full">
-                <span data-hs-combo-box-search-text="Indonesia" data-hs-combo-box-value="Indonesia">Indonesia</span>
-                <span class="hidden hs-combo-box-selected:block">
-                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 6 9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <!-- select -->
-          </div>
-        </div>
-        <!-- Form End -->
-
-        <!-- Form -->
-        <div class="mb-1">
-          <label for="jenis" class="font-bold">Jenis</label>
-        </div>
-        <div class="relative mb-4" data-hs-combo-box="">
-          <div class="relative">
-            <input placeholder="Pilih Jenis..." id="jenis" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
-            <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
-              <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m7 15 5 5 5-5"></path>
-                <path d="m7 9 5-5 5 5"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
-            <!-- select -->
-            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
-              <div class="flex justify-between items-center w-full">
-                <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="">Argentina</span>
-                <span class="hidden hs-combo-box-selected:block">
-                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 6 9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <!-- select -->
-          </div>
-        </div>
-        <!-- Form End -->
-        <!-- Form -->
-        <div class="mb-1">
-          <label for="namalsp" class="font-bold">Nama Perguruan Silat</label>
-        </div>
-        <div class="relative mb-4" data-hs-combo-box="">
-          <div class="relative">
-            <input placeholder="Pilih Nama Perguruan Silat..." id="namalsp" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
-            <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
-              <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m7 15 5 5 5-5"></path>
-                <path d="m7 9 5-5 5 5"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
-            <!-- select -->
-            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
-              <div class="flex justify-between items-center w-full">
-                <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="">Argentina</span>
-                <span class="hidden hs-combo-box-selected:block">
-                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 6 9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <!-- select -->
-          </div>
-        </div>
-        <!-- Form End -->
-        <button class="btn-full">Cari</button>
-      </div>
-    </div>
-  </section>
 
   <section id="perguruan" class="reveal">
     <div id="container_perguruan" class="flex flex-wrap gap-2 justify-center mb-4">
@@ -343,7 +218,7 @@
     <!-- selengkapnya -->
   </section>
 
-  <section id="prestasi" class="reveal">
+  <!-- <section id="prestasi" class="reveal">
     <h1 class="text-3xl mb-3 font-bold text-center text-main">
       Prestasi
     </h1>
@@ -353,9 +228,9 @@
 
     <div id="container_prestasi" class="flex gap-5 flex-wrap justify-center">
 
-    </div>
-    <!-- selengkapnya -->
-    <div class="flex justify-end my-5">
+    </div> -->
+  <!-- selengkapnya -->
+  <!-- <div class="flex justify-end my-5">
       <a href="{{route('prestasi')}}" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
         Selengkapnya
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
@@ -363,9 +238,9 @@
           <path d="M7 7l5 5l-5 5" />
           <path d="M13 7l5 5l-5 5" />
         </svg> </a>
-    </div>
-    <!-- selengkapnya -->
-  </section>
+    </div> -->
+  <!-- selengkapnya -->
+  <!-- </section> -->
   </div>
 
 
@@ -381,10 +256,10 @@
         console.log(data);
         createCardBerita(data);
       });
-      $.get('/api/prestasi', function(data) {
-        console.log(data);
-        createCardPrestasi(data);
-      });
+      // $.get('/api/prestasi', function(data) {
+      //   console.log(data);
+      //   createCardPrestasi(data);
+      // });
 
       function paginate(data) {
         var index = 1;

@@ -69,7 +69,7 @@ class PrestasiController extends Controller
         $status =  $prestasi->save();
 
 
-        return redirect()->route('adminpg.prestasi.index')->with('success', 'Prestasi berhasil diperbarui!');
+        return redirect()->route('adminpg.prestasi.index')->with('success', 'Prestasi berhasil ditambahkan!');
     }
 
 

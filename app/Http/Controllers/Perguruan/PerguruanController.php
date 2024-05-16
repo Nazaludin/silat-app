@@ -156,8 +156,8 @@ class PerguruanController extends Controller
             $status = false;
         }
 
-        dd($status);
-        // return redirect()->route('perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');
+        // dd($status);
+        return redirect()->route('adminpg.perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');
     }
     public function update(Request $request): RedirectResponse
     {
@@ -256,8 +256,8 @@ class PerguruanController extends Controller
         }
         $status = $perguruan->save();
 
-        dd($status);
-        // return redirect()->route('perguruan.index')->with('success', 'Perguruan berhasil ditambahkan!');
+        // dd($status);
+        return redirect()->route('adminpg.perguruan.index')->with('success', 'Perguruan berhasil diperbarui!');
     }
     public function storeSejarah(Request $request): RedirectResponse
     {
