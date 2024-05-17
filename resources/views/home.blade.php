@@ -56,10 +56,7 @@
         <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
           <h1 class="text-3xl mb-3 font-bold text-main lg:text-left text-center">Selamat Datang!</h1>
           <p class="mb-3 text-main w-full">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur fugit similique quis accusantium dolorum mollitia
-            quod, laboriosam voluptatum eligendi asperiores vero est vel
-            adipisci deleniti laudantium ipsum amet? Eaque, est!
+            Kami bangga menjadi rumah bagi para pesilat dari berbagai penjuru nusantara, tempat di mana semangat, keahlian, dan tradisi pencak silat dipertahankan dan dikembangkan. Di sini, Anda akan menemukan informasi terbaru tentang kegiatan, pelatihan, dan kejuaraan pencak silat, serta berbagai artikel dan sumber daya untuk memperdalam pengetahuan Anda tentang seni bela diri warisan budaya Indonesia ini.
           </p>
           <a href="#tentang" class="btn-main"> Lanjutkan </a>
         </div>
@@ -124,10 +121,7 @@
         <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
           <h1 class="text-3xl mb-3 font-bold text-main lg:text-left text-center">Tentang Kami</h1>
           <p class="mb-3 text-main w-full">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur fugit similique quis accusantium dolorum mollitia
-            quod, laboriosam voluptatum eligendi asperiores vero est vel
-            adipisci deleniti laudantium ipsum amet? Eaque, est!
+          Perkumpulan ini didirikan dengan tujuan untuk menyatukan, mempromosikan, dan melestarikan warisan budaya pencak silat yang kaya dan beragam di Indonesia. Kami percaya bahwa pencak silat bukan hanya seni bela diri, tetapi juga sarana untuk membangun karakter, disiplin, dan persatuan di antara masyarakat.
           </p>
           <a href="#perguruan" class="btn-main">Lihat Perguruan </a>
         </div>
