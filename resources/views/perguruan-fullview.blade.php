@@ -57,7 +57,7 @@
     <div class="flex flex-col lg:flex-row w-full">
       <div class="static lg:fixed flex flex-col w-full lg:w-[15rem] text-justify z-[2]">
         <div class="p-5 shadow-lg rounded-2xl w-[90%] flex justify-center bg-white backdrop-blur-3xl mb-3">
-          <img class="lg:w-full w-[10rem]  object-contain" src="{{ url('/view-image/'.$perguruan->nama_file_logo) }}" alt="">
+          <img class="lg:w-full w-[10rem]  object-cover" src="{{ url('/view-image/'.$perguruan->nama_file_logo) }}" alt="">
         </div>
         <div class="p-5 shadow-lg rounded-2xl w-[90%] bg-white backdrop-blur-3xl">
           <div class="mb-3">
