@@ -65,9 +65,10 @@ Route::get('/berita/read/{id_berita}', function (Request $request, $id_berita) {
 })->name('berita.read');
 
 // PRESTASI
-Route::get('/prestasi', function (Request $request) {
-    return view('prestasi');
-})->name('prestasi');
+Route::get('/perguruan/full-view/prestasi/{id_perguruan}', function (Request $request, $id_perguruan) {
+
+    return view('prestasi', compact('id_perguruan'));
+})->name('perguruan.fullview.prestasi');
 Route::get('/prestasi/read/{id_prestasi}', function (Request $request, $id_prestasi) {
     $prestasi = Prestasi::join('perguruan', 'perguruan.id_perguruan', '=', 'prestasi.id_perguruan')
         ->select('prestasi.*', 'perguruan.nama AS penulis')

@@ -36,7 +36,7 @@
                 </div>
                 @endif
 
-                @if (isset($errors->any))
+                @if ($errors->any)
                 @foreach ($errors->all() as $error)
                 <div class="bg-red-50 border-s-4 border-red-500 p-4 my-1" role="alert">
                     <div class="flex">

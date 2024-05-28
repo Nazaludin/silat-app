@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmailVerificationNotificationController extends Controller
 {
@@ -20,7 +21,6 @@ class EmailVerificationNotificationController extends Controller
             // return redirect()->intended(RouteServiceProvider::getHome());
             return  redirect()->route('wait.accept');
         }
-
         $user->sendEmailVerificationNotification();
 
         // if ($request->user()->hasVerifiedEmail()) {

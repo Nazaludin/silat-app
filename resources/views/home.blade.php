@@ -121,7 +121,7 @@
         <div class="flex flex-col w-full lg:w-[50%] text-justify justify-center lg:items-start items-center">
           <h1 class="text-3xl mb-3 font-bold text-main lg:text-left text-center">Tentang Kami</h1>
           <p class="mb-3 text-main w-full">
-          Perkumpulan ini didirikan dengan tujuan untuk menyatukan, mempromosikan, dan melestarikan warisan budaya pencak silat yang kaya dan beragam di Indonesia. Kami percaya bahwa pencak silat bukan hanya seni bela diri, tetapi juga sarana untuk membangun karakter, disiplin, dan persatuan di antara masyarakat.
+            Perkumpulan ini didirikan dengan tujuan untuk menyatukan, mempromosikan, dan melestarikan warisan budaya pencak silat yang kaya dan beragam di Indonesia. Kami percaya bahwa pencak silat bukan hanya seni bela diri, tetapi juga sarana untuk membangun karakter, disiplin, dan persatuan di antara masyarakat.
           </p>
           <a href="#perguruan" class="btn-main">Lihat Perguruan </a>
         </div>
@@ -132,6 +132,149 @@
     </div>
   </section>
 
+  <section class="reveal">
+    <div class="flex flex-col justify-center items-center">
+      <h1 class="text-3xl mb-3 font-bold text-center text-main">
+        Cari Perguruan Silat
+      </h1>
+
+      <div class="w-[70%]">
+        <!-- Form -->
+        <div class="mb-1">
+          <label for="provinsi_perguruan" class="font-bold">Tempat (Provinsi)</label>
+        </div>
+        <div id="combobox-provinsi" class="relative mb-4" data-hs-combo-box="">
+          <div class="relative">
+            <input placeholder="Pilih Tempat..." id="provinsi_perguruan" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
+            <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
+              <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </div>
+          </div>
+          <div id="container_provinsi" class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
+            <!-- select -->
+            <!-- <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item>
+              <div class="flex justify-between items-center w-full">
+                <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value="Argentina">Argentina</span>
+                <span class="hidden hs-combo-box-selected:block">
+                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </span>
+              </div>
+            </div> -->
+            <!-- select -->
+
+          </div>
+        </div>
+        <!-- Form End -->
+
+        <!-- Form -->
+        <div class="mb-1">
+          <label for="aliran_perguruan" class="font-bold">Aliran</label>
+        </div>
+        <div class="relative mb-4" data-hs-combo-box="">
+          <div class="relative">
+            <input placeholder="Pilih aliran..." id="aliran_perguruan" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" value="" data-hs-combo-box-input="" />
+            <div class="absolute top-1/2 end-3 -translate-y-1/2" data-hs-combo-box-toggle="">
+              <svg class="flex-shrink-0 size-3.5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="absolute z-50 w-full max-h-72 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" style="display: none" data-hs-combo-box-output="">
+            <!-- select -->
+            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+              <div class="flex justify-between items-center w-full">
+                <span data-hs-combo-box-search-text="Persaudaraan Setia Hati Terate (PSHT)" data-hs-combo-box-value="">Persaudaraan Setia Hati Terate (PSHT)</span>
+                <span class="hidden hs-combo-box-selected:block">
+                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <!-- select -->
+            <!-- select -->
+            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+              <div class="flex justify-between items-center w-full">
+                <span data-hs-combo-box-search-text="Pencak Silat Pagar Nusa" data-hs-combo-box-value="">Pencak Silat Pagar Nusa</span>
+                <span class="hidden hs-combo-box-selected:block">
+                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <!-- select -->
+            <!-- select -->
+            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+              <div class="flex justify-between items-center w-full">
+                <span data-hs-combo-box-search-text="Pencak Silat Perisai Diri" data-hs-combo-box-value="">Pencak Silat Perisai Diri</span>
+                <span class="hidden hs-combo-box-selected:block">
+                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <!-- select -->
+            <!-- select -->
+            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+              <div class="flex justify-between items-center w-full">
+                <span data-hs-combo-box-search-text="Pencak Silat Merpati Putih" data-hs-combo-box-value="">Pencak Silat Merpati Putih</span>
+                <span class="hidden hs-combo-box-selected:block">
+                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <!-- select -->
+            <!-- select -->
+            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+              <div class="flex justify-between items-center w-full">
+                <span data-hs-combo-box-search-text="Silat Tapak Suci Putera Muhammadiyah" data-hs-combo-box-value="">Silat Tapak Suci Putera Muhammadiyah</span>
+                <span class="hidden hs-combo-box-selected:block">
+                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <!-- select -->
+            <!-- select -->
+            <div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">
+              <div class="flex justify-between items-center w-full">
+                <span data-hs-combo-box-search-text="Pencak Silat Cimande" data-hs-combo-box-value="">Pencak Silat Cimande</span>
+                <span class="hidden hs-combo-box-selected:block">
+                  <svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <!-- select -->
+          </div>
+        </div>
+        <!-- Form End -->
+        <!-- Form -->
+        <div class="mb-1">
+          <label for="nama_perguruan" class="font-bold">Nama Perguruan Silat</label>
+        </div>
+        <div class="relative mb-4" data-hs-combo-box="">
+          <div class="form-group">
+            <input placeholder="Nama Perguruan Silat..." id="nama_perguruan" name="makna_logo" class="form-default" type="text" value="{{old('nama')}}" data-hs-combo-box-input="" />
+          </div>
+        </div>
+        <!-- Form End -->
+        <button id="btn_search" class="btn-full">Cari</button>
+      </div>
+    </div>
+  </section>
 
   <section id="perguruan" class="reveal">
     <div id="container_perguruan" class="flex flex-wrap gap-2 justify-center mb-4">
@@ -150,7 +293,7 @@
 
 
     </div>
-    <div id="pagination_perguruan" class="flex gap-3 justify-center ">
+    <div id="container_pagination" class="flex gap-3 justify-center ">
       <!-- <div class="w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out ">
           1
         </div>
@@ -225,7 +368,7 @@
     </div> -->
   <!-- selengkapnya -->
   <!-- <div class="flex justify-end my-5">
-      <a href="{{route('prestasi')}}" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+      <a href="" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
         Selengkapnya
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -240,46 +383,134 @@
 
   <script type="module">
     $(document).ready(function() {
-      $.get('/api/perguruan', function(data) {
-        console.log(data);
-        createCardBPerguruan(data);
-        paginate(data);
-      });
+      var kode_provinsi = null;
+      var page = 1;
+      var api_url = '/api/perguruan?page=' + page;
+      loadPerguruan();
 
-      $.get('/api/berita', function(data) {
+      $.get('/api/berita?page=' + page, function(data) {
         console.log(data);
         createCardBerita(data);
       });
-      // $.get('/api/prestasi', function(data) {
-      //   console.log(data);
-      //   createCardPrestasi(data);
-      // });
 
-      function paginate(data) {
-        var index = 1;
-        do {
-          var pageDiv = $('<div>', {
-            class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
-            text: index
-          });
-          index++;
-          // Menambahkan elemen div pagination ke dalam DOM
-          $('#pagination_perguruan').append(pageDiv);
+      $("#provinsi_perguruan").on("input", setSearchKey);
+      $("#aliran_perguruan").on("input", setSearchKey);
+      $("#nama_perguruan").on("input", setSearchKey);
 
-          if (index == 5) {
-            var pageDiv = $('<div>', {
-              class: 'w-fit cursor-pointer px-8 py-3 rounded-lg font-extrabold text-white bg-main border-2 border-main transition duration-200 ease-in-out',
-              text: '>'
-            });
-            // Menambahkan elemen div pagination ke dalam DOM
-            $('#pagination_perguruan').append(pageDiv);
-            break;
+      function loadPerguruan() {
+        $.get(api_url, function(data) {
+          if (data.data && data.data.length > 0) {
+            createCardBPerguruan(data);
+            pagination(data);
+          } else {
+            // Jika data.data kosong
+            console.log('Data tidak ditemukan.');
+            // Tindakan lain, seperti menampilkan pesan kepada pengguna
+            $('#container_perguruan').html(` <div class="flex flex-wrap items-center justify-center h-full">
+                        <div class="flex flex-col gap-5 text-center justify-center items-center md:items-start md:text-left">
+                            <p class="font-bold text-3xl text-center">Data yang Anda cari tidak ditemukan!</p>
+                            </a>
+                        </div>
+                        <img class="w-[30rem] object-contain" src="{{ url('/view-image/404.svg') }}/" alt="">
+                    </div>`);
           }
-        } while (index < data.last_page);
+        });
       }
+      $("#btn_search").on("click", function() {
+        setSearchKey();
+        loadPerguruan();
+      });
+
+      function setSearchKey() {
+        let provinsi = $("#provinsi_perguruan").val().trim();
+        let aliran = $("#aliran_perguruan").val().trim();
+        let nama = $("#nama_perguruan").val().trim();
+
+        if (provinsi != "") {
+          api_url += '&provinsi=' + encodeURIComponent(provinsi);
+        }
+        if (aliran != "") {
+          api_url += '&aliran=' + encodeURIComponent(aliran);
+        }
+        if (nama != "") {
+          api_url += '&nama=' + encodeURIComponent(nama);
+        }
+      }
+
+
+      if ($('#provinsi_perguruan').val()) {
+        var searchValue = $('#provinsi_perguruan').val(); // Jika ini adalah nilai yang ingin Anda gunakan
+        $.get('/api/provinsi/search/' + searchValue, function(data) {
+          console.log(data.data, data.data[0].kode_provinsi);
+          kode_provinsi = data.data[0].kode_provinsi; // Menggunakan data yang diterima dari API
+          console.log("INNNN");
+        });
+      }
+
+
+      $('#provinsi_perguruan').on('input', function() {
+        var searchValue = $(this).val();
+        if (searchValue.length > 0) {
+          // Lakukan pencarian ke API
+          $.get('/api/provinsi/search/' + searchValue, function(data) {
+            $('#container_provinsi').show();
+            console.log(data.data);
+
+            // Kosongkan konten container_provinsi sebelum menambahkan opsi baru
+            $('#container_provinsi').empty();
+
+            // Jika data tidak ditemukan, tambahkan pesan bahwa tidak ada hasil
+            if (data.data.length === 0) {
+              $('#container_provinsi').append('<div class="text-main py-2 px-4">Tidak ada hasil yang ditemukan.</div>');
+              return; // Keluar dari fungsi karena tidak ada opsi yang perlu ditambahkan
+            }
+
+            // Tambahkan opsi berdasarkan data yang diterima dari API
+            $.each(data.data, function(index, provinsi) {
+              var option = $('<div class="cursor-pointer py-2 px-4 w-full text-sm text-main hover:text-white hover:bg-main rounded-lg focus:outline-none focus:opacity-75" tabindex="0" data-hs-combo-box-output-item="">');
+              option.append('<div class="flex justify-between items-center w-full">');
+              option.find('div').append('<span data-hs-combo-box-search-kode="' + provinsi.kode_provinsi + '" data-hs-combo-box-search-text="' + provinsi.provinsi + '" data-hs-combo-box-value="' + provinsi.provinsi + '">' + provinsi.provinsi + '</span>');
+              option.find('div').append('<span class="hidden hs-combo-box-selected:hide">');
+              option.find('span.hs-combo-box-selected').append('<svg class="flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>');
+
+              // Tambahkan opsi ke dalam container_provinsi
+              $('#container_provinsi').append(option);
+            });
+            // Tampilkan hasil pencarian
+            // $('#container_provinsi').show();
+          });
+        } else {
+          // Sembunyikan hasil pencarian jika input kosong
+          $('#container_provinsi').hide();
+        }
+      });
+
+      $(document).on('click', '#container_provinsi [data-hs-combo-box-output-item]', function() {
+        $('#combobox-provinsi').removeClass('active');
+        // Mengambil nilai teks dari opsi yang dipilih
+        var selectedProvinsi = $(this).find('span[data-hs-combo-box-search-text]').text();
+        var selectedKodeProvinsi = $(this).find('span[data-hs-combo-box-search-kode]').attr('data-hs-combo-box-search-kode');
+
+        // Mengatur nilai input #provinsi sesuai dengan opsi yang dipilih
+        $('#provinsi_perguruan').val(selectedProvinsi);
+        $('#provinsi_perguruan').attr('value', selectedProvinsi);
+        kode_provinsi = selectedKodeProvinsi;
+        $('#container_provinsi').hide();
+
+        $('#provinsi_perguruan').val(selectedProvinsi);
+        setTimeout(function() {
+          $('#provinsi_perguruan').val(selectedProvinsi);
+        }, 500); // 1000 milidetik (1 detik) delay
+
+
+      });
+
+
 
       function createCardBPerguruan(data) {
         const container = $('#container_perguruan');
+        container.html('');
+
         $.each(data.data, function(index, item) {
           // Bangun elemen DOM untuk setiap item
           console.log(item);
@@ -318,6 +549,74 @@
         });
       }
 
+      function pagination(data) {
+        const container = $("#container_pagination");
+        container.html('');
+
+        var divMain = $("<div>").addClass("hidden sm:flex sm:flex-1 sm:items-center sm:justify-center");
+
+        var divSecond = $("<div>");
+        var navElement = $("<nav>").addClass("isolate inline-flex -space-x-px rounded-md shadow-sm").attr("aria-label", "Pagination");
+
+        var firstNavItemClass = "relative inline-flex items-center rounded-l-full p-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 cursor-default";
+        var lastNavItemClass = "relative hidden items-center p-2 rounded-r-full text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex hover:bg-main hover:text-white hover:opacity-70 cursor-pointer transition duration-200 ease-in-out";
+        var defaultNavItemClass = "relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex hover:bg-main hover:text-white hover:opacity-70 cursor-pointer transition duration-200 ease-in-out";
+        var activeNavItemClass = "relative z-10 inline-flex items-center bg-main px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main ";
+
+        var anchorPrev = $("<a>").attr("href", "#").addClass(firstNavItemClass).html("<span class='sr-only'>Previous</span><svg class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'><path fill-rule='evenodd' d='M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z' clip-rule='evenodd' /></svg>").on("click", function() {
+          if (pageNumber > 1) {
+            numberPagination(pageNumber - 1);
+          }
+        });
+        var anchorNext = $("<a>").attr("href", "#").addClass(lastNavItemClass).html("<span class='sr-only'>Next</span><svg class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>    <path fill-rule='evenodd' d='M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z' clip-rule='evenodd' /></svg>").on("click", function() {
+          if ((pageNumber + 5) < data.last_page) {
+            numberPagination(pageNumber + 1);
+          }
+        });
+
+        if (data.last_page > 6) {
+          console.log(data.current_page);
+          navElement.append(anchorPrev);
+          for (let index = pageNumber; index < (pageNumber + 6); index++) {
+            (function() {
+              var number = index;
+              var anchorCurrent = $("<a>").text(number).on("click", function() {
+                setPage(number);
+              });
+              if (data.current_page == number) {
+                anchorCurrent.addClass(activeNavItemClass).attr("aria-current", "page");
+              } else {
+                anchorCurrent.addClass(defaultNavItemClass);
+              }
+              navElement.append(anchorCurrent);
+            })();
+          }
+          navElement.append(anchorNext);
+
+        } else {
+          console.log('inn');
+          for (let index = 1; index <= data.last_page; index++) {
+            (function() {
+              var number = index;
+              var anchorCurrent = $("<a>").text(number).on("click", function() {
+                setPage(number);
+              });
+              if (data.current_page == number) {
+                anchorCurrent.addClass(activeNavItemClass).attr("aria-current", "page");
+              } else {
+                anchorCurrent.addClass(defaultNavItemClass);
+              }
+              navElement.append(anchorCurrent);
+            })();
+          }
+        }
+
+        // divFirst.append(paragraph);
+        divSecond.append(navElement);
+        divMain.append(divSecond);
+        container.append(divMain);
+      }
+
       function createCardBerita(data) {
         const container = $('#container_berita');
         container.html('');
@@ -354,7 +653,7 @@
 
           $('<p>', {
             'class': 'mt-1 text-gray-500 line-clamp-3',
-            'text': 'Some quick example text to build on the card title and make up the bulk of the card\'s content. Some quick example text to build on the card title and make up the bulk of the card\'s content.'
+            'html': item.berita
           }).appendTo(contentContainer);
 
           // Menambahkan elemen berita ke dalam container
@@ -362,49 +661,7 @@
         });
       }
 
-      function createCardPrestasi(data) {
-        const container = $('#container_prestasi');
-        container.html('');
-        $.each(data.data, function(index, item) {
-          // Membuat elemen berita
-          var prestasiCard = $('<a>', {
-            'class': 'flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out',
-            'href': "{{ route('prestasi.read','') }}/" + item.id_prestasi
-          });
 
-          var imageContainer = $('<div>', {
-            'class': 'relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden'
-          }).appendTo(prestasiCard);
-
-          $('<img>', {
-            'class': 'size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl',
-            'src': "{{ url('/view-image/') }}/" + item.nama_file,
-            'alt': 'Image Description'
-          }).appendTo(imageContainer);
-
-          var contentContainer = $('<div>', {
-            'class': 'p-4 md:p-5'
-          }).appendTo(prestasiCard);
-
-          $('<h3>', {
-            'class': 'text-lg font-bold text-gray-800',
-            'text': item.judul
-          }).appendTo(contentContainer);
-
-          $('<div>', {
-            'class': 'font-bold text-xs uppercase text-slate-400',
-            'text': item.tanggal
-          }).appendTo(contentContainer);
-
-          $('<p>', {
-            'class': 'mt-1 text-gray-500 line-clamp-3',
-            'text': 'Some quick example text to build on the card title and make up the bulk of the card\'s content. Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-          }).appendTo(contentContainer);
-
-          // Menambahkan elemen berita ke dalam container
-          container.append(prestasiCard);
-        });
-      }
 
     });
   </script>

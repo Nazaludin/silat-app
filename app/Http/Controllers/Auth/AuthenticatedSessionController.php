@@ -29,23 +29,32 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        return redirect()->intended(RouteServiceProvider::getHome());
         // Simpan informasi perguruan ke dalam session
-        $perguruan = Perguruan::where('id_user', Auth::id())->first(); // Sesuaikan dengan logika pengambilan informasi perguruan
-        $request->session()->put('id_perguruan', $perguruan->id_perguruan);
+        // $perguruan = Perguruan::where('id_user', Auth::id())->first(); // Sesuaikan dengan logika pengambilan informasi perguruan
+        // $request->session()->put('id_perguruan', $perguruan->id_perguruan);
 
-        $user = auth()->user();
+        // $user = auth()->user();
 
-        if ($user) {
-            if ($user->hasRole('admin')) {
-                $route = 'admin.dashboard';
-            } else {
-                $route = 'adminpg.dashboard';
-            }
-        } else {
-            abort(403, 'Unauthorized action.');
-        }
-        return redirect()->route($route);
+        // // Periksa status pengguna
+        // if ($user->access_status === 'banned') {
+        //     auth()->logout(); // Logout pengguna jika statusnya banned
+        //     return redirect()->route('login')->with('status_error', 'Your account is banned.');
+        // } elseif ($user->access_status === 'inactive') {
+        //     auth()->logout(); // Logout pengguna jika statusnya inactive
+        //     return redirect()->back()->with('status_error', 'Your account is inactive.');
+        // }
+
+        // if ($user) {
+        //     if ($user->hasRole('admin')) {
+        //         $route = 'admin.dashboard';
+        //     } else {
+        //         $route = 'adminpg.dashboard';
+        //     }
+        // } else {
+        //     abort(403, 'Unauthorized action.');
+        // }
+        // return redirect()->route($route);
     }
 
     /**

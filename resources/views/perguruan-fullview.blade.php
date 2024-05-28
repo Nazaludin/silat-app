@@ -144,7 +144,7 @@
                 <div class="font-semibold text-xs uppercase mb-5 text-center text-slate-600"> {{ $guru['tipe'] }}</div>
                 <div class="mb-5 line-clamp-3">
                   {!! $guru['deskripsi'] !!}
-</div>
+                </div>
                 <div class="flex justify-center" data-hs-overlay="#modal-tokoh" data-id-tokoh="{{ $guru['id_tokoh'] }}">
                   <div class="btn-main flex gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -220,7 +220,7 @@
     </div>
   </section>
   @endif
-  @if(count($tokoh_lain) > 0)
+  @if(count($prestasi) > 0)
   <section id="prestasiView" class="mt-10 reveal">
     <div class="flex flex-col lg:flex-row w-full">
       <div class="flex flex-col justify-center w-full lg:ml-[17rem] p-5 text-justify">
@@ -235,7 +235,7 @@
           <!-- Prestasi Card -->
           <a href="{{ route('prestasi.read',$pres['id_prestasi']) }}" class="relative flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out " href="#">
             <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
-              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80" alt="Image Description">
+              <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="{{ url('/view-image/') . '/' . $pres['nama_file'] }}" alt="Image Description">
               <!-- medal -->
               <img class="size-10 absolute top-3 right-3 group-hover:scale-110 transition-transform duration-200 ease-in-out" src="{{ url('/view-image/trophy-icon.svg') }}/" alt="">
               <!-- medal -->
@@ -247,9 +247,9 @@
               <div class="font-bold text-xs uppercase text-slate-400">
                 {{$pres['tahun']}}
               </div>
-              <p class="mt-1 text-gray-500 line-clamp-3">
-                {{$pres['deskripsi']}}
-              </p>
+              <div class="mt-1 text-gray-500 line-clamp-3 text-sm">
+                {!!$pres['deskripsi']!!}
+              </div>
             </div>
           </a>
           <!-- Prestasi Card -->
@@ -259,7 +259,7 @@
         </div>
         <!-- selengkapnya -->
         <div class="flex justify-end my-5">
-          <a href="{{route('prestasi')}}" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+          <a href="{{route('perguruan.fullview.prestasi',$perguruan->id_perguruan)}}" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
             Selengkapnya
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />

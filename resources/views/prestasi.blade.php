@@ -110,7 +110,7 @@
       setPage(1);
 
       function loadData() {
-        var api_url = '/api/prestasi?page=' + page;
+        var api_url = "/api/prestasi/{{$id_perguruan}}?page=" + page;
         if (searchKey && searchKey.trim() !== '') {
           api_url += '&search=' + searchKey.trim(); // Menambahkan kata kunci pencarian ke URL API
         }

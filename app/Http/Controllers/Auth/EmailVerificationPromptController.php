@@ -19,7 +19,6 @@ class EmailVerificationPromptController extends Controller
     {
         // dd($id);
         $user = User::findOrFail($id);
-        Auth::login($user);
         $user_id = $id;
         return $user->hasVerifiedEmail()
             ? redirect()->route('wait.accept')

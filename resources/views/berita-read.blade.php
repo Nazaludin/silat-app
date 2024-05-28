@@ -109,7 +109,7 @@
       <div class="divider">
         Terbaru
       </div>
-      <div class="webkit-box-mobile lg:block overflow-x-scroll lg:overflow-y-scroll lg:overflow-x-hidden lg:h-[50rem]">
+      <div id="container_berita" class="webkit-box-mobile lg:block overflow-x-scroll lg:overflow-y-scroll lg:overflow-x-hidden lg:h-[50rem]">
 
         <a class=" m-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out" href="#">
           <div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden"><img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl" src="http://127.0.0.1:8000/view-image/1715768212_mengalir.png" alt="Image Description"></div>
@@ -163,7 +163,7 @@
       </div>
       <!-- selengkapnya -->
       <div class="flex justify-end my-5">
-        <a href="#" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
+        <a href="{{route('berita')}}" class="flex group hover:translate-x-2 transition-all duration-200 ease-in-out">
           Selengkapnya
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-4 transition-all duration-200 ease-in-out">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -197,7 +197,71 @@
   </section>
 
 
+  <script type="module">
+    $(document).ready(function() {
+      $.get('/api/berita/{{$berita->id_berita}}', function(data) {
+        console.log(data);
+        createCardBerita(data);
+      });
 
+
+      function createCardBerita(data) {
+        const container = $('#container_berita');
+        container.html('');
+        $.each(data.data, function(index, item) {
+          // Create the main <a> element
+          var cardBerita = $('<a>', {
+            class: 'm-4 flex flex-col w-[20rem] group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg hover:scale-95 transition-all duration-200 ease-in-out',
+            href: "{{ route('berita.read','') }}/" + item.id_berita
+          });
+
+          // Create the first <div> element
+          var div1 = $('<div>', {
+            class: 'relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden'
+          });
+
+          // Create the <img> element
+          var img = $('<img>', {
+            class: 'size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-t-xl',
+            src: "{{ url('/view-image/') }}/" + item.nama_file,
+            alt: 'Image Description'
+          }).appendTo(div1);
+
+          // Create the second <div> element
+          var div2 = $('<div>', {
+            class: 'p-4 md:p-5'
+          });
+
+          // Create the <h3> element
+          var heading = $('<h3>', {
+            class: 'text-lg font-bold text-gray-800',
+            text: item.judul
+          }).appendTo(div2);
+
+          // Create the date <div> element
+          var dateDiv = $('<div>', {
+            class: 'font-bold text-xs uppercase text-slate-400',
+            text: item.tanggal
+          }).appendTo(div2);
+
+          // Create the content <div> element
+          var contentDiv = $('<div>', {
+            class: 'mt-1 text-gray-500 line-clamp-3',
+            html: item.berita
+          }).appendTo(div2);
+
+          // Append both <div> elements to the main <a> element
+          div1.appendTo(cardBerita);
+          div2.appendTo(cardBerita);
+
+          // Menambahkan elemen berita ke dalam container
+          container.append(cardBerita);
+        });
+      }
+
+
+    });
+  </script>
 
 
   @include('layouts.footer')

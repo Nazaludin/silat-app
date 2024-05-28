@@ -34,6 +34,23 @@ Route::get('/prestasi', function (Request $request) {
     }
     return response()->json($prestasi);
 });
+Route::get('/prestasi/{id_perguruan}', function (Request $request, $id_perguruan) {
+    $key = $request->input('search');
+
+    // Jika query tidak ada atau kosong, tampilkan semua data
+    if (!$key) {
+        $prestasi = Prestasi::where('id_perguruan', $id_perguruan)->paginate(1);
+    } else {
+        // Jika query ada, lakukan pencarian berdasarkan judul
+        $prestasi = Prestasi::where('id_perguruan', $id_perguruan)
+            ->where('judul', 'like', "%$key%")
+            ->paginate(1);
+    }
+    foreach ($prestasi as $item) {
+        $item->tanggal = $item->getTanggal();
+    }
+    return response()->json($prestasi);
+});
 
 Route::prefix('admin')->group(function () {
     Route::get('/prestasi', function (Request $request) {
