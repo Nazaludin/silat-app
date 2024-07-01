@@ -160,12 +160,87 @@
             // .. After imports init TinyMCE ..
             window.addEventListener('DOMContentLoaded', () => {
                 tinymce.init({
-                    selector: 'textarea',
+                        selector: 'textarea',
+                        skin: 'oxide',
+                        content_css: 'default',
+                        plugins: 'image code',
+                        toolbar: 'undo redo | formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | link image | code',
+                        file_picker_types: 'image',
+                        images_upload_url: '/upload-image',
+                        automatic_uploads: true,
+                        object_resizing: true, // Aktifkan resize objek, termasuk gambar
+                        images_file_types: 'jpg,png',
+                        // image_advtab: true,
+                        images_upload_handler: function(blobInfo) {
+                            return new Promise((resolve, reject) => {
+                                let xhr = new XMLHttpRequest();
+                                let formData = new FormData();
 
-                    /* TinyMCE configuration options */
-                    skin: false,
-                    content_css: false
-                });
+                                xhr.withCredentials = false;
+                                xhr.open('POST', '/upload-image');
+                                xhr.setRequestHeader('X-CSRF-Token', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+
+                                xhr.upload.onprogress = (e) => {
+                                    console.log('Upload progress:', (e.loaded / e.total) * 100);
+                                };
+
+                                xhr.onload = function() {
+                                    if (xhr.status === 200) {
+                                        try {
+                                            let json = JSON.parse(xhr.responseText);
+                                            if (json && typeof json.location === 'string') {
+                                                resolve(json.location);
+                                            } else {
+                                                reject('Invalid JSON response');
+                                            }
+                                        } catch (e) {
+                                            reject('Error parsing JSON response');
+                                        }
+                                    } else {
+                                        reject('HTTP Error: ' + xhr.status);
+                                    }
+                                };
+
+                                xhr.onerror = function() {
+                                    reject('Network error');
+                                };
+
+                                formData.append('file', blobInfo.blob(), blobInfo.filename());
+                                xhr.send(formData);
+                            });
+                        },
+                        file_picker_callback: function(cb, value, meta) {
+                            const input = document.createElement('input');
+                            input.setAttribute('type', 'file');
+                            input.setAttribute('accept', 'image/*');
+
+                            input.addEventListener('change', function(e) {
+                                const file = e.target.files[0];
+
+                                const reader = new FileReader();
+                                reader.onload = function() {
+                                    const id = 'blobid' + (new Date()).getTime();
+                                    const blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                                    const base64 = reader.result.split(',')[1];
+                                    const blobInfo = blobCache.create(id, file, base64);
+                                    blobCache.add(blobInfo);
+
+                                    cb(blobInfo.blobUri(), {
+                                        title: file.name
+                                    });
+                                };
+
+                                reader.readAsDataURL(file);
+                            });
+
+                            input.click();
+                        }
+                    })
+                    .then(() => {
+                        console.log('TinyMCE initialized successfully');
+                    }).catch(error => {
+                        console.error('Error initializing TinyMCE:', error);
+                    });
             });
         </script>
 </x-app-layout>

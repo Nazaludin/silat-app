@@ -32,6 +32,7 @@ Route::get('/wait/accept', function (Request $request) {
 
 // FUNCTIONAL ROUTE
 Route::get('view-image/{filename}',   [FunctionalController::class, 'viewImage'])->name('view-image');
+Route::post('upload-image/',   [FunctionalController::class, 'uploadImage'])->name('upload-image');
 Route::get('/wilayah/tambah', [WilayahController::class, 'tambahData'])->name('wilayah.tambah');
 
 

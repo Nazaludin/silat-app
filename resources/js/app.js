@@ -6,6 +6,8 @@ import "tinymce/skins/content/default/content.css";
 import "tinymce/icons/default/icons";
 import "tinymce/themes/silver/theme";
 import "tinymce/models/dom/model";
+import "tinymce/plugins/image";
+import "tinymce/plugins/code";
 
 import Alpine from "alpinejs";
 import "preline";
@@ -13,48 +15,52 @@ import "preline";
 window.Alpine = Alpine;
 Alpine.start();
 
-import jQuery from 'jquery';
+import jQuery from "jquery";
 window.$ = jQuery;
 // hamburger
-const hamburger = document.querySelector('#hamburger')
-const navMenu = document.querySelector('#nav-menu')
-hamburger.addEventListener('click', function(){
-    hamburger.classList.toggle('hamburger-active')
-    navMenu.classList.toggle('-translate-y-[30rem]')
+const hamburger = document.querySelector("#hamburger");
+const navMenu = document.querySelector("#nav-menu");
+hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("hamburger-active");
+    navMenu.classList.toggle("-translate-y-[30rem]");
+});
 
-}); 
-
-window.onscroll = function() {
+window.onscroll = function () {
     var className = "fixed-header";
     var scrollTrigger = 100;
-  // We add pageYOffset for compatibility with IE.
-  if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
-    document.getElementsByTagName("header")[0].classList.add(className);
-  } else {
-    document.getElementsByTagName("header")[0].classList.remove(className);
-  }
+    // We add pageYOffset for compatibility with IE.
+    if (
+        window.scrollY >= scrollTrigger ||
+        window.pageYOffset >= scrollTrigger
+    ) {
+        document.getElementsByTagName("header")[0].classList.add(className);
+    } else {
+        document.getElementsByTagName("header")[0].classList.remove(className);
+    }
 };
 
-    const sections = document.querySelectorAll('section');
-    const links = document.querySelectorAll('a');
+const sections = document.querySelectorAll("section");
+const links = document.querySelectorAll("a");
 
-    window.addEventListener('scroll', () => {
-        let scrollPosition = window.scrollY + 80;
+window.addEventListener("scroll", () => {
+    let scrollPosition = window.scrollY + 80;
 
-        sections.forEach(section => {
-            if (scrollPosition >= section.offsetTop) {
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
+    sections.forEach((section) => {
+        if (scrollPosition >= section.offsetTop) {
+            links.forEach((link) => {
+                link.classList.remove("active");
+                if (
+                    section.getAttribute("id") ===
+                    link.getAttribute("href").substring(1)
+                ) {
+                    link.classList.add("active");
+                }
+            });
+        }
     });
+});
 
-
-// Scroll Show Element 
+// Scroll Show Element
 
 // window.addEventListener('scroll', reveal);
 
@@ -72,25 +78,25 @@ window.onscroll = function() {
 //         }else{
 //             reveals[i].classList.remove('scrollShow');
 //         }
-        
+
 //     }
 // }
 
-document.querySelector('#progressbar').animate(
+document.querySelector("#progressbar").animate(
     {
-      backgroundColor: ['red', 'darkred'],
-      transform: ['scaleX(0)', 'scaleX(1)'],
+        backgroundColor: ["red", "darkred"],
+        transform: ["scaleX(0)", "scaleX(1)"],
     },
     {
-      duration: 2500,
-      fill: 'forwards',
-      easing: 'linear',
-     }
-  );
+        duration: 2500,
+        fill: "forwards",
+        easing: "linear",
+    }
+);
 
-  $(function() {
+$(function () {
     var elem = $(".trim-text");
-    if (elem.length > 0){
+    if (elem.length > 0) {
         var text = elem.text();
         if (text.length > 10) {
             elem.text(text.substring(0, 10));

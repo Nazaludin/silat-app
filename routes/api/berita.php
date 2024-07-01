@@ -22,12 +22,31 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/berita', function (Request $request) {
 
-    $berita = Berita::orderBy('updated_at', 'desc')
-        ->where('id_status_berita', 4)
-        ->where('judul', 'like', "%$key%")
-        ->paginate(4);
-
+    $key = $request->input('search');
+    // Jika query tidak ada atau kosong, tampilkan semua data
+    if (!$key) {
+        $berita = Berita::orderBy('updated_at', 'desc')
+            // ->whereNotIn('id_berita', [$id_berita])
+            ->where('id_status_berita', 4)
+            ->paginate(4);
+    } else {
+        $berita = Berita::orderBy('updated_at', 'desc')
+            // ->whereNotIn('id_berita', [$id_berita])
+            ->where('id_status_berita', 4)
+            ->where('judul', 'like', "%$key%")
+            ->paginate(4);
+    }
+    // Mengubah format tanggal 'created_at' dari setiap berita
+    foreach ($berita as $item) {
+        $item->tanggal = $item->getTanggal();
+    }
     return response()->json($berita);
+    // $berita = Berita::orderBy('updated_at', 'desc')
+    //     ->where('id_status_berita', 4)
+    //     ->where('judul', 'like', "%$key%")
+    //     ->paginate(4);
+
+    // return response()->json($berita);
 });
 Route::get('/berita/{id_berita}', function (Request $request, $id_berita) {
     $key = $request->input('search');
